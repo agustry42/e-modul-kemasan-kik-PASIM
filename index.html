@@ -887,4 +887,1524 @@
 
             <!-- Navigation Buttons -->
             <div class="flex justify-between">
-                <button onclick="switchTab('tp2')" class="px-5 py-3 rounded-xl bg-white border border-slate-300 hover:bg-slate-50 text-slate-70
+                <button onclick="switchTab('tp2')" class="px-5 py-3 rounded-xl bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 font-bold text-sm transition flex items-center gap-2">
+                    <i class="fa-solid fa-arrow-left"></i> Kembali ke Modul 2
+                </button>
+                <button onclick="switchTab('tp4')" class="px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm transition shadow-md flex items-center gap-2">
+                    Lanjut ke Modul 4: Desain & Label BPOM <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- ==================== SECTION 4: TP 4 (UNSUR DESAIN, LABEL & DAYA TARIK) ==================== -->
+        <section id="sec-tp4" class="module-section hidden space-y-8">
+            <!-- Header Modul -->
+            <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+                <span class="text-xs font-bold uppercase tracking-wider text-rose-600">Modul 4 • Tujuan Pembelajaran 4</span>
+                <h2 class="font-display font-bold text-2xl sm:text-3xl text-slate-900 mt-1 mb-3">
+                    Unsur Desain, Informasi Label Wajib, dan Daya Tarik Kemasan
+                </h2>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    Kemasan yang unggul memadukan <strong>estetika desain grafis</strong>, <strong>kepatuhan hukum pelabelan pangan (PP No. 69 Tahun 1999 & Regulasi BPOM)</strong>, serta <strong>daya tarik fungsional</strong>.
+                </p>
+            </div>
+
+            <!-- INTERAKTIF 4: Inspektor 8 Informasi Wajib Label Kemasan -->
+            <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+                <div class="mb-6">
+                    <span class="text-xs font-bold uppercase tracking-wider text-indigo-600">Eksplorasi Interaktif Regulasi Label</span>
+                    <h3 class="font-display font-bold text-xl sm:text-2xl text-slate-900 mt-1">
+                        1. Inspektor 8 Informasi Wajib pada Label Kemasan Pangan
+                    </h3>
+                    <p class="text-xs sm:text-sm text-slate-500 mt-1">
+                        Klik pada <strong>titik angka (1–8)</strong> di ilustrasi kemasan atau daftar di sebelah kanan untuk memeriksa ketentuan resminya!
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <!-- Visual Mockup Standing Pouch with Hotspots -->
+                    <div class="lg:col-span-5 flex justify-center">
+                        <div id="mockupPackage" class="relative w-72 sm:w-80 rounded-[36px] p-6 shadow-2xl border-4 border-white transition-colors duration-500 bg-gradient-to-b from-amber-500 via-orange-500 to-amber-700 text-white select-none">
+                            <!-- Ziplock Seal Line -->
+                            <div class="w-full h-3 border-y-2 border-dashed border-white/50 mb-4 flex items-center justify-between px-2">
+                                <span class="text-[9px] uppercase tracking-widest text-white/80">Tear Here / Ziplock Seal</span>
+                                <i class="fa-solid fa-scissors text-[10px] text-white/80"></i>
+                            </div>
+
+                            <!-- Top Badges: Halal & BPOM -->
+                            <div class="flex justify-between items-start mb-3">
+                                <div class="bg-white text-emerald-800 px-2.5 py-1 rounded-lg text-[10px] font-extrabold shadow flex items-center gap-1">
+                                    <i class="fa-solid fa-certificate text-emerald-600"></i> HALAL INDONESIA
+                                </div>
+                                <div class="bg-white/90 text-slate-900 px-2.5 py-1 rounded-lg text-[10px] font-bold shadow">
+                                    BPOM RI MD 123456789
+                                </div>
+                            </div>
+
+                            <!-- Brand & Product Name -->
+                            <div class="text-center my-4 bg-slate-950/30 backdrop-blur-sm rounded-2xl p-4 border border-white/20">
+                                <div class="text-[11px] font-bold uppercase tracking-widest text-amber-200">KRIPIK NUSANTARA</div>
+                                <h4 class="font-display font-extrabold text-2xl leading-tight tracking-tight mt-0.5">SINGKONG BALADO</h4>
+                                <p class="text-[11px] text-white/90 mt-1">Renyah Pilihan Tanpa Pengawet</p>
+                            </div>
+
+                            <!-- Ingredients & Nutrition Box -->
+                            <div class="bg-white/95 text-slate-800 rounded-xl p-3 text-[10px] space-y-1.5 shadow-inner">
+                                <div><strong>Komposisi:</strong> Singkong Segar (75%), Minyak Nabati, Cabai Merah, Bawang Putih, Gula, Garam.</div>
+                                <div class="border-t border-slate-200 pt-1 flex justify-between">
+                                    <span><strong>Informasi Nilai Gizi:</strong> Energi 150 kkal</span>
+                                    <span><strong>Kode Produksi:</strong> B26-09</span>
+                                </div>
+                                <div class="border-t border-slate-200 pt-1 text-[9px] text-slate-600">
+                                    <strong>Diproduksi oleh:</strong> CV Pangan Kreatif Mandiri, Kota Sukabumi 43111 - Indonesia
+                                </div>
+                            </div>
+
+                            <!-- Bottom Row: Netto & Expiry -->
+                            <div class="mt-4 flex items-center justify-between text-xs font-extrabold">
+                                <div class="bg-slate-900/70 px-3 py-1.5 rounded-lg">Berat Bersih: 150g</div>
+                                <div class="bg-white text-slate-900 px-2.5 py-1.5 rounded-lg text-[10px]">Baik Digunakan Sebelum: 30 DES 2027</div>
+                            </div>
+
+                            <!-- 8 Interactive Hotspot Buttons -->
+                            <button onclick="showLabelHotspot(1)" class="hotspot-dot absolute top-28 left-6 w-8 h-8 rounded-full bg-indigo-600 text-white font-bold text-xs shadow-lg border-2 border-white flex items-center justify-center">1</button>
+                            <button onclick="showLabelHotspot(2)" class="hotspot-dot absolute top-14 left-5 w-8 h-8 rounded-full bg-indigo-600 text-white font-bold text-xs shadow-lg border-2 border-white flex items-center justify-center">2</button>
+                            <button onclick="showLabelHotspot(3)" class="hotspot-dot absolute top-14 right-5 w-8 h-8 rounded-full bg-indigo-600 text-white font-bold text-xs shadow-lg border-2 border-white flex items-center justify-center">3</button>
+                            <button onclick="showLabelHotspot(4)" class="hotspot-dot absolute top-52 left-4 w-8 h-8 rounded-full bg-indigo-600 text-white font-bold text-xs shadow-lg border-2 border-white flex items-center justify-center">4</button>
+                            <button onclick="showLabelHotspot(5)" class="hotspot-dot absolute top-64 right-4 w-8 h-8 rounded-full bg-indigo-600 text-white font-bold text-xs shadow-lg border-2 border-white flex items-center justify-center">5</button>
+                            <button onclick="showLabelHotspot(6)" class="hotspot-dot absolute bottom-16 left-8 w-8 h-8 rounded-full bg-indigo-600 text-white font-bold text-xs shadow-lg border-2 border-white flex items-center justify-center">6</button>
+                            <button onclick="showLabelHotspot(7)" class="hotspot-dot absolute bottom-4 left-4 w-8 h-8 rounded-full bg-indigo-600 text-white font-bold text-xs shadow-lg border-2 border-white flex items-center justify-center">7</button>
+                            <button onclick="showLabelHotspot(8)" class="hotspot-dot absolute bottom-4 right-4 w-8 h-8 rounded-full bg-indigo-600 text-white font-bold text-xs shadow-lg border-2 border-white flex items-center justify-center">8</button>
+                        </div>
+                    </div>
+
+                    <!-- Explanation Panel & Quick Selector -->
+                    <div class="lg:col-span-7 space-y-4">
+                        <div id="hotspotDetailCard" class="bg-indigo-50 border-2 border-indigo-200 rounded-2xl p-6">
+                            <!-- Dynamic via JS -->
+                        </div>
+
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+                            <button onclick="showLabelHotspot(1)" id="hs-btn-1" class="hs-btn text-left p-2.5 rounded-xl border text-xs font-bold transition">1. Nama Produk & Merek</button>
+                            <button onclick="showLabelHotspot(2)" id="hs-btn-2" class="hs-btn text-left p-2.5 rounded-xl border text-xs font-bold transition">2. Logo & Sertifikat Halal</button>
+                            <button onclick="showLabelHotspot(3)" id="hs-btn-3" class="hs-btn text-left p-2.5 rounded-xl border text-xs font-bold transition">3. Nomor Izin Edar</button>
+                            <button onclick="showLabelHotspot(4)" id="hs-btn-4" class="hs-btn text-left p-2.5 rounded-xl border text-xs font-bold transition">4. Daftar Komposisi</button>
+                            <button onclick="showLabelHotspot(5)" id="hs-btn-5" class="hs-btn text-left p-2.5 rounded-xl border text-xs font-bold transition">5. Nilai Gizi & Kode Batch</button>
+                            <button onclick="showLabelHotspot(6)" id="hs-btn-6" class="hs-btn text-left p-2.5 rounded-xl border text-xs font-bold transition">6. Identitas Produsen</button>
+                            <button onclick="showLabelHotspot(7)" id="hs-btn-7" class="hs-btn text-left p-2.5 rounded-xl border text-xs font-bold transition">7. Berat Bersih (Netto)</button>
+                            <button onclick="showLabelHotspot(8)" id="hs-btn-8" class="hs-btn text-left p-2.5 rounded-xl border text-xs font-bold transition">8. Tanggal Kedaluwarsa</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INTERAKTIF 5: Simulator Psikologi Warna Kemasan -->
+            <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+                <span class="text-xs font-bold uppercase tracking-wider text-rose-600">Unsur Desain Grafis Kemasan</span>
+                <h3 class="font-display font-bold text-xl sm:text-2xl text-slate-900 mt-1 mb-2">2. Simulator Psikologi Warna pada Desain Kemasan</h3>
+                <p class="text-xs sm:text-sm text-slate-600 mb-6">
+                    Warna adalah elemen visual pertama yang ditangkap mata konsumen sebelum membaca teks. Klik warna di bawah untuk mengubah tema warna kemasan dan mempelajari efek psikologisnya!
+                </p>
+
+                <div class="flex flex-wrap gap-3 mb-6">
+                    <button onclick="selectColorPsych('red')" class="px-4 py-2.5 rounded-xl bg-red-600 text-white font-bold text-xs shadow hover:opacity-90 flex items-center gap-2">
+                        <span class="w-3 h-3 rounded-full bg-white"></span> Merah (Energi & Pedas)
+                    </button>
+                    <button onclick="selectColorPsych('yellow')" class="px-4 py-2.5 rounded-xl bg-amber-500 text-slate-950 font-bold text-xs shadow hover:opacity-90 flex items-center gap-2">
+                        <span class="w-3 h-3 rounded-full bg-slate-950"></span> Kuning/Oranye (Ceria & Gurih)
+                    </button>
+                    <button onclick="selectColorPsych('green')" class="px-4 py-2.5 rounded-xl bg-emerald-600 text-white font-bold text-xs shadow hover:opacity-90 flex items-center gap-2">
+                        <span class="w-3 h-3 rounded-full bg-white"></span> Hijau (Organik & Segar)
+                    </button>
+                    <button onclick="selectColorPsych('blue')" class="px-4 py-2.5 rounded-xl bg-sky-600 text-white font-bold text-xs shadow hover:opacity-90 flex items-center gap-2">
+                        <span class="w-3 h-3 rounded-full bg-white"></span> Biru (Murni & Terpercaya)
+                    </button>
+                    <button onclick="selectColorPsych('black')" class="px-4 py-2.5 rounded-xl bg-slate-900 text-amber-300 font-bold text-xs shadow hover:opacity-90 flex items-center gap-2 border border-amber-400">
+                        <span class="w-3 h-3 rounded-full bg-amber-400"></span> Hitam & Emas (Premium/Eksklusif)
+                    </button>
+                </div>
+
+                <div id="colorPsychResult" class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+                    <!-- Dynamic via JS -->
+                </div>
+            </div>
+
+            <!-- 2 Kategori Daya Tarik Kemasan: Visual vs Praktis -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-display font-bold text-lg text-slate-900">1. Daya Tarik Visual (Estetika)</h4>
+                            <p class="text-xs text-slate-500">Memikat emosi dan mata konsumen pada pandangan pertama</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-2.5 text-xs sm:text-sm text-slate-600">
+                        <li>• <strong>Kombinasi Warna Harmonis:</strong> Kontras yang tepat antara latar belakang dan teks agar mudah terbaca (<em>legibility</em>).</li>
+                        <li>• <strong>Tipografi (Huruf):</strong> Pemilihan jenis font yang sesuai karakter produk (misal font <em>serif</em> elegan untuk parfum, font <em>sans-serif bold</em> untuk snack).</li>
+                        <li>• <strong>Ilustrasi & Fotografi Produk:</strong> Menampilkan foto penyajian produk yang menggugah selera atau jendela transparan (<em>window</em>) agar isi terlihat.</li>
+                        <li>• <strong>Tata Letak (Layout):</strong> Hierarki visual yang jelas sehingga konsumen langsung tahu apa nama produk dan keunggulannya.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center">
+                            <i class="fa-solid fa-gears"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-display font-bold text-lg text-slate-900">2. Daya Tarik Praktis (Fungsional)</h4>
+                            <p class="text-xs text-slate-500">Mendorong pembelian berulang (repeat order) karena kemudahan pakai</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-2.5 text-xs sm:text-sm text-slate-600">
+                        <li>• <strong>Kemudahan Dibuka & Ditutup Kembali (Resealable):</strong> Fitur <em>ziplock</em>, tutup ulir (<em>spout</em>), atau perekat ulang agar sisa produk tetap awet.</li>
+                        <li>• <strong>Takaran Porsi yang Pas (Single-Serve / Portion Pack):</strong> Kemasan <em>sachet</em> sekali seduh yang praktis tanpa perlu menakar lagi.</li>
+                        <li>• <strong>Kemudahan Dijinjing / Dibawa:</strong> Adanya lubang pegangan jari (<em>handle</em>) atau bentuk botol yang pas di genggaman tangan.</li>
+                        <li>• <strong>Kemudahan Dituang / Disemprotkan:</strong> Mekanisme <em>spray, pump,</em> atau corong anti-tumpah.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="flex justify-between">
+                <button onclick="switchTab('tp3')" class="px-5 py-3 rounded-xl bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 font-bold text-sm transition flex items-center gap-2">
+                    <i class="fa-solid fa-arrow-left"></i> Kembali ke Modul 3
+                </button>
+                <button onclick="switchTab('quiz')" class="px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm transition shadow-lg flex items-center gap-2">
+                    Mulai Evaluasi HOTS (20 Soal) <i class="fa-solid fa-trophy"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- ==================== SECTION 5: EVALUASI HOTS (20 SOAL & PDF EXPORT) ==================== -->
+        <section id="sec-quiz" class="module-section hidden space-y-8">
+            <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-amber-600">Asesmen Formatif & Sumatif (20 Soal HOTS)</span>
+                        <h2 class="font-display font-bold text-2xl sm:text-3xl text-slate-900 mt-1">
+                            Evaluasi HOTS: Studi Kasus Kemasan Produk
+                        </h2>
+                        <p class="text-slate-600 text-sm mt-1">
+                            Jawablah 20 pertanyaan berbasis studi kasus di bawah ini (masing-masing bernilai 5 poin). Setelah selesai, unduh laporan hasil dalam format <strong>PDF</strong> untuk dikirimkan kepada Bapak <strong>Agus Tryanto, M.Pd</strong>.
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 bg-indigo-50 px-4 py-3 rounded-2xl border border-indigo-200 shrink-0">
+                        <div class="text-right">
+                            <div class="text-xs text-indigo-700 font-semibold">Terjawab</div>
+                            <div id="quizAnsweredCount" class="font-display font-extrabold text-xl text-indigo-900">0 / 20</div>
+                        </div>
+                        <div class="h-8 w-px bg-indigo-200"></div>
+                        <div class="text-right">
+                            <div class="text-xs text-indigo-700 font-semibold">Skor Saat Ini</div>
+                            <div id="quizScoreBadge" class="font-display font-extrabold text-2xl text-indigo-700">0 / 100</div>
+                        </div>
+                        <button onclick="resetQuiz()" class="px-3 py-2 rounded-xl bg-white text-indigo-700 hover:bg-indigo-100 text-xs font-bold border border-indigo-200 transition" title="Ulangi Kuis">
+                            <i class="fa-solid fa-rotate-right mr-1"></i> Reset
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Student Identity Form for PDF Report -->
+                <div class="mt-6 pt-6 border-t border-slate-200 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Nama Lengkap Siswa <span class="text-rose-500">*</span></label>
+                        <input type="text" id="studentName" placeholder="Contoh: Andi Ralviansyah" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Kelas & Kompetensi Keahlian <span class="text-rose-500">*</span></label>
+                        <input type="text" id="studentClass" placeholder="Contoh: XI TJKT / XI PPLG / XI DKV" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Nomor Absen / NIS</label>
+                        <input type="text" id="studentNumber" placeholder="Contoh: 05 / 12345" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Instansi / Sekolah</label>
+                        <input type="text" id="studentSchool" value="SMKS PK PASIM Plus Kota Sukabumi" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent">
+                    </div>
+                </div>
+
+                <!-- Quick Action Bar -->
+                <div class="mt-4 flex flex-wrap items-center justify-between gap-3 bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+                    <div class="text-xs text-slate-600 flex items-center gap-2">
+                        <i class="fa-solid fa-file-pdf text-rose-600 text-base"></i>
+                        <span>Hasil evaluasi dapat diunduh kapan saja dalam bentuk <strong>File PDF Resmi</strong> lengkap dengan rincian jawaban 20 soal untuk dikirim ke WhatsApp / Google Classroom Guru.</span>
+                    </div>
+                    <button onclick="downloadQuizPDF()" class="px-4 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs transition shadow-sm flex items-center gap-2 shrink-0">
+                        <i class="fa-solid fa-file-arrow-down"></i> Unduh Hasil Evaluasi (PDF)
+                    </button>
+                </div>
+            </div>
+
+            <!-- Quiz Questions Container -->
+            <div id="quizContainer" class="space-y-5">
+                <!-- Rendered via JS -->
+            </div>
+
+            <!-- Final Summary Card -->
+            <div id="quizResultBanner" class="hidden bg-gradient-to-r from-indigo-900 via-slate-900 to-indigo-950 text-white rounded-2xl p-8 text-center shadow-xl">
+                <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-amber-400 text-slate-950 flex items-center justify-center text-3xl shadow-lg">
+                    <i class="fa-solid fa-award"></i>
+                </div>
+                <h3 class="font-display font-bold text-2xl sm:text-3xl mb-2">Evaluasi 20 Soal HOTS Selesai!</h3>
+                <p id="quizFeedbackText" class="text-indigo-200 text-sm sm:text-base max-w-xl mx-auto mb-6"></p>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <button onclick="downloadQuizPDF()" class="px-6 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-sm transition shadow-lg flex items-center gap-2">
+                        <i class="fa-solid fa-file-pdf text-base"></i> Simpan & Unduh Hasil PDF (Kirim ke Guru)
+                    </button>
+                    <button onclick="window.print()" class="px-5 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm transition border border-white/20 flex items-center gap-2">
+                        <i class="fa-solid fa-print"></i> Cetak Halaman
+                    </button>
+                    <button onclick="resetQuiz()" class="px-5 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm transition flex items-center gap-2">
+                        <i class="fa-solid fa-rotate-right"></i> Kerjakan Ulang
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER DENGAN LINK INSTAGRAM & YOUTUBE RESMI -->
+    <footer class="bg-slate-900 text-slate-300 border-t border-slate-800 mt-12 py-10 no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 pb-8 border-b border-slate-800">
+                <!-- Identitas Sekolah & Guru -->
+                <div class="md:col-span-5 space-y-3">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-amber-500 flex items-center justify-center text-white shadow-md">
+                            <i class="fa-solid fa-box-open text-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-display font-bold text-white text-base leading-tight">SMKS PK PASIM Plus Kota Sukabumi</h4>
+                            <p class="text-xs text-amber-400 font-semibold">Mata Pelajaran: KIK (Kreatif, Inovasi, dan Kewirausahaan) Kelas XI</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Media Pembelajaran Interaktif materi <strong>Kemasan Produk (Product Packaging)</strong> dilengkapi laboratorium bedah kemasan, simulator target pasar, dan evaluasi 20 soal HOTS berbasis PDF.
+                    </p>
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800/90 border border-slate-700 text-xs text-slate-200">
+                        <i class="fa-solid fa-user-tie text-amber-400"></i>
+                        <span>Guru Pengampu: <strong class="text-white">Agus Tryanto, M.Pd</strong></span>
+                    </div>
+                </div>
+
+                <!-- Tautan Instagram -->
+                <div class="md:col-span-3 space-y-2.5">
+                    <h5 class="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2">
+                        <i class="fa-brands fa-instagram text-pink-400 text-sm"></i> Instagram Resmi
+                    </h5>
+                    <div class="space-y-2">
+                        <a href="[https://www.instagram.com/smkpasim.official/](https://www.instagram.com/smkpasim.official/)" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-800/60 hover:bg-pink-600/20 border border-slate-700/80 hover:border-pink-500/50 transition group">
+                            <span class="w-8 h-8 rounded-lg bg-gradient-to-tr from-amber-500 via-pink-500 to-purple-600 text-white flex items-center justify-center shrink-0 shadow-sm">
+                                <i class="fa-brands fa-instagram"></i>
+                            </span>
+                            <div class="overflow-hidden">
+                                <div class="text-xs font-bold text-white group-hover:text-pink-300 transition truncate">@smkpasim.official</div>
+                                <div class="text-[10px] text-slate-400 truncate">[https://www.instagram.com/smkpasim.official/](https://www.instagram.com/smkpasim.official/)</div>
+                            </div>
+                        </a>
+                        <a href="[https://www.instagram.com/agus_tryanto/](https://www.instagram.com/agus_tryanto/)" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-800/60 hover:bg-pink-600/20 border border-slate-700/80 hover:border-pink-500/50 transition group">
+                            <span class="w-8 h-8 rounded-lg bg-gradient-to-tr from-amber-500 via-pink-500 to-purple-600 text-white flex items-center justify-center shrink-0 shadow-sm">
+                                <i class="fa-brands fa-instagram"></i>
+                            </span>
+                            <div class="overflow-hidden">
+                                <div class="text-xs font-bold text-white group-hover:text-pink-300 transition truncate">@agus_tryanto</div>
+                                <div class="text-[10px] text-slate-400 truncate">[https://www.instagram.com/agus_tryanto/](https://www.instagram.com/agus_tryanto/)</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tautan YouTube -->
+                <div class="md:col-span-4 space-y-2.5">
+                    <h5 class="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2">
+                        <i class="fa-brands fa-youtube text-red-500 text-sm"></i> Kanal YouTube
+                    </h5>
+                    <div class="space-y-2">
+                        <a href="[https://www.youtube.com/@PASIMChannel](https://www.youtube.com/@PASIMChannel)" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-800/60 hover:bg-red-600/20 border border-slate-700/80 hover:border-red-500/50 transition group">
+                            <span class="w-8 h-8 rounded-lg bg-red-600 text-white flex items-center justify-center shrink-0 shadow-sm">
+                                <i class="fa-brands fa-youtube"></i>
+                            </span>
+                            <div class="overflow-hidden">
+                                <div class="text-xs font-bold text-white group-hover:text-red-300 transition truncate">@PASIMChannel</div>
+                                <div class="text-[10px] text-slate-400 truncate">[https://www.youtube.com/@PASIMChannel](https://www.youtube.com/@PASIMChannel)</div>
+                            </div>
+                        </a>
+                        <a href="[https://www.youtube.com/@agustryanto6575](https://www.youtube.com/@agustryanto6575)" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-800/60 hover:bg-red-600/20 border border-slate-700/80 hover:border-red-500/50 transition group">
+                            <span class="w-8 h-8 rounded-lg bg-red-600 text-white flex items-center justify-center shrink-0 shadow-sm">
+                                <i class="fa-brands fa-youtube"></i>
+                            </span>
+                            <div class="overflow-hidden">
+                                <div class="text-xs font-bold text-white group-hover:text-red-300 transition truncate">@agustryanto6575</div>
+                                <div class="text-[10px] text-slate-400 truncate">[https://www.youtube.com/@agustryanto6575](https://www.youtube.com/@agustryanto6575)</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+                <div>
+                    © 2026 <strong>SMKS PK PASIM Plus Kota Sukabumi</strong> • Disusun oleh <strong>Agus Tryanto, M.Pd</strong>
+                </div>
+                <div class="flex flex-wrap items-center gap-3">
+                    <a href="[https://www.instagram.com/smkpasim.official/](https://www.instagram.com/smkpasim.official/)" target="_blank" rel="noopener noreferrer" class="hover:text-pink-400 transition">IG Sekolah</a>
+                    <span>•</span>
+                    <a href="[https://www.instagram.com/agus_tryanto/](https://www.instagram.com/agus_tryanto/)" target="_blank" rel="noopener noreferrer" class="hover:text-pink-400 transition">IG Guru</a>
+                    <span>•</span>
+                    <a href="[https://www.youtube.com/@PASIMChannel](https://www.youtube.com/@PASIMChannel)" target="_blank" rel="noopener noreferrer" class="hover:text-red-400 transition">YT PASIM</a>
+                    <span>•</span>
+                    <a href="[https://www.youtube.com/@agustryanto6575](https://www.youtube.com/@agustryanto6575)" target="_blank" rel="noopener noreferrer" class="hover:text-red-400 transition">YT Guru</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL PANDUAN GITHUB PAGES -->
+    <div id="githubModal" class="fixed inset-0 z-50 hidden bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4 no-print">
+        <div class="bg-white rounded-3xl max-w-xl w-full p-6 sm:p-8 shadow-2xl border border-slate-200">
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-slate-900 text-white flex items-center justify-center text-xl">
+                        <i class="fa-brands fa-github"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-display font-bold text-lg text-slate-900">Cara Upload ke GitHub Pages</h3>
+                        <p class="text-xs text-slate-500">Agar bahan ajar dapat diakses online oleh seluruh siswa</p>
+                    </div>
+                </div>
+                <button onclick="toggleGithubModal()" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <ol class="space-y-3 text-xs sm:text-sm text-slate-700 mb-6">
+                <li class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+                    <strong>1. Simpan File:</strong> Simpan kode aplikasi ini dengan nama wajib <code class="px-1.5 py-0.5 rounded bg-indigo-100 text-indigo-800 font-bold">index.html</code>.
+                </li>
+                <li class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+                    <strong>2. Buat Repository Baru:</strong> Login ke <a href="[https://github.com](https://github.com)" target="_blank" class="text-indigo-600 underline font-semibold">github.com</a>, klik tombol <strong>New Repository</strong>, beri nama misalnya <code class="px-1.5 py-0.5 rounded bg-slate-200 font-semibold">modul-kemasan-kik</code>, pilih <strong>Public</strong>, lalu klik <em>Create repository</em>.
+                </li>
+                <li class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+                    <strong>3. Upload File:</strong> Klik tautan <em>"uploading an existing file"</em>, tarik file <code class="px-1.5 py-0.5 rounded bg-indigo-100 text-indigo-800 font-bold">index.html</code> ke halaman tersebut, lalu klik tombol hijau <strong>Commit changes</strong>.
+                </li>
+                <li class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+                    <strong>4. Aktifkan GitHub Pages:</strong> Buka menu <strong>Settings</strong> di repository Anda &rarr; pilih menu <strong>Pages</strong> di samping kiri &rarr; pada bagian <em>Branch</em> ubah <em>None</em> menjadi <strong>main</strong> &rarr; klik <strong>Save</strong>. Tunggu 1 menit, link website siap dibagikan ke siswa!
+                </li>
+            </ol>
+
+            <div class="flex justify-end">
+                <button onclick="toggleGithubModal()" class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs transition">
+                    Mengerti, Tutup Panduan
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // ==================== 1. TAB NAVIGATION & PROGRESS TRACKER ====================
+        const visitedTabs = new Set(['intro']);
+        const totalTabs = 6;
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.module-section').forEach(sec => sec.classList.add('hidden'));
+            document.getElementById('sec-' + tabId).classList.remove('hidden');
+
+            document.querySelectorAll('.nav-tab').forEach(btn => {
+                btn.classList.remove('bg-indigo-600', 'text-white', 'shadow-sm');
+                if (btn.id !== 'tab-quiz') {
+                    btn.classList.add('text-slate-600');
+                }
+            });
+
+            const activeBtn = document.getElementById('tab-' + tabId);
+            if (tabId === 'quiz') {
+                activeBtn.classList.add('bg-indigo-600', 'text-white', 'shadow-sm');
+            } else {
+                activeBtn.classList.remove('text-slate-600');
+                activeBtn.classList.add('bg-indigo-600', 'text-white', 'shadow-sm');
+            }
+
+            visitedTabs.add(tabId);
+            const percent = Math.round((visitedTabs.size / totalTabs) * 100);
+            document.getElementById('progressBar').style.width = percent + '%';
+            document.getElementById('progressText').textContent = percent + '%';
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleGithubModal() {
+            const modal = document.getElementById('githubModal');
+            modal.classList.toggle('hidden');
+        }
+
+        // ==================== 2. MODUL 2: SIMULASI TINGKATAN KEMASAN ====================
+        const tierData = {
+            kopi: [
+                {
+                    level: 'Kemasan Primer',
+                    badge: 'Bersentuhan Langsung',
+                    icon: 'fa-mug-hot',
+                    color: 'indigo',
+                    item: 'Sachet Aluminium Foil Laminasi',
+                    desc: 'Mewadahi 25 gram bubuk kopi secara langsung. Kedap udara dan cahaya agar aroma kopi tidak menguap dan bubuk tidak menggumpal.'
+                },
+                {
+                    level: 'Kemasan Sekunder',
+                    badge: 'Pelindung & Display Ritel',
+                    icon: 'fa-box',
+                    color: 'emerald',
+                    item: 'Folding Box Karton Duplex (Isi 10 Sachet)',
+                    desc: 'Mengelompokkan 10 sachet menjadi 1 pak ritel untuk dipajang di rak minimarket serta memuat informasi nilai gizi lebih lengkap.'
+                },
+                {
+                    level: 'Kemasan Tersier',
+                    badge: 'Distribusi & Logistik',
+                    icon: 'fa-truck-ramp-box',
+                    color: 'amber',
+                    item: 'Master Carton Box Bergelombang (Isi 12 Box)',
+                    desc: 'Melindungi 12 box sekunder selama pengiriman truk/kontainer dari pabrik menuju distributor antarprovinsi.'
+                }
+            ],
+            susu: [
+                {
+                    level: 'Kemasan Primer',
+                    badge: 'Bersentuhan Langsung',
+                    icon: 'fa-glass-water',
+                    color: 'indigo',
+                    item: 'Kotak Aseptik Multilayer (Tetra Brik 250 ml)',
+                    desc: 'Terdiri dari 6 lapisan (kertas, polietilena, aluminium foil) yang menjaga susu UHT tetap steril tanpa pengawet hingga berbulan-bulan.'
+                },
+                {
+                    level: 'Kemasan Sekunder',
+                    badge: 'Pelindung & Multipack',
+                    icon: 'fa-boxes-packing',
+                    color: 'emerald',
+                    item: 'Shrink Film Plastik / Cardboard Tray (Isi 6 Kotak)',
+                    desc: 'Mengikat 6 kotak susu menjadi paket hemat keluarga (multipack) agar mudah dibawa pembeli di supermarket.'
+                },
+                {
+                    level: 'Kemasan Tersier',
+                    badge: 'Distribusi & Logistik',
+                    icon: 'fa-pallet',
+                    color: 'amber',
+                    item: 'Kardus Induk + Pallet Kayu Stretch Wrap',
+                    desc: 'Menyusun puluhan kardus susu di atas palet kayu yang dibungkus plastik stretch agar stabil saat diangkut forklift.'
+                }
+            ],
+            parfum: [
+                {
+                    level: 'Kemasan Primer',
+                    badge: 'Bersentuhan Langsung',
+                    icon: 'fa-spray-can-sparkles',
+                    color: 'indigo',
+                    item: 'Botol Kaca Tebal + Sprayer Crimp',
+                    desc: 'Material kaca bersifat inert sehingga tidak bereaksi dengan alkohol dan essential oil parfum yang mudah menguap.'
+                },
+                {
+                    level: 'Kemasan Sekunder',
+                    badge: 'Branding & Pelindung Pecah',
+                    icon: 'fa-gift',
+                    color: 'emerald',
+                    item: 'Hardbox Karton Ivory + Inner Busa EVA + Segel Plastik',
+                    desc: 'Menahan guncangan agar botol kaca tidak pecah sekaligus menampilkan kemewahan brand parfum.'
+                },
+                {
+                    level: 'Kemasan Tersier',
+                    badge: 'Distribusi & Logistik',
+                    icon: 'fa-box-open',
+                    color: 'amber',
+                    item: 'Kardus Double-Wall + Bubble Wrap + Stiker Fragile',
+                    desc: 'Melindungi lusinan box parfum saat dikirim melalui kurir ekspedisi ke berbagai kota.'
+                }
+            ],
+            keripik: [
+                {
+                    level: 'Kemasan Primer',
+                    badge: 'Bersentuhan Langsung',
+                    icon: 'fa-cookie-bite',
+                    color: 'indigo',
+                    item: 'Standing Pouch Metalized + Ziplock (150g)',
+                    desc: 'Menjaga keripik singkong tetap renyah, tidak tengik oleh paparan oksigen, dan mudah ditutup kembali.'
+                },
+                {
+                    level: 'Kemasan Sekunder',
+                    badge: 'Paket Oleh-Oleh / Hampers',
+                    icon: 'fa-bag-shopping',
+                    color: 'emerald',
+                    item: 'Tas Jinjing Karton Kraft / Box Oleh-Oleh (Isi 4 Varian)',
+                    desc: 'Memudahkan wisatawan membeli paket bundel 4 rasa sekaligus sebagai buah tangan khas daerah.'
+                },
+                {
+                    level: 'Kemasan Tersier',
+                    badge: 'Distribusi & Logistik',
+                    icon: 'fa-dolly',
+                    color: 'amber',
+                    item: 'Kardus Besar Bergelombang + Sekat Karton',
+                    desc: 'Mencegah tekanan berlebih saat ditumpuk di bagasi kargo agar keripik di dalamnya tidak hancur.'
+                }
+            ]
+        };
+
+        function updateTierExample() {
+            const selected = document.getElementById('tierProductSelect').value;
+            const list = tierData[selected];
+            const container = document.getElementById('tierCardsContainer');
+
+            container.innerHTML = list.map((item, idx) => `
+                <div class="rounded-2xl p-6 border border-slate-200 bg-slate-50/70 hover:bg-white hover:shadow-md transition flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-bold bg-${item.color}-100 text-${item.color}-800">
+                                Tingkatan 0${idx + 1} • ${item.badge}
+                            </span>
+                            <div class="w-10 h-10 rounded-xl bg-${item.color}-600 text-white flex items-center justify-center">
+                                <i class="fa-solid ${item.icon}"></i>
+                            </div>
+                        </div>
+                        <h4 class="font-display font-bold text-lg text-slate-900 mb-1">${item.level}</h4>
+                        <div class="text-sm font-bold text-${item.color}-700 mb-3">${item.item}</div>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">${item.desc}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // ==================== 3. MODUL 2: INSPEKTOR KODE PLASTIK (RIC 1-7) ====================
+        const ricData = {
+            1: {
+                code: '▲ 1 — PET / PETE (Polyethylene Terephthalate)',
+                status: 'Aman Sekali Pakai (Food Grade)',
+                badgeColor: 'bg-emerald-500 text-slate-950',
+                chars: 'Jernih/transparan, permukaan halus, kuat, kedap gas dan air, namun TIDAK tahan air panas (>60°C).',
+                usage: 'Botol air mineral, botol jus buah, botol minyak goreng, toples selai.',
+                warning: 'Disarankan hanya untuk 1 kali pemakaian. Jangan diisi air mendidih karena lapisan polimer dapat meluruh.'
+            },
+            2: {
+                code: '▲ 2 — HDPE (High-Density Polyethylene)',
+                status: 'Sangat Aman (Food Grade)',
+                badgeColor: 'bg-emerald-500 text-slate-950',
+                chars: 'Lebih tebal, buram/tidak tembus pandang, kaku namun liat, tahan terhadap bahan kimia dan suhu yang lebih tinggi dibanding PET.',
+                usage: 'Botol susu cair pasteurisasi, jeriken minyak goreng, botol sampo dan sabun cair.',
+                warning: 'Relatif aman, namun tetap disarankan tidak digunakan berulang kali untuk makanan jika sulit dibersihkan bagian dalamnya.'
+            },
+            3: {
+                code: '▲ 3 — PVC / V (Polyvinyl Chloride)',
+                status: 'HINDARI untuk Makanan Panas / Berlemak!',
+                badgeColor: 'bg-rose-500 text-white',
+                chars: 'Sulit didaur ulang dan mengandung senyawa DEHA / Phthalates yang dapat bermigrasi ke makanan bila terkena panas atau minyak.',
+                usage: 'Pipa air, plastik pembungkus kabel, mainan, plastik wrap non-makanan.',
+                warning: 'Jangan gunakan plastik kode 3 untuk mewadahi makanan berminyak atau panas karena berisiko mengganggu kesehatan ginjal & hormon.'
+            },
+            4: {
+                code: '▲ 4 — LDPE (Low-Density Polyethylene)',
+                status: 'Aman untuk Pangan (Food Grade)',
+                badgeColor: 'bg-emerald-500 text-slate-950',
+                chars: 'Sangat lentur, fleksibel, kuat, tahan air, tidak mudah sobek, namun kurang kedap terhadap gas oksigen.',
+                usage: 'Plastik kemasan gula/beras, plastik cling wrap makanan, kantong roti tawar, lapisan dalam karton susu.',
+                warning: 'Aman untuk makanan dingin/suhu ruang, tetapi jangan dipanaskan langsung di atas kompor/microwave.'
+            },
+            5: {
+                code: '▲ 5 — PP (Polypropylene)',
+                status: 'TERBAIK untuk Makanan & Minuman Panas!',
+                badgeColor: 'bg-amber-400 text-slate-950',
+                chars: 'Titik leleh tinggi (tahan suhu panas hingga 100°C–120°C), kuat, ringan, tahan lemak dan minyak.',
+                usage: 'Kotak makan thinwall, wadah microwave, cup minuman kopi/boba, botol dot bayi, sedotan, plastik keripik bening.',
+                warning: 'Pilihan paling direkomendasikan bagi UMKM kuliner untuk produk berkuah panas atau wadah pakai ulang.'
+            },
+            6: {
+                code: '▲ 6 — PS (Polystyrene / Styrofoam)',
+                status: 'HINDARI untuk Makanan Panas & Berminyak!',
+                badgeColor: 'bg-rose-500 text-white',
+                chars: 'Ringan, kaku, menahan suhu sementara, namun mengandung monomer Stirena yang mudah lepas saat terkena suhu tinggi, asam, atau minyak.',
+                usage: 'Kotak gabus styrofoam, gelas kopi sekali pakai murah, sendok garpu plastik getas.',
+                warning: 'Bila terkena kuah bakso panas atau gorengan berminyak, zat stirena yang bersifat karsinogenik dapat berpindah ke makanan.'
+            },
+            7: {
+                code: '▲ 7 — OTHER (SAN, ABS, Nylon, Polycarbonate)',
+                status: 'Periksa Label "BPA Free"!',
+                badgeColor: 'bg-sky-400 text-slate-950',
+                chars: 'Kelompok plastik campuran selain nomor 1–6. Sangat kuat, bening, dan tahan benturan.',
+                usage: 'Galon air minum isi ulang (PC), plastik vakum frozen food (Nylon), botol minum olahraga (Tritan/SAN).',
+                warning: 'Untuk jenis Polycarbonate (PC), pastikan tercantum label "BPA Free" (Bebas Bisphenol-A) agar aman bagi makanan/minuman.'
+            }
+        };
+
+        function selectPlasticCode(num) {
+            document.querySelectorAll('.ric-btn').forEach(btn => {
+                btn.classList.remove('border-2', 'border-amber-400', 'bg-white/10');
+                btn.classList.add('border', 'border-white/15', 'bg-white/5');
+            });
+            const active = document.getElementById('ric-btn-' + num);
+            active.classList.remove('border', 'border-white/15', 'bg-white/5');
+            active.classList.add('border-2', 'border-amber-400', 'bg-white/10');
+
+            const d = ricData[num];
+            document.getElementById('ricDetailPanel').innerHTML = `
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4 pb-3 border-b border-white/15">
+                    <h4 class="font-display font-bold text-lg sm:text-xl text-white">${d.code}</h4>
+                    <span class="px-3 py-1 rounded-full text-xs font-extrabold ${d.badgeColor} self-start sm:self-auto">${d.status}</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs sm:text-sm">
+                    <div class="bg-slate-950/40 p-4 rounded-xl border border-white/10">
+                        <div class="text-amber-300 font-bold mb-1"><i class="fa-solid fa-microscope mr-1"></i> Sifat Fisik & Kimia:</div>
+                        <p class="text-slate-200 leading-relaxed">${d.chars}</p>
+                    </div>
+                    <div class="bg-slate-950/40 p-4 rounded-xl border border-white/10">
+                        <div class="text-emerald-300 font-bold mb-1"><i class="fa-solid fa-box-open mr-1"></i> Contoh Penggunaan:</div>
+                        <p class="text-slate-200 leading-relaxed">${d.usage}</p>
+                    </div>
+                    <div class="bg-slate-950/40 p-4 rounded-xl border border-white/10">
+                        <div class="text-rose-300 font-bold mb-1"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Catatan Keamanan UMKM:</div>
+                        <p class="text-slate-200 leading-relaxed">${d.warning}</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        // ==================== 4. MODUL 3: SIMULATOR REKOMENDASI KEMASAN ====================
+        const simulatorMatrix = {
+            snack: {
+                genz: {
+                    title: 'Standing Pouch Full-Print Doff + Ziplock + Window Unik',
+                    material: 'Aluminium Foil / Metalized PET + LLDPE (Food Grade)',
+                    design: 'Warna kontras berani (Ungu/Kuning/Merah), ilustrasi karakter maskot street-art, dilengkapi QR Code playlist musik atau tantangan media sosial.',
+                    reason: 'Menjaga keripik tetap renyah hingga 6–8 bulan sekaligus praktis dibawa nongkrong (bisa ditutup ulang dengan ziplock).'
+                },
+                keluarga: {
+                    title: 'Kemasan Bantal (Pillow Pack) PP Tebal / Pouch Ekonomis Transparan',
+                    material: 'Polypropylene (PP ▲5) Ketebalan 0.8 mm atau Metalized Kombinasi Bening',
+                    design: 'Bagian depan transparan agar bumbu dan keutuhan keripik terlihat jelas oleh Ibu Rumah Tangga, menonjolkan tulisan "Ukuran Keluarga Lebih Hemat" & Logo Halal.',
+                    reason: 'Menekan biaya produksi kemasan sehingga harga jual per gram tetap kompetitif di pasar tradisional maupun minimarket.'
+                },
+                premium: {
+                    title: 'Paper Canister (Tabung Komposit Silinder) Berlapis Aluminium Dalam',
+                    material: 'Hard Paper Tube + Inner Aluminium Foil + Tutup Kaleng/Plastik Kedap + Segel Kupas (Peel-Off Membrane)',
+                    design: 'Finishing matte/doff elegan dengan aksen Gold Foil Stamping, menceritakan asal-usul bahan baku lokal terpilih.',
+                    reason: 'Silinder kokoh mencegah keripik remuk 100% saat dibawa di koper pesawat sebagai oleh-oleh eksekutif.'
+                },
+                eco: {
+                    title: 'Kraft Paper Standing Pouch (Eco-Laminated) + Jendela Bioplastik',
+                    material: 'Kertas Kraft Cokelat Alami dengan lapisan dalam PLA/PE tipis penahan minyak',
+                    design: 'Nuansa bumi (Earth Tone: cokelat, hijau daun), menggunakan tinta cetak berbasis kedelai (Soy Ink) dan klaim "Kemasan Ramah Lingkungan".',
+                    reason: 'Menarik simpati konsumen hijau dengan mengurangi penggunaan plastik murni namun tetap menjaga kerenyahan produk.'
+                }
+            },
+            minuman: {
+                genz: {
+                    title: 'Botol Kale / Cup Slim Injection PP dengan Stopper Anti-Tumpah',
+                    material: 'Botol PET (▲1) Tebal atau Cup PP (▲5) Reusable',
+                    design: 'Label stiker transparan minimalis (no-label look) dengan tipografi estetik yang fotogenik saat dipegang untuk foto Instagram Story.',
+                    reason: 'Mudah digenggam satu tangan, tampak modern, dan memamerkan warna asli lapisan minuman (misal gradasi matcha/kopi susu).'
+                },
+                keluarga: {
+                    title: 'Botol Literan (Family Size 1 Liter) dengan Tutup Segel Ulir',
+                    material: 'Botol HDPE (▲2) atau PET (▲1) Ukuran 1000 ml',
+                    design: 'Label tahan air (Vinyl) memuat petunjuk penyimpanan di kulkas dan takaran saji untuk 5 gelas keluarga.',
+                    reason: 'Lebih hemat untuk disajikan bersama keluarga di rumah dan mudah disimpan di pintu lemari es.'
+                },
+                premium: {
+                    title: 'Botol Kaca Amber / Flint Glass dengan Tutup Aluminium ROPP',
+                    material: 'Kaca Food Grade Tebal 250 ml + Segel Leher Menyusut (Shrink Cap)',
+                    design: 'Label bertekstur kertas katun tahan air dengan nomor batch eksklusif (Craft Beverage Style).',
+                    reason: 'Kaca menjaga suhu dingin lebih lama dan mempertahankan cita rasa asli kopi/teh tanpa kontaminasi aroma plastik.'
+                },
+                eco: {
+                    title: 'Kemasan Karton Aseptik (FSC Certified) atau Botol Kaca Returnable',
+                    material: 'Karton Komposit Bersertifikat Hutan Lestari / Kaca Sistem Tukar Botol',
+                    design: 'Menonjolkan pesan program pengembalian botol kosong untuk mendapatkan diskon pembelian berikutnya.',
+                    reason: 'Menerapkan prinsip ekonomi sirkular (Zero Waste) yang sangat dihargai komunitas peduli lingkungan.'
+                }
+            },
+            sambal: {
+                genz: {
+                    title: 'Sachet Stick Pack / Mini Spout Pouch Praktis Dibawa Travelling',
+                    material: 'Nylon + Aluminium Foil + LLDPE (Tahan Minyak & Asam Cabai)',
+                    design: 'Desain indikator level kepedasan dengan warna merah menyala dan ilustrasi ekspresi pedas yang seru.',
+                    reason: 'Remaja/mahasiswa suka membawa sambal praktis di tas untuk teman makan di kampus atau kos tanpa takut bocor.'
+                },
+                keluarga: {
+                    title: 'Toples Jar Plastik PET/PP Leher Lebar + Segel Induksi Aluminium',
+                    material: 'Toples PET (▲1) / PP (▲5) 150g + Foam/Induction Liner di bawah tutup',
+                    design: 'Warna merah-kuning menggugah selera, memperlihatkan tekstur cabai dan potongan bawang di dalam toples.',
+                    reason: 'Segel induksi mencegah minyak sambal merembes keluar saat pengiriman, dan toples ringan tidak mudah pecah.'
+                },
+                premium: {
+                    title: 'Toples Kaca Heksagonal Steril + Tutup Logam Lug Cap (Vacuum Button)',
+                    material: 'Kaca Tebal Tahan Panas Sterilisasi (Pasteurisasi) + Segel Plastik Luar',
+                    design: 'Kemasan dilengkapi sabuk kertas (paper belt) bermotif batik daerah dan pita segel di atas tutup.',
+                    reason: 'Proses pengisian panas (hot-fill) pada toples kaca menciptakan ruang hampa udara sehingga sambal awet hingga 1 tahun tanpa pengawet kimia.'
+                },
+                eco: {
+                    title: 'Toples Kaca Guna Ulang (Reusable Glass Jar) dengan Label Kertas Mudah Lepas',
+                    material: '100% Kaca Daur Ulang & Tutup Kaleng Logam',
+                    design: 'Menyertakan panduan kreatif di balik label agar konsumen memanfaatkan kembali toples bekas untuk wadah bumbu dapur.',
+                    reason: 'Bebas sampah plastik sekali pakai dan memberikan nilai tambah fungsional di dapur konsumen.'
+                }
+            },
+            skincare: {
+                genz: {
+                    title: 'Tube Flip-Top Pastel / Pouch Refill Mini Travel Size',
+                    material: 'Plastik PE Squeeze Tube lembut atau Botol Airless Pump',
+                    design: 'Warna pastel lembut (lilac, mint, peach) dengan ikon klaim bahan aktif yang jelas dan bersih.',
+                    reason: 'Higienis karena jari tidak langsung menyentuh isi krim, serta ukuran travel-friendly.'
+                },
+                keluarga: {
+                    title: 'Botol Pump Besar 500 ml + Kemasan Pouch Isi Ulang (Refill)',
+                    material: 'Botol HDPE (▲2) Kokoh + Pouch Nylon/PE',
+                    design: 'Informasi manfaat kesehatan kulit seluruh anggota keluarga, sertifikasi BPOM & Halal tercetak jelas.',
+                    reason: 'Kombinasi botol pump dan pouch refill sangat disukai keluarga karena praktis dan menghemat pengeluaran bulanan.'
+                },
+                premium: {
+                    title: 'Botol Kaca Frosted (Buram) + Pipet Dropper + Hardbox Emboss',
+                    material: 'Kaca Frosted UV-Protection + Kotak Karton Ivory Berlapis Beludru/Busa',
+                    design: 'Tipografi minimalis mewah, efek timbul (emboss) pada logo merek, serta segel hologram keaslian.',
+                    reason: 'Melindungi kandungan antioksidan/essential oil dari kerusakan akibat cahaya matahari sekaligus menaikkan prestise merek.'
+                },
+                eco: {
+                    title: 'Kertas Perkamen Sabun Batang (Zero-Plastic Wrap) / Kaleng Aluminium',
+                    material: 'Kertas Kraft Unbleached + Sabuk Kertas Benih Tanaman (Seed Paper)',
+                    design: 'Desain botani natural tanpa laminasi plastik sama sekali, mudah terurai 100% di tanah.',
+                    reason: 'Sangat selaras dengan filosofi produk herbal alami yang tidak mencemari air maupun tanah.'
+                }
+            }
+        };
+
+        function runPackagingSimulator() {
+            const prod = document.getElementById('simProduct').value;
+            const target = document.getElementById('simTarget').value;
+            const res = simulatorMatrix[prod][target];
+
+            document.getElementById('simOutputBox').innerHTML = `
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 pb-4 mb-4 border-b border-slate-200">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-indigo-600">Hasil Analisis Rekomendasi Kemasan</span>
+                        <h4 class="font-display font-extrabold text-xl text-slate-900 mt-0.5">${res.title}</h4>
+                    </div>
+                    <span class="px-3 py-1.5 rounded-xl bg-emerald-100 text-emerald-800 font-bold text-xs self-start md:self-auto">
+                        <i class="fa-solid fa-check-double mr-1"></i> Kesesuaian Pasar Optimal
+                    </span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs sm:text-sm">
+                    <div class="p-4 rounded-xl bg-indigo-50 border border-indigo-100">
+                        <div class="font-bold text-indigo-900 mb-1"><i class="fa-solid fa-layer-group text-indigo-600 mr-1.5"></i> Spesifikasi Bahan Material:</div>
+                        <p class="text-slate-700 leading-relaxed">${res.material}</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-amber-50 border border-amber-100">
+                        <div class="font-bold text-amber-900 mb-1"><i class="fa-solid fa-palette text-amber-600 mr-1.5"></i> Strategi Visual & Desain:</div>
+                        <p class="text-slate-700 leading-relaxed">${res.design}</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-emerald-50 border border-emerald-100">
+                        <div class="font-bold text-emerald-900 mb-1"><i class="fa-solid fa-lightbulb text-emerald-600 mr-1.5"></i> Alasan Bisnis & Fungsional:</div>
+                        <p class="text-slate-700 leading-relaxed">${res.reason}</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        // ==================== 5. MODUL 4: INSPEKTOR 8 INFORMASI WAJIB LABEL ====================
+        const labelHotspots = {
+            1: {
+                title: '1. Nama Produk & Merek Dagang',
+                rule: 'Wajib dicantumkan pada bagian utama label (Principal Display Panel)',
+                desc: 'Terdiri dari Nama Dagang/Merek (misal: "KRIPIK NUSANTARA") dan Nama Jenis Pangan yang menunjukkan sifat asli produk (misal: "Keripik Singkong Balado"). Harus tercetak paling menonjol dan tidak boleh menyesatkan konsumen.'
+            },
+            2: {
+                title: '2. Logo & Nomor Sertifikat Halal',
+                rule: 'UU Jaminan Produk Halal (Wajib bagi produk yang beredar di Indonesia)',
+                desc: 'Menampilkan logo Halal Indonesia resmi dari BPJPH beserta nomor sertifikatnya. Memberikan rasa aman dan kepastian batin bagi konsumen muslim.'
+            },
+            3: {
+                title: '3. Nomor Izin Edar (P-IRT atau BPOM RI MD/ML)',
+                rule: 'Jaminan Keamanan & Kelayakan Pangan Resmi',
+                desc: 'Produk UMKM industri rumahan berisiko rendah menggunakan SPP-IRT (P-IRT 15 digit dari Dinas Kesehatan), sedangkan produk olahan pabrik/berisiko tinggi atau susu/beku wajib menggunakan izin BPOM RI MD (Dalam Negeri) atau ML (Luar Negeri).'
+            },
+            4: {
+                title: '4. Daftar Bahan / Komposisi (Ingredients)',
+                rule: 'Diurutkan dari bahan dengan persentase berat paling banyak ke paling sedikit',
+                desc: 'Seluruh bahan baku dan bahan tambahan pangan (BTP seperti pengawet, pewarna, pemanis) wajib ditulis secara jujur. Jika mengandung alergen (kacang, susu, gandum, udang), wajib dicetak tebal.'
+            },
+            5: {
+                title: '5. Informasi Nilai Gizi (Nutrition Facts) & Kode Produksi',
+                rule: 'Transparansi Kandungan Gizi & Ketertelusuran (Traceability)',
+                desc: 'Tabel Informasi Nilai Gizi memuat takaran saji, energi total, lemak, protein, karbohidrat, gula, dan garam (natrium). Kode produksi/batch memudahkan penarikan produk jika ditemukan cacat pada tanggal produksi tertentu.'
+            },
+            6: {
+                title: '6. Nama dan Alamat Pihak yang Memproduksi / Mengedarkan',
+                rule: 'Pertanggungjawaban Hukum Produsen',
+                desc: 'Mencantumkan nama perusahaan/UMKM serta minimal nama kota, kode pos, dan negara tempat produk diproduksi (Contoh: Diproduksi oleh CV Pangan Kreatif Mandiri, Kota Sukabumi - Indonesia).'
+            },
+            7: {
+                title: '7. Berat Bersih atau Isi Bersih (Netto / Net Weight)',
+                rule: 'Ukuran bobot produk murni tanpa memperhitungkan berat bungkus kemasan',
+                desc: 'Dinyatakan dalam satuan metrik: gram (g) atau kilogram (kg) untuk produk padat, mililiter (ml) atau liter (L) untuk produk cair. Melindungi konsumen dari kecurangan takaran.'
+            },
+            8: {
+                title: '8. Tanggal, Bulan, dan Tahun Kedaluwarsa',
+                rule: 'Batas Akhir Jaminan Mutu & Keamanan Produk',
+                desc: 'Ditulis dengan kalimat "Baik digunakan sebelum (Best Before): Tanggal/Bulan/Tahun". Untuk produk yang daya simpannya kurang dari 3 bulan, wajib mencantumkan tanggal, bulan, dan tahun secara lengkap.'
+            }
+        };
+
+        function showLabelHotspot(num) {
+            const item = labelHotspots[num];
+            document.getElementById('hotspotDetailCard').innerHTML = `
+                <div class="flex items-center justify-between mb-2">
+                    <span class="px-3 py-1 rounded-full bg-indigo-600 text-white text-xs font-bold">Unsur Label Wajib #0${num}</span>
+                    <span class="text-xs font-semibold text-indigo-700"><i class="fa-solid fa-scale-balanced mr-1"></i> PP No. 69/1999 & BPOM</span>
+                </div>
+                <h4 class="font-display font-bold text-lg sm:text-xl text-slate-900 mb-1">${item.title}</h4>
+                <div class="text-xs font-bold text-amber-700 mb-3">${item.rule}</div>
+                <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">${item.desc}</p>
+            `;
+
+            document.querySelectorAll('.hs-btn').forEach(btn => {
+                btn.classList.remove('bg-indigo-600', 'text-white', 'border-indigo-600');
+                btn.classList.add('bg-white', 'text-slate-700', 'border-slate-200');
+            });
+            const activeBtn = document.getElementById('hs-btn-' + num);
+            if (activeBtn) {
+                activeBtn.classList.remove('bg-white', 'text-slate-700', 'border-slate-200');
+                activeBtn.classList.add('bg-indigo-600', 'text-white', 'border-indigo-600');
+            }
+        }
+
+        // ==================== 6. MODUL 4: SIMULATOR PSIKOLOGI WARNA ====================
+        const colorPsychData = {
+            red: {
+                name: 'Merah Menyala (Red Passion)',
+                gradient: 'from-red-600 via-rose-600 to-red-800',
+                emotion: 'Menggugah selera makan (appetite stimulant), energi tinggi, keberanian, sensasi pedas, dan memicu keputusan belanja cepat.',
+                bestFor: 'Sambal kemasan, keripik pedas balado, mi instan pedas, makanan cepat saji, minuman berenergi.'
+            },
+            yellow: {
+                name: 'Kuning & Oranye (Warm & Cheerful)',
+                gradient: 'from-amber-500 via-orange-500 to-amber-700',
+                emotion: 'Keceriaan, optimisme, kehangatan, rasa gurih/keju/manis, mudah ditangkap mata di rak yang agak gelap.',
+                bestFor: 'Snack jagung bakar/keju, keripik pisang, jus jeruk/mangga, produk makanan anak-anak.'
+            },
+            green: {
+                name: 'Hijau Alami (Natural & Fresh)',
+                gradient: 'from-emerald-600 via-green-600 to-teal-800',
+                emotion: 'Kesegaran alam, kesehatan, organik, herbal, keseimbangan, dan ramah lingkungan.',
+                bestFor: 'Sayuran organik, teh hijau/matcha, madu hutan, minyak kayu putih, sabun herbal, keripik rumput laut.'
+            },
+            blue: {
+                name: 'Biru Jernih (Trust & Purity)',
+                gradient: 'from-sky-600 via-blue-600 to-indigo-800',
+                emotion: 'Kemurnian, kebersihan, kesegaran dingin, kepercayaan (trust), dan profesionalisme.',
+                bestFor: 'Air minum dalam kemasan (AMDK), susu murni, produk olahan laut (seafood), produk kesehatan/elektronik.'
+            },
+            black: {
+                name: 'Hitam & Emas (Luxury & Exclusive)',
+                gradient: 'from-slate-900 via-neutral-900 to-slate-950',
+                emotion: 'Kemewahan, eksklusivitas, kekuatan, keanggunan, dan kualitas kelas atas (high-end).',
+                bestFor: 'Kopi Arabika Specialty, cokelat hitam premium (dark chocolate), parfum mewah, hampers eksekutif.'
+            }
+        };
+
+        function selectColorPsych(colorKey) {
+            const c = colorPsychData[colorKey];
+            const mockup = document.getElementById('mockupPackage');
+            mockup.className = `relative w-72 sm:w-80 rounded-[36px] p-6 shadow-2xl border-4 border-white transition-colors duration-500 bg-gradient-to-b ${c.gradient} text-white select-none`;
+
+            document.getElementById('colorPsychResult').innerHTML = `
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-indigo-600">Tema Warna Terpilih</span>
+                        <h4 class="font-display font-bold text-lg text-slate-900 mt-0.5 mb-2">${c.name}</h4>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed"><strong>Efek Psikologis Konsumen:</strong> ${c.emotion}</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl border border-slate-200 flex flex-col justify-center">
+                        <div class="text-xs font-bold text-emerald-700 uppercase mb-1"><i class="fa-solid fa-check-circle mr-1"></i> Sangat Cocok Digunakan Untuk:</div>
+                        <p class="text-xs sm:text-sm text-slate-800 font-medium">${c.bestFor}</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        // ==================== 7. EVALUASI HOTS (20 SOAL PILIHAN GANDA & PDF EXPORT) ====================
+        const quizQuestions = [
+            // TP 1: Pengertian, Fungsi, dan Tujuan Kemasan (Soal 1 - 5)
+            {
+                tp: 'TP 1 • Fungsi Promosional Kemasan',
+                q: 'Sebuah UMKM keripik tempe di Kota Sukabumi mendapati produknya sangat enak, namun kalah laris ketika dititipkan di rak minimarket modern dibandingkan produk pesaing. Setelah dievaluasi, keripik UMKM tersebut masih menggunakan plastik bening tanpa warna mencolok, sedangkan pesaing menggunakan kemasan full-color yang langsung menarik perhatian pembeli dalam 5 detik pertama. Dalam konsep pemasaran modern, kegagalan kemasan UMKM tersebut berkaitan dengan peran kemasan sebagai...',
+                options: [
+                    'A. The Silent Salesman (Wiraniaga Bisu)',
+                    'B. Secondary Containment (Wadah Sekunder)',
+                    'C. Tamper-Evident System (Sistem Segel Keamanan)',
+                    'D. Reverse Logistics Controller (Pengendali Logistik Balik)',
+                    'E. Passive Preservative Agent (Agen Pengawet Pasif)'
+                ],
+                answer: 0,
+                explanation: 'Di ritel modern/swalayan tidak ada pramuniaga yang menawarkan produk satu per satu, sehingga desain kemasan berfungsi sebagai "The Silent Salesman" (wiraniaga bisu) yang memikat pembeli secara visual.'
+            },
+            {
+                tp: 'TP 1 • Fungsi Ergonomis Kemasan',
+                q: 'Produsen saus sambal mengubah desain kemasannya dari botol kaca leher sempit menjadi kemasan "Standing Spout Pouch" (kantong berdiri dengan corong tutup ulir di sudut atas dan lekukan pegangan jari di bagian samping). Perubahan desain ini terutama bertujuan untuk mengoptimalkan fungsi kemasan pada aspek...',
+                options: [
+                    'A. Kepatuhan terhadap regulasi pajak barang mewah',
+                    'B. Fungsi ergonomis dan kenyamanan penggunaan (kemudahan digenggam, dituang, dan ditutup kembali)',
+                    'C. Peningkatan bobot kotor produk agar biaya pengiriman logistik menjadi lebih mahal',
+                    'D. Penghilangan kewajiban mencantumkan tanggal kedaluwarsa pada label',
+                    'E. Perubahan status kemasan dari kemasan primer menjadi kemasan tersier'
+                ],
+                answer: 1,
+                explanation: 'Penambahan corong tuang (spout) dan lekukan pegangan jari merupakan penerapan fungsi ergonomis (kenyamanan dan kemudahan pemakaian oleh konsumen).'
+            },
+            {
+                tp: 'TP 1 • Tujuan Kemasan Bagi Produsen (Nilai Tambah)',
+                q: 'Seorang petani kopi menjual biji kopi sangrai (roasted bean) dalam karung plastik biasa seharga Rp80.000/kg. Setelah mengikuti pelatihan kewirausahaan, ia mengemas kopi tersebut ke dalam kemasan "Flat Bottom Pouch" 250 gram berdesain eksklusif lengkap dengan "one-way degassing valve" dan menjualnya seharga Rp45.000 per bungkus (setara Rp180.000/kg). Fenomena ini membuktikan tujuan kemasan bagi produsen sebagai...',
+                options: [
+                    'A. Alat untuk menurunkan kualitas bahan baku secara tersembunyi',
+                    'B. Sarana pencipta nilai tambah (value creator) yang meningkatkan citra merek dan margin keuntungan',
+                    'C. Metode untuk menghindari kewajiban pencantuman berat bersih (netto)',
+                    'D. Kewajiban mutlak untuk mengganti seluruh bahan baku lokal menjadi bahan impor',
+                    'E. Cara mengurangi umur simpan (shelf-life) produk agar cepat habis'
+                ],
+                answer: 1,
+                explanation: 'Kemasan profesional mampu menciptakan nilai tambah (added value) dan meningkatkan perceived value di mata konsumen sehingga harga jual dan margin keuntungan meningkat signifikan.'
+            },
+            {
+                tp: 'TP 1 • Fungsi Protektif (Perlindungan Fisik & Kimia)',
+                q: 'Produk susu bubuk dan suplemen vitamin sangat rentan mengalami kerusakan nutrisi (oksidasi) apabila terpapar oksigen serta sinar ultraviolet (UV) matahari secara langsung. Fungsi utama kemasan kaleng logam atau aluminium foil pada produk tersebut adalah...',
+                options: [
+                    'A. Mempercepat proses fermentasi bakteri di dalam produk',
+                    'B. Memberikan perlindungan fisik dan penghalang kimiawi (barrier) terhadap oksigen, uap air, dan cahaya UV',
+                    'C. Memudahkan konsumen melihat warna bubuk di dalam kemasan dari luar',
+                    'D. Mengurangi berat bersih produk selama masa penyimpanan di gudang',
+                    'E. Menggantikan fungsi merek dagang pada saat dipajang di etalase toko'
+                ],
+                answer: 1,
+                explanation: 'Fungsi protektif kemasan mencakup perlindungan kimiawi/mikrobiologis sebagai penghalang (barrier) terhadap oksigen, kelembapan uap air, dan radiasi sinar UV.'
+            },
+            {
+                tp: 'TP 1 • Tujuan Kemasan Bagi Konsumen (Keamanan)',
+                q: 'Ketika membeli botol air mineral atau botol obat sirup, konsumen selalu memeriksa apakah cincin plastik pada tutup botol masih menyatu rapat dan terdengar bunyi "klik" saat pertama kali diputar. Fitur kemasan ini disebut "Tamper-Evident Seal" yang bertujuan untuk...',
+                options: [
+                    'A. Mempersulit konsumen lansia saat hendak meminum produk',
+                    'B. Memberikan jaminan keamanan dan kepastian bahwa produk masih asli serta belum pernah dibuka atau dioplos sebelumnya',
+                    'C. Menambah biaya daur ulang sampah plastik di tingkat konsumen',
+                    'D. Mengubah klasifikasi kemasan botol dari sekali pakai menjadi multi-trip',
+                    'E. Menghilangkan keharusan mencantumkan kode produksi pada botol'
+                ],
+                answer: 1,
+                explanation: 'Segel keamanan (Tamper-Evident Seal) bertujuan melindungi konsumen dari risiko pemalsuan, kontaminasi, atau pembukaan ilegal sebelum produk sampai ke tangan pembeli.'
+            },
+
+            // TP 2: Jenis, Bahan, dan Tingkatan Kemasan (Soal 6 - 10)
+            {
+                tp: 'TP 2 • Struktur Tingkatan Kemasan',
+                q: 'Perhatikan alur pengemasan produk Biskuit Kelapa berikut: (1) Biskuit dibungkus langsung menggunakan plastik metalized kedap udara; (2) Bungkus metalized tersebut dimasukkan ke dalam kotak karton bergambar merek dan informasi gizi untuk dipajang di toko; (3) Sebanyak 24 kotak karton disusun ke dalam kardus besar bergelombang (corrugated box) untuk dikirim menggunakan truk antarprovinsi. Urutan tingkatan kemasan (1), (2), dan (3) yang tepat adalah...',
+                options: [
+                    'A. Sekunder – Primer – Tersier',
+                    'B. Primer – Tersier – Sekunder',
+                    'C. Primer – Sekunder – Tersier',
+                    'D. Tersier – Sekunder – Primer',
+                    'E. Kuarter – Primer – Sekunder'
+                ],
+                answer: 2,
+                explanation: 'Plastik yang bersentuhan langsung dengan biskuit adalah Kemasan Primer (1), kotak karton display ritel adalah Kemasan Sekunder (2), dan kardus besar pengiriman logistik adalah Kemasan Tersier (3).'
+            },
+            {
+                tp: 'TP 2 • Klasifikasi Berdasarkan Frekuensi Pemakaian',
+                q: 'Galon air minum ukuran 19 liter dan tabung gas LPG 3 kg yang setelah habis isinya dikembalikan oleh konsumen ke agen/pabrik untuk dicuci, diuji kelayakannya, dan diisi ulang kembali termasuk ke dalam jenis kemasan...',
+                options: [
+                    'A. Kemasan Disposable (Sekali Pakai)',
+                    'B. Kemasan Multi-Trip (Berulang Kali Pakai)',
+                    'C. Kemasan Semi-Disposable',
+                    'D. Kemasan Edible Film (Bisa Dimakan)',
+                    'E. Kemasan Tersier Sekali Buang'
+                ],
+                answer: 1,
+                explanation: 'Kemasan Multi-Trip adalah wadah yang dirancang untuk dikembalikan ke produsen/distributor dan diisi ulang berkali-kali dalam siklus distribusi.'
+            },
+            {
+                tp: 'TP 2 • Kode Daur Ulang Plastik & Keamanan Pangan',
+                q: 'Seorang wirausahawan kuliner memproduksi "Seblak Kuah Instan" yang cara penyajiannya mengharuskan konsumen menuangkan air mendidih (suhu ±100°C) langsung ke dalam mangkuk plastik kemasannya. Agar tidak melepaskan zat kimia berbahaya akibat suhu panas tinggi, jenis plastik yang PALING TEPAT dipilih adalah...',
+                options: [
+                    'A. Kode ▲ 1 — PET / PETE (Polyethylene Terephthalate)',
+                    'B. Kode ▲ 3 — PVC (Polyvinyl Chloride)',
+                    'C. Kode ▲ 5 — PP (Polypropylene)',
+                    'D. Kode ▲ 6 — PS (Polystyrene / Styrofoam)',
+                    'E. Plastik kresek daur ulang berwarna hitam'
+                ],
+                answer: 2,
+                explanation: 'Plastik kode ▲ 5 (PP / Polypropylene) memiliki titik leleh tinggi (tahan panas hingga 100°C–120°C) dan tahan lemak, sehingga paling aman untuk wadah makanan/minuman panas dan microwave.'
+            },
+            {
+                tp: 'TP 2 • Karakteristik Bahan Material Kaca',
+                q: 'Produk madu murni, selai buah premium, dan parfum Eau de Parfum sangat disarankan menggunakan kemasan botol kaca/gelas dibandingkan plastik tipis. Keunggulan ilmiah utama dari material kaca untuk produk-produk tersebut adalah...',
+                options: [
+                    'A. Bobotnya paling ringan sehingga biaya ekspedisi pengiriman menjadi paling murah',
+                    'B. Sifatnya yang elastis dan tidak mungkin pecah meskipun terjatuh dari ketinggian',
+                    'C. Bersifat "inert" (tidak bereaksi secara kimia dengan isi produk) dan 100% kedap terhadap gas maupun penguapan aroma',
+                    'D. Dapat terurai menjadi kompos di dalam tanah hanya dalam waktu 2 minggu',
+                    'E. Tidak memerlukan kemasan sekunder atau pelindung tambahan saat dikirim ke luar pulau'
+                ],
+                answer: 2,
+                explanation: 'Material kaca bersifat "inert" (stabil secara kimiawi, tidak bereaksi dengan asam madu atau alkohol parfum) serta memiliki sifat kedap gas dan uap 100%.'
+            },
+            {
+                tp: 'TP 2 • Karakteristik Kemasan Komposit (Multilayer)',
+                q: 'Kemasan susu UHT kotak dan santan cair instan (seperti Tetra Pak) mampu menjaga produk tetap awet selama berbulan-bulan pada suhu ruang tanpa bahan pengawet. Kemasan ini disebut "Kemasan Komposit (Multilayer)" karena...',
+                options: [
+                    'A. Hanya terbuat dari 100% kertas karton daur ulang tanpa lapisan pelindung lain',
+                    'B. Menggabungkan beberapa material berbeda (kertas untuk kekakuan, plastik PE untuk kedap air, dan aluminium foil untuk kedap cahaya/oksigen) dalam satu struktur terpadu',
+                    'C. Terbuat dari campuran tanah liat dan serat bambu tradisional',
+                    'D. Hanya dapat digunakan untuk mengemas produk padat kering seperti beras dan tepung',
+                    'E. Dirancang agar dapat dimakan langsung bersama produknya'
+                ],
+                answer: 1,
+                explanation: 'Kemasan komposit aseptik menggabungkan kekuatan mekanis kertas karton, sifat kedap air plastik polietilena (PE), dan sifat penghalang cahaya/oksigen dari lapisan tipis aluminium foil.'
+            },
+
+            // TP 3: Analisis Karakteristik Kemasan Berdasarkan Produk & Target Konsumen (Soal 11 - 15)
+            {
+                tp: 'TP 3 • Analisis Karakteristik Fisik Produk Higroskopis',
+                q: 'Bawang goreng dan keripik bayam memiliki sifat "higroskopis" (mudah menyerap uap air dari udara sekitar sehingga cepat melempem) serta mengandung minyak yang mudah tengik bila terpapar oksigen dan cahaya matahari. Kombinasi kemasan yang PALING EFEKTIF untuk menjaga kerenyahan produk tersebut selama 6 bulan adalah...',
+                options: [
+                    'A. Kantong kertas cokelat tipis tanpa lapisan plastik di bagian dalamnya',
+                    'B. Plastik kresek bening tipis yang diikat menggunakan karet gelang',
+                    'C. Standing pouch berbahan Aluminium Foil / Metalized tertutup rapat (heat-sealed) dilengkapi Ziplock dan penyerap oksigen/silika gel food grade',
+                    'D. Kotak anyaman bambu (besek) berlubang agar sirkulasi udara dari luar masuk dengan bebas',
+                    'E. Wadah styrofoam (PS ▲6) yang ditutup menggunakan kawat steples'
+                ],
+                answer: 2,
+                explanation: 'Produk higroskopis dan berminyak memerlukan kemasan dengan penghalang uap air dan oksigen tinggi (Aluminium Foil/Metalized), segel rapat (heat-sealed + ziplock), serta bantuan desiccant/oxygen absorber.'
+            },
+            {
+                tp: 'TP 3 • Analisis Target Konsumen Anak-Anak',
+                q: 'Sebuah perusahaan makanan ringan hendak meluncurkan produk "Sereal Susu Cokelat" yang secara spesifik menargetkan konsumen anak-anak usia 5–10 tahun. Karakteristik desain dan struktur kemasan yang paling tepat untuk segmen ini adalah...',
+                options: [
+                    'A. Warna hitam pekat minimalis, menggunakan botol kaca berat dengan tutup kaleng tajam yang harus dibuka dengan pisau',
+                    'B. Warna cerah kontras (kuning/merah/biru), menampilkan ilustrasi karakter maskot kartun ceria, porsi pas di genggaman anak, serta sudut kemasan tumpul yang aman',
+                    'C. Kemasan karung goni polos ukuran 25 kilogram tanpa gambar apa pun',
+                    'D. Desain penuh teks ilmiah kedokteran dengan ukuran huruf sangat kecil tanpa ilustrasi',
+                    'E. Kemasan kaleng logam polos tanpa merek yang hanya mencantumkan kode batang logistik'
+                ],
+                answer: 1,
+                explanation: 'Segmen anak-anak tertarik pada warna cerah, karakter maskot visual yang imajinatif, ukuran porsi kecil yang pas di tangan, dan mengutamakan aspek keamanan fisik (tidak tajam/tidak mudah pecah).'
+            },
+            {
+                tp: 'TP 3 • Analisis Target Konsumen Gen-Z & Remaja',
+                q: 'UMKM minuman "Cold Brew Coffee" menargetkan segmen mahasiswa dan pekerja muda (Gen-Z) yang aktif di media sosial dan sering berpindah tempat (mobile). Strategi kemasan yang paling selaras dengan psikografi target pasar tersebut adalah...',
+                options: [
+                    'A. Mengemas kopi di dalam plastik kiloan yang diikat tali rafia agar tampak kuno',
+                    'B. Menggunakan botol/kaleng berdesain estetik modern (Instagrammable), praktis digenggam saat beraktivitas (on-the-go), serta menyematkan QR Code interaktif menuju akun media sosial/playlist musik',
+                    'C. Menggunakan teko keramik besar seberat 3 kg agar mahasiswa sulit membawanya ke kampus',
+                    'D. Menghilangkan seluruh identitas merek dan desain visual dari permukaan botol',
+                    'E. Hanya menjual minuman dalam jeriken ukuran 20 liter untuk kebutuhan industri'
+                ],
+                answer: 1,
+                explanation: 'Konsumen Gen-Z mengutamakan kepraktisan mobilitas (on-the-go), estetika visual yang layak dibagikan ke media sosial (shareable/Instagrammable), serta pengalaman interaktif digital.'
+            },
+            {
+                tp: 'TP 3 • Analisis Segmen Premium & Pengalaman Membuka Kemasan',
+                q: 'Seorang pengrajin batik tulis dan parfum lokal di Sukabumi ingin menjual paket produknya sebagai suvenir korporat dan hampers eksekutif dengan harga Rp750.000 per paket. Untuk membangun persepsi mewah dan menciptakan "Unboxing Experience" yang berkesan, kemasan yang harus dipilih adalah...',
+                options: [
+                    'A. Kantong plastik kresek tipis berwarna merah seperti di pasar sayur',
+                    'B. Kertas koran bekas yang dilipat dan direkatkan dengan selotip bening',
+                    'C. Hardbox (kotak kaku tebal) dengan penutup magnetik, finishing doff + hot-print emas, dilengkapi dudukan busa (inner tray) dan kartu cerita keaslian produk',
+                    'D. Karung plastik beras bekas yang dijahit bagian atasnya',
+                    'E. Kemasan blister plastik gantung murah seperti kemasan baterai di warung'
+                ],
+                answer: 2,
+                explanation: 'Segmen premium/eksekutif menuntut kemasan yang kokoh (Hardbox), sentuhan akhir elegan (doff/emboss/gold foil), dan tata letak dalam yang rapi untuk menghadirkan pengalaman membuka kemasan (unboxing experience) yang bernilai tinggi.'
+            },
+            {
+                tp: 'TP 3 • Analisis Konsumen Peduli Lingkungan (Green Consumer)',
+                q: 'Tren global menunjukkan meningkatnya jumlah "Green Consumer" (konsumen yang peduli kelestarian lingkungan). Jika sebuah usaha sabun organik ingin membidik segmen pasar ini, keputusan pengemasan yang paling konsisten dengan nilai produknya adalah...',
+                options: [
+                    'A. Membungkus sabun dengan 5 lapis plastik PVC sekali pakai dan styrofoam tebal',
+                    'B. Menggunakan kemasan kertas kraft biodegradable bersertifikat ramah lingkungan (FSC) atau kertas benih tanaman (seed paper) tanpa laminasi plastik',
+                    'C. Menggunakan wadah plastik sekali pakai yang tidak memiliki kode daur ulang sama sekali',
+                    'D. Mengemas sabun menggunakan kaleng bekas cat tembok yang masih mengandung residu logam berat',
+                    'E. Menjual produk cair tanpa wadah apa pun sehingga tumpah saat dikirim ekspedisi'
+                ],
+                answer: 1,
+                explanation: 'Konsumen hijau (Green Consumer) sangat memperhatikan jejak ekologis kemasan; material biodegradable/recyclable seperti kertas kraft tanpa plastik sangat selaras dengan citra produk organik.'
+            },
+
+            // TP 4: Unsur Desain, Informasi Label Wajib, dan Daya Tarik Kemasan (Soal 16 - 20)
+            {
+                tp: 'TP 4 • Regulasi Informasi Wajib Label Pangan (PP No. 69/1999 & BPOM)',
+                q: 'Berdasarkan Peraturan Pemerintah tentang Label dan Iklan Pangan serta ketentuan BPOM, sebuah kemasan pangan olahan yang telah mencantumkan: (1) Nama Produk, (2) Daftar Komposisi Bahan, (3) Berat Bersih/Netto, (4) Nama & Alamat Produsen, serta (5) Nomor Izin Edar & Logo Halal, MASIH BELUM MEMENUHI SYARAT HUKUM apabila belum mencantumkan...',
+                options: [
+                    'A. Foto wajah pemilik perusahaan dan daftar riwayat hidupnya',
+                    'B. Tanggal, bulan, dan tahun kedaluwarsa (Baik Digunakan Sebelum) serta Kode Produksi',
+                    'C. Harga eceran tertinggi di setiap provinsi di seluruh dunia',
+                    'D. Resep rahasia takaran bumbu dapur secara rinci dalam satuan miligram',
+                    'E. Tanda tangan basah kepala desa setempat di setiap bungkus kemasan'
+                ],
+                answer: 1,
+                explanation: 'Tanggal kedaluwarsa (Best Before/Expiry Date) dan Kode Produksi merupakan bagian dari 8 informasi wajib pada label pangan untuk menjamin keamanan konsumsi dan ketertelusuran produk.'
+            },
+            {
+                tp: 'TP 4 • Aturan Penulisan Komposisi Bahan pada Label',
+                q: 'Pada label belakang kemasan minuman "Sari Kacang Hijau", tertulis daftar komposisi sebagai berikut: "Air, Kacang Hijau (25%), Gula Aren, Daun Pandan, Garam". Menurut regulasi pelabelan pangan, aturan baku pengurutan daftar komposisi bahan tersebut adalah...',
+                options: [
+                    'A. Diurutkan berdasarkan abjad huruf depan nama bahan dari A sampai Z',
+                    'B. Diurutkan secara menurun mulai dari bahan yang digunakan paling banyak (persentase berat terbesar) hingga paling sedikit',
+                    'C. Diurutkan mulai dari bahan yang harganya paling mahal ke bahan yang paling murah',
+                    'D. Diurutkan secara acak sesuai keinginan desainer grafis agar baris teks terlihat rata',
+                    'E. Diurutkan mulai dari bahan tambahan kimia terlebih dahulu baru bahan baku utama di bagian paling akhir'
+                ],
+                answer: 1,
+                explanation: 'Standar pelabelan pangan mewajibkan daftar bahan/komposisi disusun secara berurutan dari proporsi berat terbanyak hingga paling sedikit.'
+            },
+            {
+                tp: 'TP 4 • Psikologi Warna dalam Desain Kemasan',
+                q: 'Seorang desainer kemasan memilih dominasi warna HIJAU DAUN dan COKELAT TANAH (Earth Tone) untuk produk "Teh Herbal Daun Kelor Organik", serta warna MERAH MENYALA untuk produk "Makaroni Goreng Ekstra Pedas Level 10". Pemilihan warna tersebut didasarkan pada prinsip psikologi warna karena...',
+                options: [
+                    'A. Tinta warna hijau dan merah adalah satu-satunya warna yang diizinkan oleh pemerintah',
+                    'B. Warna hijau dan cokelat mengasosiasikan kesegaran alami/organik/kesehatan, sedangkan warna merah membangkitkan persepsi energi, rasa pedas, dan menggugah selera makan',
+                    'C. Warna merah membuat produk pedas terasa dingin dan tawar di lidah konsumen',
+                    'D. Warna hijau digunakan khusus untuk memberi tanda bahwa produk tersebut mengandung bahan berbahaya',
+                    'E. Pemilihan warna sama sekali tidak memengaruhi persepsi maupun emosi pembeli'
+                ],
+                answer: 1,
+                explanation: 'Dalam psikologi warna kemasan, warna hijau/earth-tone membangun asosiasi alami, sehat, dan organik, sedangkan warna merah memicu kesan pedas, hangat, dan menggugah selera (appetite stimulant).'
+            },
+            {
+                tp: 'TP 4 • Unsur Desain Grafis: Tipografi & Keterbacaan (Legibility)',
+                q: 'Sebuah produk suplemen kesehatan untuk lansia mengalami keluhan dari pelanggan karena petunjuk aturan pakai dan tanggal kedaluwarsanya dicetak menggunakan jenis huruf sambung dekoratif (script) berukuran 5 pt dengan warna abu-abu muda di atas latar putih. Kesalahan unsur desain kemasan pada kasus ini terletak pada...',
+                options: [
+                    'A. Pemilihan material kemasan tersier yang terlalu tebal',
+                    'B. Rendahnya tingkat keterbacaan (legibility) tipografi dan kurangnya kontras warna antara teks dengan latar belakang',
+                    'C. Pencantuman logo Halal yang terlalu jelas di bagian depan kemasan',
+                    'D. Penggunaan tutup botol ulir yang terlalu mudah dibuka oleh lansia',
+                    'E. Penulisan berat bersih dalam satuan gram atau mililiter'
+                ],
+                answer: 1,
+                explanation: 'Informasi krusial seperti aturan pakai dan kedaluwarsa wajib menerapkan prinsip tipografi yang mudah dibaca (high legibility) dan kontras warna yang tegas terhadap latar belakang.'
+            },
+            {
+                tp: 'TP 4 • Perbedaan Daya Tarik Visual vs Daya Tarik Praktis',
+                q: 'Perhatikan dua fitur kemasan berikut: Fitur (X) adalah ilustrasi fotografi produk yang menggugah selera dengan kombinasi warna harmonis dan logo emboss emas; Fitur (Y) adalah mekanisme klip "Ziplock" yang memudahkan bungkus ditutup kembali serta adanya takik sobekan ("tear notch") agar konsumen mudah membuka kemasan tanpa gunting. Pernyataan yang tepat mengenai kedua fitur tersebut adalah...',
+                options: [
+                    'A. Fitur (X) dan Fitur (Y) keduanya hanya berfungsi untuk kemasan tersier di gudang',
+                    'B. Fitur (X) merupakan Daya Tarik Praktis (Fungsional), sedangkan Fitur (Y) merupakan Daya Tarik Visual (Estetika)',
+                    'C. Fitur (X) merupakan Daya Tarik Visual (Estetika) untuk memikat pembelian pertama, sedangkan Fitur (Y) merupakan Daya Tarik Praktis (Fungsional) yang memberikan kenyamanan pakai dan mendorong pembelian berulang',
+                    'D. Fitur (Y) dilarang digunakan pada kemasan makanan ringan karena melanggar aturan BPOM',
+                    'E. Fitur (X) hanya boleh diterapkan pada kemasan sekali pakai berbahan kaca'
+                ],
+                answer: 2,
+                explanation: 'Ilustrasi, warna, dan tipografi adalah Daya Tarik Visual (Estetika), sedangkan fitur kemudahan buka-tutup (ziplock, tear notch, spout) adalah Daya Tarik Praktis (Fungsional).'
+            }
+        ];
+
+        let userAnswers = {};
+
+        function renderQuiz() {
+            const container = document.getElementById('quizContainer');
+            container.innerHTML = quizQuestions.map((item, idx) => `
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="px-3 py-1 rounded-lg bg-indigo-50 text-indigo-700 font-bold text-xs">${item.tp}</span>
+                        <span class="text-xs font-bold text-slate-400">Soal ${idx + 1} dari ${quizQuestions.length} • Bobot: 5 Poin</span>
+                    </div>
+                    <h4 class="font-display font-bold text-base sm:text-lg text-slate-900 mb-4 leading-snug">${idx + 1}. ${item.q}</h4>
+                    <div class="space-y-2.5" id="q-options-${idx}">
+                        ${item.options.map((opt, oIdx) => `
+                            <button onclick="selectQuizOption(${idx}, ${oIdx})" id="q-${idx}-opt-${oIdx}" class="w-full text-left p-3.5 rounded-xl border border-slate-200 hover:border-indigo-400 hover:bg-indigo-50/40 transition text-xs sm:text-sm font-medium text-slate-700 flex items-center justify-between">
+                                <span>${opt}</span>
+                                <i class="fa-regular fa-circle text-slate-400"></i>
+                            </button>
+                        `).join('')}
+                    </div>
+                    <div id="q-exp-${idx}" class="hidden mt-4 p-4 rounded-xl text-xs sm:text-sm"></div>
+                </div>
+            `).join('');
+            updateQuizScore();
+        }
+
+        function selectQuizOption(qIdx, oIdx) {
+            if (userAnswers[qIdx] !== undefined) return;
+            userAnswers[qIdx] = oIdx;
+
+            const qObj = quizQuestions[qIdx];
+            const isCorrect = (oIdx === qObj.answer);
+
+            qObj.options.forEach((_, idx) => {
+                const btn = document.getElementById(`q-${qIdx}-opt-${idx}`);
+                btn.disabled = true;
+                btn.classList.remove('hover:border-indigo-400', 'hover:bg-indigo-50/40');
+
+                if (idx === qObj.answer) {
+                    btn.classList.replace('border-slate-200', 'border-emerald-500');
+                    btn.classList.add('bg-emerald-50', 'text-emerald-900', 'font-bold');
+                    btn.querySelector('i').className = 'fa-solid fa-circle-check text-emerald-600 text-base';
+                } else if (idx === oIdx && !isCorrect) {
+                    btn.classList.replace('border-slate-200', 'border-rose-500');
+                    btn.classList.add('bg-rose-50', 'text-rose-900', 'font-bold');
+                    btn.querySelector('i').className = 'fa-solid fa-circle-xmark text-rose-600 text-base';
+                }
+            });
+
+            const expBox = document.getElementById(`q-exp-${qIdx}`);
+            expBox.classList.remove('hidden');
+            if (isCorrect) {
+                expBox.className = 'mt-4 p-4 rounded-xl text-xs sm:text-sm bg-emerald-50 border border-emerald-200 text-emerald-900';
+                expBox.innerHTML = `<strong class="block mb-1"><i class="fa-solid fa-check mr-1"></i> Jawaban Tepat (+5 Poin)!</strong> ${qObj.explanation}`;
+            } else {
+                expBox.className = 'mt-4 p-4 rounded-xl text-xs sm:text-sm bg-amber-50 border border-amber-200 text-amber-950';
+                expBox.innerHTML = `<strong class="block mb-1"><i class="fa-solid fa-circle-info mr-1"></i> Pembahasan:</strong> ${qObj.explanation}`;
+            }
+
+            updateQuizScore();
+        }
+
+        function updateQuizScore() {
+            let correctCount = 0;
+            const answeredCount = Object.keys(userAnswers).length;
+            Object.keys(userAnswers).forEach(qIdx => {
+                if (userAnswers[qIdx] === quizQuestions[qIdx].answer) {
+                    correctCount++;
+                }
+            });
+
+            const score = correctCount * 5;
+            document.getElementById('quizScoreBadge').textContent = `${score} / 100`;
+            document.getElementById('quizAnsweredCount').textContent = `${answeredCount} / ${quizQuestions.length}`;
+
+            if (answeredCount === quizQuestions.length) {
+                const banner = document.getElementById('quizResultBanner');
+                const feedback = document.getElementById('quizFeedbackText');
+                banner.classList.remove('hidden');
+
+                let predikat = '';
+                if (score >= 90) {
+                    predikat = 'Sangat Kompeten (A)';
+                } else if (score >= 75) {
+                    predikat = 'Kompeten (B)';
+                } else if (score >= 60) {
+                    predikat = 'Cukup Kompeten (C)';
+                } else {
+                    predikat = 'Perlu Penguatan (D)';
+                }
+
+                feedback.innerHTML = `Skor Akhir Anda: <strong class="text-amber-300 text-lg">${score} / 100</strong> (${correctCount} benar dari 20 soal HOTS) — Predikat: <strong class="text-emerald-300">${predikat}</strong>.<br>Silakan klik tombol <strong>"Simpan & Unduh Hasil PDF"</strong> di bawah untuk mengunduh lembar hasil evaluasi resmi dan kirimkan kepada Bapak <strong>Agus Tryanto, M.Pd</strong>.`;
+            }
+        }
+
+        function resetQuiz() {
+            userAnswers = {};
+            document.getElementById('quizResultBanner').classList.add('hidden');
+            renderQuiz();
+        }
+
+        // ==================== 8. EXPORT HASIL EVALUASI KE PDF (jsPDF & AutoTable) ====================
+        function downloadQuizPDF() {
+            const nameInput = document.getElementById('studentName');
+            const classInput = document.getElementById('studentClass');
+            const numInput = document.getElementById('studentNumber');
+            const schoolInput = document.getElementById('studentSchool');
+
+            const studentName = nameInput.value.trim() || 'Siswa (Belum Mengisi Nama)';
+            const studentClass = classInput.value.trim() || 'Kelas XI SMK';
+            const studentNumber = numInput.value.trim() || '-';
+            const studentSchool = schoolInput.value.trim() || 'SMKS PK PASIM Plus Kota Sukabumi';
+
+            if (!nameInput.value.trim()) {
+                const proceed = confirm('Anda belum mengisi "Nama Lengkap Siswa" pada kolom identitas di atas.\n\nKlik "Cancel / Batal" jika ingin mengisi nama terlebih dahulu, atau klik "OK" untuk tetap mengunduh PDF.');
+                if (!proceed) {
+                    nameInput.focus();
+                    return;
+                }
+            }
+
+            let correctCount = 0;
+            const answeredCount = Object.keys(userAnswers).length;
+            Object.keys(userAnswers).forEach(qIdx => {
+                if (userAnswers[qIdx] === quizQuestions[qIdx].answer) {
+                    correctCount++;
+                }
+            });
+            const score = correctCount * 5;
+
+            let predikat = 'Perlu Penguatan (D)';
+            if (score >= 90) predikat = 'Sangat Kompeten (A)';
+            else if (score >= 75) predikat = 'Kompeten (B)';
+            else if (score >= 60) predikat = 'Cukup Kompeten (C)';
+
+            // Hitung Capaian per Tujuan Pembelajaran (TP 1 - TP 4)
+            const tpStats = [
+                { name: 'TP 1: Pengertian, Fungsi & Tujuan Kemasan (Soal 1-5)', correct: 0, total: 5 },
+                { name: 'TP 2: Jenis, Bahan & Tingkatan Kemasan (Soal 6-10)', correct: 0, total: 5 },
+                { name: 'TP 3: Karakteristik Produk & Target Konsumen (Soal 11-15)', correct: 0, total: 5 },
+                { name: 'TP 4: Unsur Desain, Label Wajib & Daya Tarik (Soal 16-20)', correct: 0, total: 5 }
+            ];
+
+            quizQuestions.forEach((q, idx) => {
+                const tpGroup = Math.floor(idx / 5);
+                if (userAnswers[idx] === q.answer) {
+                    tpStats[tpGroup].correct++;
+                }
+            });
+
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF('p', 'mm', 'a4');
+            const now = new Date();
+            const timestamp = now.toLocaleDateString('id-ID', {
+                day: '2-digit', month: 'long', year: 'numeric'
+            }) + ' Pukul ' + now.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
+
+            // Header Kop Dokumen
+            doc.setFillColor(30, 27, 75); // Indigo-950
+            doc.rect(0, 0, 210, 30, 'F');
+
+            doc.setTextColor(255, 255, 255);
+            doc.setFont("helvetica", "bold");
+            doc.setFontSize(13);
+            doc.text("SMKS PK PASIM PLUS KOTA SUKABUMI - LAPORAN EVALUASI HOTS", 14, 12);
+
+            doc.setFont("helvetica", "normal");
+            doc.setFontSize(8.5);
+            doc.setTextColor(224, 231, 255);
+            doc.text("Mata Pelajaran: KIK (Kelas XI) | Materi: Kemasan Produk | Guru Pengampu: Agus Tryanto, M.Pd", 14, 19);
+            doc.text("Waktu Cetak Laporan: " + timestamp, 14, 25);
+
+            // Box Identitas Siswa & Nilai Akhir
+            doc.setDrawColor(203, 213, 225);
+            doc.setFillColor(248, 250, 252);
+            doc.roundedRect(14, 35, 182, 32, 2, 2, 'FD');
+
+            doc.setTextColor(15, 23, 42);
+            doc.setFontSize(9.5);
+            doc.setFont("helvetica", "bold");
+            doc.text("Nama Siswa", 18, 43);
+            doc.text("Kelas / Jurusan", 18, 50);
+            doc.text("No. Absen / NIS", 18, 57);
+            doc.text("Sekolah", 18, 64);
+
+            doc.setFont("helvetica", "normal");
+            doc.text(": " + studentName, 50, 43);
+            doc.text(": " + studentClass, 50, 50);
+            doc.text(": " + studentNumber, 50, 57);
+            doc.text(": " + studentSchool, 50, 64);
+
+            // Kotak Skor di Kanan
+            doc.setFillColor(79, 70, 229);
+            doc.roundedRect(132, 38, 60, 26, 2, 2, 'F');
+            doc.setTextColor(255, 255, 255);
+            doc.setFont("helvetica", "bold");
+            doc.setFontSize(8.5);
+            doc.text("NILAI AKHIR EVALUASI", 162, 44, { align: "center" });
+            doc.setFontSize(18);
+            doc.text(`${score} / 100`, 162, 53, { align: "center" });
+            doc.setFontSize(8);
+            doc.setTextColor(253, 230, 138);
+            doc.text(`${predikat} (${correctCount}/20 Benar)`, 162, 60, { align: "center" });
+
+            // Tabel 1: Ringkasan Capaian Per Tujuan Pembelajaran (TP)
+            doc.setTextColor(15, 23, 42);
+            doc.setFont("helvetica", "bold");
+            doc.setFontSize(10);
+            doc.text("A. Ringkasan Capaian per Tujuan Pembelajaran (TP)", 14, 74);
+
+            doc.autoTable({
+                startY: 77,
+                head: [['Tujuan Pembelajaran (TP)', 'Jawaban Benar', 'Skor TP', 'Persentase']],
+                body: tpStats.map(tp => [
+                    tp.name,
+                    `${tp.correct} dari ${tp.total} Soal`,
+                    `${tp.correct * 5} / 25`,
+                    `${Math.round((tp.correct / tp.total) * 100)}%`
+                ]),
+                theme: 'grid',
+                headStyles: { fillColor: [51, 65, 85], textColor: 255, fontSize: 8.5, fontStyle: 'bold' },
+                bodyStyles: { fontSize: 8, textColor: [30, 41, 59] },
+                columnStyles: {
+                    0: { cellWidth: 105 },
+                    1: { cellWidth: 30, halign: 'center' },
+                    2: { cellWidth: 22, halign: 'center' },
+                    3: { cellWidth: 25, halign: 'center' }
+                },
+                margin: { left: 14, right: 14 }
+            });
+
+            // Tabel 2: Rincian Jawaban Siswa (20 Nomor)
+            const detailStartY = doc.lastAutoTable.finalY + 7;
+            doc.setFont("helvetica", "bold");
+            doc.setFontSize(10);
+            doc.text(`B. Rincian Jawaban Siswa (${answeredCount} dari 20 Soal Terjawab)`, 14, detailStartY);
+
+            const letters = ['A', 'B', 'C', 'D', 'E'];
+            const detailRows = quizQuestions.map((item, idx) => {
+                const uAns = userAnswers[idx];
+                const userChoiceText = (uAns !== undefined) ? item.options[uAns] : 'Belum Dijawab';
+                const correctChoiceText = item.options[item.answer];
+                const isCorrect = (uAns === item.answer);
+                const statusText = (uAns === undefined) ? 'KOSONG (0)' : (isCorrect ? 'BENAR (+5)' : 'SALAH (0)');
+
+                return [
+                    idx + 1,
+                    item.tp.replace('•', '-'),
+                    userChoiceText,
+                    correctChoiceText,
+                    statusText
+                ];
+            });
+
+            doc.autoTable({
+                startY: detailStartY + 3,
+                head: [['No', 'Kompetensi / TP', 'Jawaban Siswa', 'Kunci Jawaban', 'Status']],
+                body: detailRows,
+                theme: 'striped',
+                headStyles: { fillColor: [79, 70, 229], textColor: 255, fontSize: 8, fontStyle: 'bold' },
+                bodyStyles: { fontSize: 7.2, textColor: [30, 41, 59], valign: 'middle' },
+                columnStyles: {
+                    0: { cellWidth: 9, halign: 'center', fontStyle: 'bold' },
+                    1: { cellWidth: 36 },
+                    2: { cellWidth: 57 },
+                    3: { cellWidth: 57 },
+                    4: { cellWidth: 23, halign: 'center', fontStyle: 'bold' }
+                },
+                didParseCell: function(data) {
+                    if (data.section === 'body' && data.column.index === 4) {
+                        const text = data.cell.raw;
+                        if (text.includes('BENAR')) {
+                            data.cell.styles.textColor = [5, 150, 105]; // Emerald
+                        } else {
+                            data.cell.styles.textColor = [225, 29, 72]; // Rose
+                        }
+                    }
+                },
+                margin: { left: 14, right: 14 }
+            });
+
+            // Footer Tanda Tangan / Pengesahan Guru
+            let finalY = doc.lastAutoTable.finalY + 8;
+            if (finalY > 265) {
+                doc.addPage();
+                finalY = 20;
+            }
+            doc.setFont("helvetica", "italic");
+            doc.setFontSize(8);
+            doc.setTextColor(100, 116, 139);
+            doc.text("Dokumen ini dihasilkan secara otomatis dari Media Pembelajaran Interaktif Kemasan Produk (Mapel KIK Kelas XI - SMKS PK PASIM Plus).", 14, finalY);
+            doc.text("Guru Pengampu: Agus Tryanto, M.Pd | Silakan kirimkan file PDF ini sebagai bukti penyelesaian evaluasi.", 14, finalY + 4.5);
+
+            const safeName = studentName.replace(/[^a-zA-Z0-9]/g, '_');
+            const safeClass = studentClass.replace(/[^a-zA-Z0-9]/g, '_');
+            doc.save(`Hasil_Evaluasi_Kemasan_${safeName}_${safeClass}.pdf`);
+        }
+
+        // ==================== INITIALIZE ALL INTERACTIVE MODULES ON LOAD ====================
+        window.addEventListener('DOMContentLoaded', () => {
+            updateTierExample();
+            selectPlasticCode(5);
+            runPackagingSimulator();
+            showLabelHotspot(1);
+            selectColorPsych('yellow');
+            renderQuiz();
+        });
+    </script>
+</body>
+</html>
