@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Modul KIK Kelas XI: Kemasan Produk - SMKS PK PASIM Plus Kota Sukabumi</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
+    <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+    <link href="[https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap](https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap)" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css)">
+    <!-- jsPDF & AutoTable for Direct PDF Generation -->
+    <script src="[https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js](https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js)"></script>
+    <script src="[https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js](https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js)"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['"Space Grotesk"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            900: '#1e1b4b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Flip Card 3D */
+        .perspective { perspective: 1000px; }
+        .flip-card-inner {
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+        .flip-card.flipped .flip-card-inner,
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+        .flip-card-back { transform: rotateY(180deg); }
+
+        /* Pulse Hotspot */
+        @keyframes pulse-ring {
+            0% { transform: scale(0.85); box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 12px rgba(245, 158, 11, 0); }
+            100% { transform: scale(0.85); box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+        }
+        .hotspot-dot { animation: pulse-ring 2s infinite; }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white !important; }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-indigo-600 selection:text-white min-h-screen flex flex-col">
+
+    <!-- TOP NAVBAR -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Brand & School Title -->
+                <div class="flex items-center gap-3">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-indigo-600 to-amber-500 flex items-center justify-center text-white shadow-md shadow-indigo-200 shrink-0">
+                        <i class="fa-solid fa-box-open text-lg"></i>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap items-center gap-1.5">
+                            <span class="text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-indigo-600 text-white">SMKS PK PASIM Plus Kota Sukabumi</span>
+                            <span class="text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-amber-50 text-amber-800 border border-amber-200">Mapel: KIK Kelas XI</span>
+                            <span class="hidden md:inline-block text-[11px] font-semibold text-slate-600">• Guru Pengampu: Agus Tryanto, M.Pd</span>
+                        </div>
+                        <h1 class="font-display font-bold text-sm sm:text-base text-slate-900 leading-tight mt-0.5">E-Modul Interaktif: Kemasan Produk (Product Packaging)</h1>
+                    </div>
+                </div>
+
+                <!-- Progress & GitHub Guide Button -->
+                <div class="flex items-center gap-4">
+                    <div class="hidden md:flex flex-col items-end">
+                        <div class="flex items-center gap-2 text-xs font-semibold text-slate-600 mb-1">
+                            <span>Progres Belajar:</span>
+                            <span id="progressText" class="text-indigo-600 font-bold">20%</span>
+                        </div>
+                        <div class="w-36 h-2 bg-slate-200 rounded-full overflow-hidden">
+                            <div id="progressBar" class="h-full bg-gradient-to-r from-indigo-600 to-amber-500 transition-all duration-500" style="width: 20%"></div>
+                        </div>
+                    </div>
+                    <button onclick="toggleGithubModal()" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-900 text-white hover:bg-slate-800 transition shadow-sm">
+                        <i class="fa-brands fa-github text-sm"></i>
+                        <span class="hidden sm:inline">Panduan GitHub</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Navigation Tabs -->
+            <nav class="flex items-center gap-1.5 overflow-x-auto py-2.5 border-t border-slate-100 no-scrollbar" aria-label="Modul Navigasi">
+                <button onclick="switchTab('intro')" id="tab-intro" class="nav-tab active-tab shrink-0 px-3.5 py-2 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-2 bg-indigo-600 text-white shadow-sm">
+                    <i class="fa-solid fa-compass"></i> Pendahuluan
+                </button>
+                <button onclick="switchTab('tp1')" id="tab-tp1" class="nav-tab shrink-0 px-3.5 py-2 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-2 text-slate-600 hover:bg-slate-100">
+                    <span class="w-5 h-5 rounded-full bg-indigo-100 text-indigo-700 text-xs flex items-center justify-center font-bold">1</span> Fungsi & Tujuan
+                </button>
+                <button onclick="switchTab('tp2')" id="tab-tp2" class="nav-tab shrink-0 px-3.5 py-2 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-2 text-slate-600 hover:bg-slate-100">
+                    <span class="w-5 h-5 rounded-full bg-indigo-100 text-indigo-700 text-xs flex items-center justify-center font-bold">2</span> Jenis, Bahan & Tingkatan
+                </button>
+                <button onclick="switchTab('tp3')" id="tab-tp3" class="nav-tab shrink-0 px-3.5 py-2 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-2 text-slate-600 hover:bg-slate-100">
+                    <span class="w-5 h-5 rounded-full bg-indigo-100 text-indigo-700 text-xs flex items-center justify-center font-bold">3</span> Lab Simulator Pasar
+                </button>
+                <button onclick="switchTab('tp4')" id="tab-tp4" class="nav-tab shrink-0 px-3.5 py-2 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-2 text-slate-600 hover:bg-slate-100">
+                    <span class="w-5 h-5 rounded-full bg-indigo-100 text-indigo-700 text-xs flex items-center justify-center font-bold">4</span> Desain & Label BPOM
+                </button>
+                <button onclick="switchTab('quiz')" id="tab-quiz" class="nav-tab shrink-0 px-3.5 py-2 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-2 text-amber-700 bg-amber-50 hover:bg-amber-100 border border-amber-200 ml-auto">
+                    <i class="fa-solid fa-trophy text-amber-500"></i> Evaluasi HOTS (20 Soal)
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <!-- ==================== SECTION 0: PENDAHULUAN ==================== -->
+        <section id="sec-intro" class="module-section space-y-8">
+            <!-- Hero Banner -->
+            <div class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-indigo-900 via-indigo-800 to-slate-900 text-white p-8 sm:p-12 shadow-xl">
+                <div class="absolute -right-16 -bottom-16 w-80 h-80 bg-amber-500/20 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute top-10 right-10 w-40 h-40 bg-indigo-400/20 rounded-full blur-2xl pointer-events-none"></div>
+
+                <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-8">
+                        <div class="flex flex-wrap items-center gap-2 mb-4">
+                            <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-400 text-slate-950 text-xs font-extrabold tracking-wide uppercase shadow-sm">
+                                <i class="fa-solid fa-school"></i> SMKS PK PASIM Plus Kota Sukabumi
+                            </span>
+                            <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/15 backdrop-blur-md text-xs font-semibold tracking-wide uppercase border border-white/20">
+                                <i class="fa-solid fa-book-open text-amber-300"></i> Mata Pelajaran: KIK Kelas XI
+                            </span>
+                        </div>
+                        <h2 class="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-3">
+                            Kemasan Produk <span class="text-amber-300">(Product Packaging)</span> & Branding UMKM
+                        </h2>
+                        <div class="inline-flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-slate-900/40 backdrop-blur-md border border-white/15 mb-4">
+                            <div class="w-8 h-8 rounded-lg bg-amber-400/20 border border-amber-300/40 flex items-center justify-center text-amber-300">
+                                <i class="fa-solid fa-chalkboard-user"></i>
+                            </div>
+                            <div>
+                                <div class="text-[10px] uppercase tracking-wider text-indigo-200 font-semibold">Guru Pengampu</div>
+                                <div class="text-sm font-bold text-white">Agus Tryanto, M.Pd</div>
+                            </div>
+                        </div>
+                        <p class="text-indigo-100 text-base sm:text-lg leading-relaxed mb-6">
+                            Pelajari bagaimana merancang kemasan yang tidak hanya melindungi kualitas produk, tetapi juga mampu menjadi <strong class="text-white underline decoration-amber-400 decoration-2">"The Silent Salesman"</strong> yang memikat hati konsumen pada pandangan pertama.
+                        </p>
+                        <div class="flex flex-wrap gap-3">
+                            <button onclick="switchTab('tp1')" class="px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm transition shadow-lg shadow-amber-500/30 flex items-center gap-2">
+                                Mulai Belajar Sekarang <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                            <button onclick="switchTab('quiz')" class="px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm transition border border-white/20 flex items-center gap-2">
+                                <i class="fa-solid fa-bolt text-amber-300"></i> Langsung ke Evaluasi HOTS (20 Soal)
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Packaging Preview Card -->
+                    <div class="lg:col-span-4">
+                        <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 text-center">
+                            <div class="w-20 h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-tr from-amber-400 to-orange-500 flex items-center justify-center shadow-lg">
+                                <i class="fa-solid fa-cubes-stacked text-3xl text-slate-950"></i>
+                            </div>
+                            <h3 class="font-display font-bold text-xl mb-1">Fakta Kewirausahaan</h3>
+                            <p class="text-xs text-indigo-200 mb-4">Riset Keputusan Pembelian Ritel</p>
+                            <div class="text-4xl font-display font-extrabold text-amber-300 mb-2">72%</div>
+                            <p class="text-xs sm:text-sm text-indigo-100 leading-relaxed">
+                                Konsumen menyatakan bahwa <strong>desain dan material kemasan</strong> secara langsung memengaruhi keputusan pembelian mereka di rak toko maupun e-commerce.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4 Tujuan Pembelajaran Cards -->
+            <div>
+                <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-6">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-indigo-600">Peta Kompetensi</span>
+                        <h3 class="font-display font-bold text-2xl text-slate-900">4 Tujuan Pembelajaran Utama</h3>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-500 mt-1 sm:mt-0">Klik pada salah satu kartu untuk langsung menuju modul materi</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+                    <!-- TP 1 -->
+                    <div onclick="switchTab('tp1')" class="group cursor-pointer bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-xl hover:border-indigo-400 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-2.5 py-1 rounded-lg bg-indigo-50 text-indigo-700 font-bold text-xs">MODUL 1 • TP 1</span>
+                                <div class="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition">
+                                    <i class="fa-solid fa-shield-halved"></i>
+                                </div>
+                            </div>
+                            <h4 class="font-display font-bold text-lg text-slate-900 mb-2 group-hover:text-indigo-600 transition">Pengertian, Fungsi & Tujuan</h4>
+                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                                Menjelaskan pengertian kemasan produk, 4 fungsi utama (Proteksi, Promosi, Informasi, Ergonomi), dan tujuan strategisnya.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-indigo-600">
+                            <span>Buka Modul 1</span>
+                            <i class="fa-solid fa-chevron-right group-hover:translate-x-1 transition"></i>
+                        </div>
+                    </div>
+
+                    <!-- TP 2 -->
+                    <div onclick="switchTab('tp2')" class="group cursor-pointer bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-xl hover:border-emerald-400 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-700 font-bold text-xs">MODUL 2 • TP 2</span>
+                                <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition">
+                                    <i class="fa-solid fa-layer-group"></i>
+                                </div>
+                            </div>
+                            <h4 class="font-display font-bold text-lg text-slate-900 mb-2 group-hover:text-emerald-600 transition">Jenis, Bahan & Tingkatan</h4>
+                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                                Mengidentifikasi tingkatan kemasan (Primer, Sekunder, Tersier), frekuensi pakai, serta karakteristik material & kode plastik.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-emerald-600">
+                            <span>Buka Modul 2</span>
+                            <i class="fa-solid fa-chevron-right group-hover:translate-x-1 transition"></i>
+                        </div>
+                    </div>
+
+                    <!-- TP 3 -->
+                    <div onclick="switchTab('tp3')" class="group cursor-pointer bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-xl hover:border-amber-400 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-2.5 py-1 rounded-lg bg-amber-50 text-amber-700 font-bold text-xs">MODUL 3 • TP 3</span>
+                                <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center group-hover:bg-amber-500 group-hover:text-white transition">
+                                    <i class="fa-solid fa-users-viewfinder"></i>
+                                </div>
+                            </div>
+                            <h4 class="font-display font-bold text-lg text-slate-900 mb-2 group-hover:text-amber-600 transition">Analisis Produk & Konsumen</h4>
+                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                                Menganalisis karakteristik kemasan yang tepat berdasarkan wujud fisik produk serta demografi/psikografi target pasar.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-amber-600">
+                            <span>Buka Modul 3</span>
+                            <i class="fa-solid fa-chevron-right group-hover:translate-x-1 transition"></i>
+                        </div>
+                    </div>
+
+                    <!-- TP 4 -->
+                    <div onclick="switchTab('tp4')" class="group cursor-pointer bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-xl hover:border-rose-400 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-2.5 py-1 rounded-lg bg-rose-50 text-rose-700 font-bold text-xs">MODUL 4 • TP 4</span>
+                                <div class="w-10 h-10 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center group-hover:bg-rose-600 group-hover:text-white transition">
+                                    <i class="fa-solid fa-palette"></i>
+                                </div>
+                            </div>
+                            <h4 class="font-display font-bold text-lg text-slate-900 mb-2 group-hover:text-rose-600 transition">Unsur Desain & Label</h4>
+                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                                Menjelaskan unsur desain visual, psikologi warna, 8 syarat informasi wajib label (PP No. 69/1999), serta daya tarik kemasan.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-rose-600">
+                            <span>Buka Modul 4</span>
+                            <i class="fa-solid fa-chevron-right group-hover:translate-x-1 transition"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Studi Kasus Pemantik Diskusi -->
+            <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="px-3 py-1 rounded-full bg-amber-100 text-amber-800 font-bold text-xs uppercase tracking-wide">
+                        <i class="fa-solid fa-lightbulb mr-1"></i> Studi Kasus Pemantik (Apersepsi)
+                    </span>
+                </div>
+                <h3 class="font-display font-bold text-xl text-slate-900 mb-4">
+                    Mengapa Keripik Singkong dengan Rasa yang Sama Bisa Memiliki Harga 4x Lipat Berbeda?
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="rounded-xl bg-slate-50 p-5 border border-slate-200">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="font-bold text-slate-700">Produk A: Plastik Polos + Steples</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-200 text-slate-800 font-bold text-xs">Rp 5.000 / bungkus</span>
+                        </div>
+                        <ul class="space-y-2 text-xs sm:text-sm text-slate-600">
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-xmark text-rose-500 mt-1"></i> Mudah melempem dalam 3 hari karena segel tidak kedap udara.</li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-xmark text-rose-500 mt-1"></i> Berbahaya jika kawat steples jatuh ke dalam makanan.</li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-xmark text-rose-500 mt-1"></i> Tanpa merek, tanpa izin P-IRT/Halal, hanya bisa dijual di warung sekitar.</li>
+                        </ul>
+                    </div>
+
+                    <div class="rounded-xl bg-indigo-50/70 p-5 border border-indigo-200">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="font-bold text-indigo-950">Produk B: Standing Pouch Metalized + Ziplock</span>
+                            <span class="px-2.5 py-1 rounded bg-indigo-600 text-white font-bold text-xs">Rp 20.000 / bungkus</span>
+                        </div>
+                        <ul class="space-y-2 text-xs sm:text-sm text-indigo-950">
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-600 mt-1"></i> Renyah tahan hingga 6 bulan berkat penghalang oksigen & sinar UV.</li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-600 mt-1"></i> Dilengkapi <em>ziplock</em> sehingga praktis dibuka-tutup kembali oleh konsumen.</li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-600 mt-1"></i> Desain menarik & label lengkap, siap masuk supermarket modern & ekspor.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SECTION 1: TP 1 (PENGERTIAN, FUNGSI & TUJUAN) ==================== -->
+        <section id="sec-tp1" class="module-section hidden space-y-8">
+            <!-- Header Modul -->
+            <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+                <span class="text-xs font-bold uppercase tracking-wider text-indigo-600">Modul 1 • Tujuan Pembelajaran 1</span>
+                <h2 class="font-display font-bold text-2xl sm:text-3xl text-slate-900 mt-1 mb-3">
+                    Pengertian, Fungsi, dan Tujuan Kemasan Produk
+                </h2>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    Dalam dunia kewirausahaan modern, <strong>kemasan (packaging)</strong> bukan lagi sekadar pembungkus terakhir setelah produk selesai dibuat, melainkan bagian integral dari strategi produk, harga, dan promosi.
+                </p>
+            </div>
+
+            <!-- Pengertian Kemasan -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center mb-4 font-bold">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-lg text-slate-900 mb-2">Definisi Umum & Teknis</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        <strong>Kemasan produk</strong> adalah wadah atau pembungkus kreatif yang dirancang secara ilmiah dan artistik untuk mewadahi, melindungi, menjaga mutu, serta mengomunikasikan identitas suatu barang dari produsen hingga ke tangan konsumen akhir.
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center mb-4 font-bold">
+                        <i class="fa-solid fa-quote-left"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-lg text-slate-900 mb-2">Menurut Kotler & Keller</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        <em>Pengemasan (packaging)</em> mencakup seluruh kegiatan merancang dan memproduksi wadah atau bungkus suatu produk. Kemasan sering disebut sebagai <strong>"P ke-5" (The 5th P)</strong> setelah <em>Product, Price, Place,</em> dan <em>Promotion</em>.
+                    </p>
+                </div>
+
+                <div class="bg-gradient-to-br from-indigo-900 to-slate-900 text-white p-6 rounded-2xl shadow-md">
+                    <div class="w-10 h-10 rounded-xl bg-white/15 text-amber-300 flex items-center justify-center mb-4 font-bold">
+                        <i class="fa-solid fa-bullhorn"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-lg mb-2 text-amber-300">"The Silent Salesman"</h3>
+                    <p class="text-sm text-indigo-100 leading-relaxed">
+                        Di supermarket atau katalog marketplace, tidak ada pramuniaga yang menjelaskan produk Anda satu per satu. Kemasanlah yang bekerja sebagai <strong>wiraniaga bisu</strong> yang membujuk pembeli dalam waktu <strong>3–7 detik pertama</strong>.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 4 Fungsi Utama Kemasan (Interactive 3D Flip Cards) -->
+            <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-indigo-600">Interaksi Kartu 3D</span>
+                        <h3 class="font-display font-bold text-xl sm:text-2xl text-slate-900">4 Fungsi Utama Kemasan Produk</h3>
+                    </div>
+                    <span class="text-xs font-medium text-slate-500 mt-1 sm:mt-0">
+                        <i class="fa-solid fa-hand-pointer text-indigo-600 mr-1"></i> Sentuh / Arahkan kursor pada kartu untuk membalik penjelasan
+                    </span>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Flip Card 1: Protektif -->
+                    <div class="flip-card h-72 cursor-pointer perspective" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner relative w-full h-full">
+                            <div class="flip-card-front absolute inset-0 bg-gradient-to-br from-indigo-50 to-white border-2 border-indigo-200 rounded-2xl p-6 flex flex-col items-center justify-center text-center shadow-sm">
+                                <div class="w-16 h-16 rounded-2xl bg-indigo-600 text-white flex items-center justify-center text-2xl mb-4 shadow-md">
+                                    <i class="fa-solid fa-shield-virus"></i>
+                                </div>
+                                <span class="text-xs font-bold uppercase tracking-wider text-indigo-600 mb-1">Fungsi 01</span>
+                                <h4 class="font-display font-bold text-xl text-slate-900 mb-2">Fungsi Protektif (Perlindungan)</h4>
+                                <p class="text-xs text-slate-500">Klik/Sentuh untuk detail & contoh</p>
+                            </div>
+                            <div class="flip-card-back absolute inset-0 bg-indigo-900 text-white rounded-2xl p-6 flex flex-col justify-between shadow-lg">
+                                <div>
+                                    <h4 class="font-display font-bold text-base text-amber-300 mb-2">Perlindungan Fisik & Kimiawi</h4>
+                                    <p class="text-xs text-indigo-100 leading-relaxed mb-3">
+                                        Melindungi produk dari benturan mekanis, getaran distribusi, uap air, oksigen, paparan sinar UV, serta kontaminasi bakteri/debu.
+                                    </p>
+                                </div>
+                                <div class="p-3 rounded-xl bg-white/10 text-xs text-white">
+                                    <strong>Contoh:</strong> Kemasan <em>aluminium foil</em> pada bubuk kopi menjaga aroma dan mencegah bubuk menggumpal.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Flip Card 2: Promosional -->
+                    <div class="flip-card h-72 cursor-pointer perspective" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner relative w-full h-full">
+                            <div class="flip-card-front absolute inset-0 bg-gradient-to-br from-amber-50 to-white border-2 border-amber-200 rounded-2xl p-6 flex flex-col items-center justify-center text-center shadow-sm">
+                                <div class="w-16 h-16 rounded-2xl bg-amber-500 text-white flex items-center justify-center text-2xl mb-4 shadow-md">
+                                    <i class="fa-solid fa-bullhorn"></i>
+                                </div>
+                                <span class="text-xs font-bold uppercase tracking-wider text-amber-600 mb-1">Fungsi 02</span>
+                                <h4 class="font-display font-bold text-xl text-slate-900 mb-2">Fungsi Promosional (Pemasaran)</h4>
+                                <p class="text-xs text-slate-500">Klik/Sentuh untuk detail & contoh</p>
+                            </div>
+                            <div class="flip-card-back absolute inset-0 bg-amber-900 text-white rounded-2xl p-6 flex flex-col justify-between shadow-lg">
+                                <div>
+                                    <h4 class="font-display font-bold text-base text-amber-300 mb-2">Daya Tarik & Diferensiasi</h4>
+                                    <p class="text-xs text-amber-100 leading-relaxed mb-3">
+                                        Membangun citra merek (<em>brand image</em>), membedakan produk dari pesaing di rak, dan memicu pembelian impulsif (<em>impulse buying</em>).
+                                    </p>
+                                </div>
+                                <div class="p-3 rounded-xl bg-white/10 text-xs text-white">
+                                    <strong>Contoh:</strong> Kotak cokelat edisi khusus dengan pita emas yang tampak mewah sebagai hadiah.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Flip Card 3: Информаtif -->
+                    <div class="flip-card h-72 cursor-pointer perspective" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner relative w-full h-full">
+                            <div class="flip-card-front absolute inset-0 bg-gradient-to-br from-emerald-50 to-white border-2 border-emerald-200 rounded-2xl p-6 flex flex-col items-center justify-center text-center shadow-sm">
+                                <div class="w-16 h-16 rounded-2xl bg-emerald-600 text-white flex items-center justify-center text-2xl mb-4 shadow-md">
+                                    <i class="fa-solid fa-circle-info"></i>
+                                </div>
+                                <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 mb-1">Fungsi 03</span>
+                                <h4 class="font-display font-bold text-xl text-slate-900 mb-2">Fungsi Informasi & Komunikasi</h4>
+                                <p class="text-xs text-slate-500">Klik/Sentuh untuk detail & contoh</p>
+                            </div>
+                            <div class="flip-card-back absolute inset-0 bg-emerald-900 text-white rounded-2xl p-6 flex flex-col justify-between shadow-lg">
+                                <div>
+                                    <h4 class="font-display font-bold text-base text-emerald-300 mb-2">Edukasi & Transparansi</h4>
+                                    <p class="text-xs text-emerald-100 leading-relaxed mb-3">
+                                        Menyampaikan informasi krusial: komposisi bahan, nilai gizi, tanggal kedaluwarsa, sertifikasi Halal/BPOM, dan cara penggunaan.
+                                    </p>
+                                </div>
+                                <div class="p-3 rounded-xl bg-white/10 text-xs text-white">
+                                    <strong>Contoh:</strong> Peringatan alergen "Mengandung Kacang & Susu" serta petunjuk penyajian pada kemasan sereal.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Flip Card 4: Ergonomis & Logistik -->
+                    <div class="flip-card h-72 cursor-pointer perspective" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner relative w-full h-full">
+                            <div class="flip-card-front absolute inset-0 bg-gradient-to-br from-rose-50 to-white border-2 border-rose-200 rounded-2xl p-6 flex flex-col items-center justify-center text-center shadow-sm">
+                                <div class="w-16 h-16 rounded-2xl bg-rose-600 text-white flex items-center justify-center text-2xl mb-4 shadow-md">
+                                    <i class="fa-solid fa-hand-holding-heart"></i>
+                                </div>
+                                <span class="text-xs font-bold uppercase tracking-wider text-rose-600 mb-1">Fungsi 04</span>
+                                <h4 class="font-display font-bold text-xl text-slate-900 mb-2">Fungsi Ergonomis & Logistik</h4>
+                                <p class="text-xs text-slate-500">Klik/Sentuh untuk detail & contoh</p>
+                            </div>
+                            <div class="flip-card-back absolute inset-0 bg-rose-900 text-white rounded-2xl p-6 flex flex-col justify-between shadow-lg">
+                                <div>
+                                    <h4 class="font-display font-bold text-base text-rose-200 mb-2">Kenyamanan Pakai & Distribusi</h4>
+                                    <p class="text-xs text-rose-100 leading-relaxed mb-3">
+                                        Memudahkan produk saat digenggam, dibuka, dituang, ditutup kembali, serta memudahkan penyusunan (<em>stacking</em>) di gudang/kontainer.
+                                    </p>
+                                </div>
+                                <div class="p-3 rounded-xl bg-white/10 text-xs text-white">
+                                    <strong>Contoh:</strong> Kemasan minyak goreng <em>spout pouch</em> (tutup ulir di sudut) agar mudah dituang tanpa tumpah.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Perbandingan Tujuan Kemasan: Produsen vs Konsumen -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center">
+                            <i class="fa-solid fa-industry"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-display font-bold text-lg text-slate-900">Tujuan Bagi Produsen / Wirausaha</h4>
+                            <p class="text-xs text-slate-500">Perspektif Bisnis & Operasional</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-3 text-sm text-slate-700">
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-indigo-600 mt-1"></i>
+                            <span><strong>Memperpanjang Umur Simpan (Shelf-Life):</strong> Menekan risiko barang rusak/basi sebelum terjual.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-indigo-600 mt-1"></i>
+                            <span><strong>Meningkatkan Nilai Jual (Added Value):</strong> Produk yang dikemas secara profesional dapat dijual dengan margin keuntungan lebih tinggi.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-indigo-600 mt-1"></i>
+                            <span><strong>Mencegah Pemalsuan:</strong> Melalui segel keamanan (<em>security seal / hologram</em>).</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-indigo-600 mt-1"></i>
+                            <span><strong>Efisiensi Distribusi:</strong> Memudahkan perhitungan stok dan pemuatan barang di kendaraan logistik.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-display font-bold text-lg text-slate-900">Tujuan Bagi Konsumen</h4>
+                            <p class="text-xs text-slate-500">Perspektif Pengguna Akhir</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-3 text-sm text-slate-700">
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-emerald-600 mt-1"></i>
+                            <span><strong>Jaminan Higienitas & Keamanan:</strong> Kepastian bahwa produk bersih dan belum pernah dibuka orang lain (<em>tamper-evident</em>).</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-emerald-600 mt-1"></i>
+                            <span><strong>Kemudahan Identifikasi:</strong> Memudahkan konsumen mengenali varian rasa, ukuran, dan kecocokan produk.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-emerald-600 mt-1"></i>
+                            <span><strong>Kepraktisan Konsumsi:</strong> Mudah dibawa bepergian (<em>on-the-go</em>) dan disimpan kembali.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-emerald-600 mt-1"></i>
+                            <span><strong>Nilai Guna Ulang (Reusable):</strong> Beberapa kemasan wadah kaca/kaleng dapat dimanfaatkan kembali di rumah.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Next Step Button -->
+            <div class="flex justify-end">
+                <button onclick="switchTab('tp2')" class="px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm transition shadow-md flex items-center gap-2">
+                    Lanjut ke Modul 2: Jenis, Bahan & Tingkatan <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- ==================== SECTION 2: TP 2 (JENIS, BAHAN & TINGKATAN) ==================== -->
+        <section id="sec-tp2" class="module-section hidden space-y-8">
+            <!-- Header Modul -->
+            <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+                <span class="text-xs font-bold uppercase tracking-wider text-emerald-600">Modul 2 • Tujuan Pembelajaran 2</span>
+                <h2 class="font-display font-bold text-2xl sm:text-3xl text-slate-900 mt-1 mb-3">
+                    Mengidentifikasi Jenis, Bahan, dan Tingkatan Kemasan Produk
+                </h2>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    Kemasan diklasifikasikan berdasarkan <strong>struktur tingkatannya</strong>, <strong>frekuensi pemakaian</strong>, serta <strong>jenis material penyusunnya</strong>. Pemahaman ini penting agar wirausahawan tidak salah memilih bahan yang dapat merusak produk.
+                </p>
+            </div>
+
+            <!-- INTERAKTIF 1: Bedah Tingkatan Kemasan (Primer, Sekunder, Tersier) -->
+            <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-indigo-600">Simulasi Interaktif Lapisan Kemasan</span>
+                        <h3 class="font-display font-bold text-xl sm:text-2xl text-slate-900">1. Klasifikasi Berdasarkan Struktur Tingkatan</h3>
+                    </div>
+                    <!-- Product Selector -->
+                    <div class="flex items-center gap-2 bg-slate-100 p-1.5 rounded-xl">
+                        <span class="text-xs font-bold text-slate-600 px-2">Contoh Produk:</span>
+                        <select id="tierProductSelect" onchange="updateTierExample()" class="bg-white text-slate-900 text-xs sm:text-sm font-bold px-3 py-2 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            <option value="kopi">Kopi Bubuk Sachet</option>
+                            <option value="susu">Susu UHT Kotak</option>
+                            <option value="parfum">Parfum Eau de Parfum</option>
+                            <option value="keripik">Keripik Singkong UMKM</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="tierCardsContainer">
+                    <!-- Dynamic Content Loaded via JS -->
+                </div>
+            </div>
+
+            <!-- Klasifikasi Berdasarkan Frekuensi Pemakaian & Kesiapan Pakai -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="px-2.5 py-1 rounded-md bg-rose-50 text-rose-700 font-bold text-xs">Frekuensi 01</span>
+                        <i class="fa-solid fa-trash-can text-rose-500 text-lg"></i>
+                    </div>
+                    <h4 class="font-display font-bold text-lg text-slate-900 mb-2">Kemasan Sekali Pakai (Disposable)</h4>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-3">
+                        Kemasan yang langsung dibuang setelah isinya habis dikonsumsi dan tidak boleh diisi ulang untuk tujuan komersial.
+                    </p>
+                    <div class="text-xs bg-slate-50 p-3 rounded-xl border border-slate-200 text-slate-700">
+                        <strong>Contoh:</strong> Bungkus mi instan, plastik sachet sampo, cup minuman dengan sealer, bungkus permen.
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-700 font-bold text-xs">Frekuensi 02</span>
+                        <i class="fa-solid fa-rotate text-emerald-600 text-lg"></i>
+                    </div>
+                    <h4 class="font-display font-bold text-lg text-slate-900 mb-2">Kemasan Multi-Trip (Berulang Kali)</h4>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-3">
+                        Kemasan yang dikembalikan kepada produsen/agen setelah isinya habis untuk dicuci, disterilisasi, dan diisi kembali.
+                    </p>
+                    <div class="text-xs bg-slate-50 p-3 rounded-xl border border-slate-200 text-slate-700">
+                        <strong>Contoh:</strong> Galon air mineral 19 liter, botol kaca kecap/saus tradisional, tabung gas LPG, krat botol minuman.
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="px-2.5 py-1 rounded-md bg-amber-50 text-amber-700 font-bold text-xs">Frekuensi 03</span>
+                        <i class="fa-solid fa-box-archive text-amber-600 text-lg"></i>
+                    </div>
+                    <h4 class="font-display font-bold text-lg text-slate-900 mb-2">Kemasan Semi-Disposable</h4>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-3">
+                        Kemasan yang tidak dikembalikan ke pabrik, tetapi oleh konsumen dimanfaatkan kembali untuk keperluan rumah tangga.
+                    </p>
+                    <div class="text-xs bg-slate-50 p-3 rounded-xl border border-slate-200 text-slate-700">
+                        <strong>Contoh:</strong> Kaleng biskuit lebaran (diisi rengginang/alat jahit), toples kaca selai, kotak makan plastik tipis (<em>thinwall</em>).
+                    </div>
+                </div>
+            </div>
+
+            <!-- Perbandingan 6 Bahan Material Kemasan -->
+            <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+                <span class="text-xs font-bold uppercase tracking-wider text-indigo-600">Analisis Material</span>
+                <h3 class="font-display font-bold text-xl sm:text-2xl text-slate-900 mb-6">2. Karakteristik Bahan Material Kemasan</h3>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-slate-900 text-white text-xs uppercase tracking-wider">
+                                <th class="py-3.5 px-4 rounded-tl-xl">Material Kemasan</th>
+                                <th class="py-3.5 px-4">Kelebihan Utama</th>
+                                <th class="py-3.5 px-4">Kekurangan / Tantangan</th>
+                                <th class="py-3.5 px-4 rounded-tr-xl">Contoh Aplikasi Produk</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 text-xs sm:text-sm">
+                            <tr class="hover:bg-slate-50">
+                                <td class="py-4 px-4 font-bold text-slate-900"><i class="fa-solid fa-bottle-water text-indigo-500 mr-2"></i>Plastik & Fleksibel</td>
+                                <td class="py-4 px-4 text-slate-600">Ringan, murah, mudah dibentuk (fleksibel/kaku), tahan air, mudah diberi desain warna.</td>
+                                <td class="py-4 px-4 text-slate-600">Sulit terurai alami, beberapa jenis tidak tahan panas dan dapat melepaskan zat kimia.</td>
+                                <td class="py-4 px-4 font-medium text-slate-800">Standing pouch snack, botol minuman, plastik vakum frozen food.</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <td class="py-4 px-4 font-bold text-slate-900"><i class="fa-solid fa-scroll text-amber-600 mr-2"></i>Kertas & Karton</td>
+                                <td class="py-4 px-4 text-slate-600">Ramah lingkungan (<em>biodegradable</em>), mudah dicetak (<em>full color</em>), bobot ringan, biaya terjangkau.</td>
+                                <td class="py-4 px-4 text-slate-600">Mudah robek, tidak tahan air/minyak (kecuali diberi lapisan laminasi PE).</td>
+                                <td class="py-4 px-4 font-medium text-slate-800">Paper lunch box, dus martabak, box kosmetik (Ivory/Duplex), kardus bergelombang.</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <td class="py-4 px-4 font-bold text-slate-900"><i class="fa-solid fa-wine-bottle text-emerald-600 mr-2"></i>Kaca / Gelas</td>
+                                <td class="py-4 px-4 text-slate-600">Bersifat <em>inert</em> (tidak bereaksi kimia dengan isi), kedap gas/uap 100%, transparan & kesan premium, tahan panas sterilisasi.</td>
+                                <td class="py-4 px-4 text-slate-600">Berat (ongkos kirim mahal), mudah pecah (<em>fragile</em>), membutuhkan bubble wrap ekstra.</td>
+                                <td class="py-4 px-4 font-medium text-slate-800">Botol madu murni, selai, sambal botol, parfum mewah, botol sirup.</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <td class="py-4 px-4 font-bold text-slate-900"><i class="fa-solid fa-database text-slate-600 mr-2"></i>Logam / Kaleng & Foil</td>
+                                <td class="py-4 px-4 text-slate-600">Kekuatan mekanis sangat tinggi, kedap cahaya & oksigen, umur simpan bertahun-tahun.</td>
+                                <td class="py-4 px-4 text-slate-600">Harga relatif mahal, kaleng bisa penyok atau berkarat jika lapisan dalam rusak oleh asam tinggi.</td>
+                                <td class="py-4 px-4 font-medium text-slate-800">Ikan sarden kaleng, susu kental manis, kornet, kemasan <em>aluminium foil</em> kopi.</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <td class="py-4 px-4 font-bold text-slate-900"><i class="fa-solid fa-layer-group text-purple-600 mr-2"></i>Komposit (Multilayer)</td>
+                                <td class="py-4 px-4 text-slate-600">Menggabungkan keunggulan kertas (kaku), plastik (kedap air), dan aluminium (kedap cahaya/oksigen).</td>
+                                <td class="py-4 px-4 text-slate-600">Proses daur ulang lebih kompleks karena terdiri dari beberapa lapisan material berbeda.</td>
+                                <td class="py-4 px-4 font-medium text-slate-800">Kemasan aseptik (Tetra Pak) untuk susu UHT, jus buah, dan santan instan.</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <td class="py-4 px-4 font-bold text-slate-900"><i class="fa-solid fa-leaf text-green-600 mr-2"></i>Alami / Tradisional</td>
+                                <td class="py-4 px-4 text-slate-600">100% ramah lingkungan, memberikan aroma khas alami, memiliki nilai eksotis budaya lokal.</td>
+                                <td class="py-4 px-4 text-slate-600">Umur simpan pendek, tidak kedap udara, sulit distandarisasi untuk distribusi jarak jauh.</td>
+                                <td class="py-4 px-4 font-medium text-slate-800">Daun pisang (lemper), besek bambu (daging/getuk), daun jati, anyaman pandan.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- INTERAKTIF 2: Inspektor 7 Kode Daur Ulang Plastik (RIC) -->
+            <div class="bg-slate-900 text-white rounded-2xl p-6 sm:p-8 shadow-xl">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-amber-400">Penting Untuk Keamanan Pangan (Food Grade)</span>
+                        <h3 class="font-display font-bold text-xl sm:text-2xl mt-1">3. Inspektor 7 Kode Plastik (Resin Identification Code)</h3>
+                        <p class="text-xs sm:text-sm text-slate-300 mt-1">Klik salah satu nomor segitiga daur ulang di bawah untuk memeriksa keamanan pangannya!</p>
+                    </div>
+                </div>
+
+                <!-- 7 Buttons -->
+                <div class="grid grid-cols-4 sm:grid-cols-7 gap-3 mb-6">
+                    <button onclick="selectPlasticCode(1)" id="ric-btn-1" class="ric-btn p-3 rounded-xl border-2 border-amber-400 bg-white/10 hover:bg-white/20 transition flex flex-col items-center">
+                        <span class="text-lg font-display font-extrabold text-amber-300">▲ 1</span>
+                        <span class="text-[11px] font-bold mt-1">PET / PETE</span>
+                    </button>
+                    <button onclick="selectPlasticCode(2)" id="ric-btn-2" class="ric-btn p-3 rounded-xl border border-white/15 bg-white/5 hover:bg-white/15 transition flex flex-col items-center">
+                        <span class="text-lg font-display font-extrabold text-slate-200">▲ 2</span>
+                        <span class="text-[11px] font-bold mt-1">HDPE</span>
+                    </button>
+                    <button onclick="selectPlasticCode(3)" id="ric-btn-3" class="ric-btn p-3 rounded-xl border border-white/15 bg-white/5 hover:bg-white/15 transition flex flex-col items-center">
+                        <span class="text-lg font-display font-extrabold text-slate-200">▲ 3</span>
+                        <span class="text-[11px] font-bold mt-1">PVC</span>
+                    </button>
+                    <button onclick="selectPlasticCode(4)" id="ric-btn-4" class="ric-btn p-3 rounded-xl border border-white/15 bg-white/5 hover:bg-white/15 transition flex flex-col items-center">
+                        <span class="text-lg font-display font-extrabold text-slate-200">▲ 4</span>
+                        <span class="text-[11px] font-bold mt-1">LDPE</span>
+                    </button>
+                    <button onclick="selectPlasticCode(5)" id="ric-btn-5" class="ric-btn p-3 rounded-xl border border-white/15 bg-white/5 hover:bg-white/15 transition flex flex-col items-center">
+                        <span class="text-lg font-display font-extrabold text-slate-200">▲ 5</span>
+                        <span class="text-[11px] font-bold mt-1">PP</span>
+                    </button>
+                    <button onclick="selectPlasticCode(6)" id="ric-btn-6" class="ric-btn p-3 rounded-xl border border-white/15 bg-white/5 hover:bg-white/15 transition flex flex-col items-center">
+                        <span class="text-lg font-display font-extrabold text-slate-200">▲ 6</span>
+                        <span class="text-[11px] font-bold mt-1">PS</span>
+                    </button>
+                    <button onclick="selectPlasticCode(7)" id="ric-btn-7" class="ric-btn p-3 rounded-xl border border-white/15 bg-white/5 hover:bg-white/15 transition flex flex-col items-center">
+                        <span class="text-lg font-display font-extrabold text-slate-200">▲ 7</span>
+                        <span class="text-[11px] font-bold mt-1">OTHER</span>
+                    </button>
+                </div>
+
+                <!-- Display Panel -->
+                <div id="ricDetailPanel" class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/15">
+                    <!-- Dynamic via JS -->
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="flex justify-between">
+                <button onclick="switchTab('tp1')" class="px-5 py-3 rounded-xl bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 font-bold text-sm transition flex items-center gap-2">
+                    <i class="fa-solid fa-arrow-left"></i> Kembali ke Modul 1
+                </button>
+                <button onclick="switchTab('tp3')" class="px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm transition shadow-md flex items-center gap-2">
+                    Lanjut ke Modul 3: Lab Simulator Pasar <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- ==================== SECTION 3: TP 3 (ANALISIS PRODUK & TARGET KONSUMEN) ==================== -->
+        <section id="sec-tp3" class="module-section hidden space-y-8">
+            <!-- Header Modul -->
+            <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+                <span class="text-xs font-bold uppercase tracking-wider text-amber-600">Modul 3 • Tujuan Pembelajaran 3</span>
+                <h2 class="font-display font-bold text-2xl sm:text-3xl text-slate-900 mt-1 mb-3">
+                    Menganalisis Karakteristik Kemasan Berdasarkan Jenis Produk & Target Konsumen
+                </h2>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    Tidak ada satu kemasan yang cocok untuk semua situasi. Seorang wirausahawan harus menyelaraskan <strong>sifat fisik/kimia produk</strong> dengan <strong>profil demografis dan psikografis target konsumennya</strong>.
+                </p>
+            </div>
+
+            <!-- Matriks Analisis Karakteristik -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Berdasarkan Jenis & Wujud Produk -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center">
+                            <i class="fa-solid fa-flask-vial"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-display font-bold text-lg text-slate-900">A. Berdasarkan Karakteristik Fisik Produk</h3>
+                            <p class="text-xs text-slate-500">Menyesuaikan daya tahan terhadap kerusakan</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3 text-xs sm:text-sm">
+                        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
+                            <strong class="text-slate-900 block mb-1">1. Produk Kering & Renyah (Higroskopis - Mudah Melempem)</strong>
+                            <span class="text-slate-600">Keripik, biskuit, kopi bubuk. Wajib menggunakan kemasan dengan <em>water vapor barrier</em> tinggi (Aluminium Foil / Metalized Pouch) + silika gel food grade.</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
+                            <strong class="text-slate-900 block mb-1">2. Produk Cair, Kental & Berminyak</strong>
+                            <span class="text-slate-600">Sambal, madu, minuman kopi susu, minyak. Membutuhkan kemasan antibocor (<em>leak-proof</em>), plastik PE/PP tebal, botol PET/Kaca dengan segel induksi aluminium di mulut botol.</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
+                            <strong class="text-slate-900 block mb-1">3. Produk Segar & Beku (Frozen Food)</strong>
+                            <span class="text-slate-600">Bakso aci, nugget, daging marinasi. Wajib menggunakan plastik <em>Vacuum Bag</em> berbahan <strong>Nylon + LLDPE</strong> yang lentur dan tidak pecah pada suhu beku (-18°C).</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
+                            <strong class="text-slate-900 block mb-1">4. Produk Rapuh / Elektronik / Kriya</strong>
+                            <span class="text-slate-600">Keramik, parfum kaca, gadget. Memerlukan kemasan sekunder <em>Corrugated Box (Flute B/C)</em> dilengkapi <em>inner tray / molded pulp / bubble wrap</em>.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Berdasarkan Target Konsumen -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-display font-bold text-lg text-slate-900">B. Berdasarkan Segmen Target Konsumen</h3>
+                            <p class="text-xs text-slate-500">Menyesuaikan daya beli, usia, dan gaya hidup</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3 text-xs sm:text-sm">
+                        <div class="p-3.5 rounded-xl bg-amber-50/60 border border-amber-200">
+                            <strong class="text-slate-900 block mb-1">1. Segmen Anak-Anak (Kids Market)</strong>
+                            <span class="text-slate-600">Warna cerah kontras (merah, kuning, biru), ilustrasi maskot/kartun lucu, ukuran porsi kecil pas di tangan anak, ujung kemasan tumpul/aman, mudah dibuka.</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-indigo-50/60 border border-indigo-200">
+                            <strong class="text-slate-900 block mb-1">2. Segmen Remaja & Gen-Z</strong>
+                            <span class="text-slate-600">Desain estetik/unik (<em>Instagrammable</em>), tipografi bold modern, praktis dibawa (<em>on-the-go</em>), ada nilai interaktif (kode QR Spotify/filter AR/kutipan unik).</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-emerald-50/60 border border-emerald-200">
+                            <strong class="text-slate-900 block mb-1">3. Segmen Keluarga & Ibu Rumah Tangga (Mass/Ekonomis)</strong>
+                            <span class="text-slate-600">Mengutamakan fungsi ekonomis: kemasan <em>refill (isi ulang)</em> atau <em>family pack</em>, transparan agar isi terlihat jelas, informasi gizi & logo Halal sangat menonjol.</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-slate-900 text-white">
+                            <strong class="text-amber-300 block mb-1">4. Segmen Eksekutif / Premium & Hampers</strong>
+                            <span class="text-slate-200">Desain minimalis elegan (hitam doff, emas, putih bersih), material kokoh (<em>hardbox</em> magnetik, botol kaca tebal), menonjolkan <em>unboxing experience</em>.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INTERAKTIF 3: Smart Packaging Simulator -->
+            <div class="bg-gradient-to-br from-indigo-950 via-slate-900 to-indigo-900 text-white rounded-3xl p-6 sm:p-8 shadow-xl border border-indigo-500/30">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+                    <div>
+                        <span class="px-3 py-1 rounded-full bg-amber-400 text-slate-950 font-bold text-xs uppercase tracking-wide">
+                            <i class="fa-solid fa-wand-magic-sparkles mr-1"></i> Laboratorium Simulasi Keputusan Kemasan
+                        </span>
+                        <h3 class="font-display font-bold text-2xl mt-2">Simulator Rekomendasi Kemasan Cerdas</h3>
+                        <p class="text-xs sm:text-sm text-indigo-200">Pilih kombinasi <strong>Jenis Produk UMKM</strong> dan <strong>Target Konsumen</strong> untuk melihat analisis kemasan terbaik!</p>
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <div class="bg-white/10 p-4 rounded-2xl border border-white/15">
+                        <label class="block text-xs font-bold uppercase tracking-wider text-amber-300 mb-2">
+                            1. Pilih Jenis Produk UMKM:
+                        </label>
+                        <select id="simProduct" onchange="runPackagingSimulator()" class="w-full bg-slate-900 text-white font-semibold text-sm rounded-xl px-4 py-3 border border-indigo-400/40 focus:outline-none focus:ring-2 focus:ring-amber-400">
+                            <option value="snack">Keripik / Snack Kering Renyah</option>
+                            <option value="minuman">Minuman Kekinian (Kopi Susu / Teh Buah)</option>
+                            <option value="sambal">Sambal / Bumbu Masak Berminyak</option>
+                            <option value="skincare">Sabun Herbal / Skincare Lokal</option>
+                        </select>
+                    </div>
+
+                    <div class="bg-white/10 p-4 rounded-2xl border border-white/15">
+                        <label class="block text-xs font-bold uppercase tracking-wider text-amber-300 mb-2">
+                            2. Pilih Segmen Target Konsumen:
+                        </label>
+                        <select id="simTarget" onchange="runPackagingSimulator()" class="w-full bg-slate-900 text-white font-semibold text-sm rounded-xl px-4 py-3 border border-indigo-400/40 focus:outline-none focus:ring-2 focus:ring-amber-400">
+                            <option value="genz">Remaja & Mahasiswa (Gen-Z / Trendy)</option>
+                            <option value="keluarga">Ibu Rumah Tangga / Pasar Ekonomis</option>
+                            <option value="premium">Segmen Premium / Oleh-Oleh Eksekutif</option>
+                            <option value="eco">Konsumen Peduli Lingkungan (Green Consumer)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Output Result Box -->
+                <div id="simOutputBox" class="bg-white text-slate-900 rounded-2xl p-6 shadow-lg">
+                    <!-- Dynamic via JS -->
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="flex justify-between">
+                <button onclick="switchTab('tp2')" class="px-5 py-3 rounded-xl bg-white border border-slate-300 hover:bg-slate-50 text-slate-70
