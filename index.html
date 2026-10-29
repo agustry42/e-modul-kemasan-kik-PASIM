@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Modul KIK Kelas XI: Kemasan Produk - SMKS PK PASIM Plus Kota Sukabumi</title>
     <!-- Tailwind CSS CDN -->
-    <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
-    <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
-    <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
-    <link href="[https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap](https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap)" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css)">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- jsPDF & AutoTable for Direct PDF Generation -->
-    <script src="[https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js](https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js)"></script>
-    <script src="[https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js](https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js)"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -22,16 +22,6 @@
                     fontFamily: {
                         sans: ['"Plus Jakarta Sans"', 'sans-serif'],
                         display: ['"Space Grotesk"', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            50: '#eef2ff',
-                            100: '#e0e7ff',
-                            500: '#6366f1',
-                            600: '#4f46e5',
-                            700: '#4338ca',
-                            900: '#1e1b4b',
-                        }
                     }
                 }
             }
@@ -67,19 +57,14 @@
         ::-webkit-scrollbar-track { background: #f1f5f9; }
         ::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #64748b; }
-
-        @media print {
-            .no-print { display: none !important; }
-            body { background: white !important; }
-        }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-indigo-600 selection:text-white min-h-screen flex flex-col">
+<body id="appTop" class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-indigo-600 selection:text-white min-h-screen flex flex-col">
 
     <!-- TOP NAVBAR -->
-    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm no-print">
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
+            <div class="flex items-center justify-between py-2.5">
                 <!-- Brand & School Title -->
                 <div class="flex items-center gap-3">
                     <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-indigo-600 to-amber-500 flex items-center justify-center text-white shadow-md shadow-indigo-200 shrink-0">
@@ -95,7 +80,7 @@
                     </div>
                 </div>
 
-                <!-- Progress & GitHub Guide Button -->
+                <!-- Progress & Google Sites Guide Button -->
                 <div class="flex items-center gap-4">
                     <div class="hidden md:flex flex-col items-end">
                         <div class="flex items-center gap-2 text-xs font-semibold text-slate-600 mb-1">
@@ -106,16 +91,16 @@
                             <div id="progressBar" class="h-full bg-gradient-to-r from-indigo-600 to-amber-500 transition-all duration-500" style="width: 20%"></div>
                         </div>
                     </div>
-                    <button onclick="toggleGithubModal()" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-900 text-white hover:bg-slate-800 transition shadow-sm">
-                        <i class="fa-brands fa-github text-sm"></i>
-                        <span class="hidden sm:inline">Panduan GitHub</span>
+                    <button onclick="toggleSitesModal()" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold bg-indigo-50 text-indigo-700 hover:bg-indigo-100 border border-indigo-200 transition shadow-sm">
+                        <i class="fa-solid fa-circle-question text-sm"></i>
+                        <span class="hidden sm:inline">Info Google Sites</span>
                     </button>
                 </div>
             </div>
 
             <!-- Navigation Tabs -->
-            <nav class="flex items-center gap-1.5 overflow-x-auto py-2.5 border-t border-slate-100 no-scrollbar" aria-label="Modul Navigasi">
-                <button onclick="switchTab('intro')" id="tab-intro" class="nav-tab active-tab shrink-0 px-3.5 py-2 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-2 bg-indigo-600 text-white shadow-sm">
+            <nav class="flex items-center gap-1.5 overflow-x-auto py-2.5 border-t border-slate-100" aria-label="Modul Navigasi">
+                <button onclick="switchTab('intro')" id="tab-intro" class="nav-tab shrink-0 px-3.5 py-2 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-2 bg-indigo-600 text-white shadow-sm">
                     <i class="fa-solid fa-compass"></i> Pendahuluan
                 </button>
                 <button onclick="switchTab('tp1')" id="tab-tp1" class="nav-tab shrink-0 px-3.5 py-2 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-2 text-slate-600 hover:bg-slate-100">
@@ -138,15 +123,13 @@
     </header>
 
     <!-- MAIN CONTENT AREA -->
-    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
 
         <!-- ==================== SECTION 0: PENDAHULUAN ==================== -->
         <section id="sec-intro" class="module-section space-y-8">
             <!-- Hero Banner -->
-            <div class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-indigo-900 via-indigo-800 to-slate-900 text-white p-8 sm:p-12 shadow-xl">
+            <div class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-indigo-900 via-indigo-800 to-slate-900 text-white p-6 sm:p-10 shadow-xl">
                 <div class="absolute -right-16 -bottom-16 w-80 h-80 bg-amber-500/20 rounded-full blur-3xl pointer-events-none"></div>
-                <div class="absolute top-10 right-10 w-40 h-40 bg-indigo-400/20 rounded-full blur-2xl pointer-events-none"></div>
-
                 <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                     <div class="lg:col-span-8">
                         <div class="flex flex-wrap items-center gap-2 mb-4">
@@ -157,7 +140,7 @@
                                 <i class="fa-solid fa-book-open text-amber-300"></i> Mata Pelajaran: KIK Kelas XI
                             </span>
                         </div>
-                        <h2 class="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-3">
+                        <h2 class="font-display font-extrabold text-2xl sm:text-4xl lg:text-5xl leading-tight mb-3">
                             Kemasan Produk <span class="text-amber-300">(Product Packaging)</span> & Branding UMKM
                         </h2>
                         <div class="inline-flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-slate-900/40 backdrop-blur-md border border-white/15 mb-4">
@@ -169,7 +152,7 @@
                                 <div class="text-sm font-bold text-white">Agus Tryanto, M.Pd</div>
                             </div>
                         </div>
-                        <p class="text-indigo-100 text-base sm:text-lg leading-relaxed mb-6">
+                        <p class="text-indigo-100 text-sm sm:text-base leading-relaxed mb-6">
                             Pelajari bagaimana merancang kemasan yang tidak hanya melindungi kualitas produk, tetapi juga mampu menjadi <strong class="text-white underline decoration-amber-400 decoration-2">"The Silent Salesman"</strong> yang memikat hati konsumen pada pandangan pertama.
                         </p>
                         <div class="flex flex-wrap gap-3">
@@ -177,7 +160,7 @@
                                 Mulai Belajar Sekarang <i class="fa-solid fa-arrow-right"></i>
                             </button>
                             <button onclick="switchTab('quiz')" class="px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm transition border border-white/20 flex items-center gap-2">
-                                <i class="fa-solid fa-bolt text-amber-300"></i> Langsung ke Evaluasi HOTS (20 Soal)
+                                <i class="fa-solid fa-bolt text-amber-300"></i> Evaluasi HOTS (20 Soal)
                             </button>
                         </div>
                     </div>
@@ -185,13 +168,13 @@
                     <!-- Interactive Packaging Preview Card -->
                     <div class="lg:col-span-4">
                         <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 text-center">
-                            <div class="w-20 h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-tr from-amber-400 to-orange-500 flex items-center justify-center shadow-lg">
-                                <i class="fa-solid fa-cubes-stacked text-3xl text-slate-950"></i>
+                            <div class="w-16 h-16 mx-auto mb-3 rounded-2xl bg-gradient-to-tr from-amber-400 to-orange-500 flex items-center justify-center shadow-lg">
+                                <i class="fa-solid fa-cubes-stacked text-2xl text-slate-950"></i>
                             </div>
-                            <h3 class="font-display font-bold text-xl mb-1">Fakta Kewirausahaan</h3>
-                            <p class="text-xs text-indigo-200 mb-4">Riset Keputusan Pembelian Ritel</p>
-                            <div class="text-4xl font-display font-extrabold text-amber-300 mb-2">72%</div>
-                            <p class="text-xs sm:text-sm text-indigo-100 leading-relaxed">
+                            <h3 class="font-display font-bold text-lg mb-1">Fakta Kewirausahaan</h3>
+                            <p class="text-xs text-indigo-200 mb-3">Riset Keputusan Pembelian Ritel</p>
+                            <div class="text-3xl font-display font-extrabold text-amber-300 mb-2">72%</div>
+                            <p class="text-xs text-indigo-100 leading-relaxed">
                                 Konsumen menyatakan bahwa <strong>desain dan material kemasan</strong> secara langsung memengaruhi keputusan pembelian mereka di rak toko maupun e-commerce.
                             </p>
                         </div>
@@ -201,26 +184,26 @@
 
             <!-- 4 Tujuan Pembelajaran Cards -->
             <div>
-                <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-6">
+                <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-5">
                     <div>
                         <span class="text-xs font-bold uppercase tracking-wider text-indigo-600">Peta Kompetensi</span>
-                        <h3 class="font-display font-bold text-2xl text-slate-900">4 Tujuan Pembelajaran Utama</h3>
+                        <h3 class="font-display font-bold text-xl sm:text-2xl text-slate-900">4 Tujuan Pembelajaran Utama</h3>
                     </div>
-                    <p class="text-xs sm:text-sm text-slate-500 mt-1 sm:mt-0">Klik pada salah satu kartu untuk langsung menuju modul materi</p>
+                    <p class="text-xs text-slate-500 mt-1 sm:mt-0">Klik pada salah satu kartu untuk langsung menuju modul materi</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
                     <!-- TP 1 -->
-                    <div onclick="switchTab('tp1')" class="group cursor-pointer bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-xl hover:border-indigo-400 transition-all duration-300 flex flex-col justify-between">
+                    <div onclick="switchTab('tp1')" class="group cursor-pointer bg-white rounded-2xl p-5 border border-slate-200 shadow-sm hover:shadow-xl hover:border-indigo-400 transition-all duration-300 flex flex-col justify-between">
                         <div>
-                            <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center justify-between mb-3">
                                 <span class="px-2.5 py-1 rounded-lg bg-indigo-50 text-indigo-700 font-bold text-xs">MODUL 1 • TP 1</span>
-                                <div class="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition">
+                                <div class="w-9 h-9 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition">
                                     <i class="fa-solid fa-shield-halved"></i>
                                 </div>
                             </div>
-                            <h4 class="font-display font-bold text-lg text-slate-900 mb-2 group-hover:text-indigo-600 transition">Pengertian, Fungsi & Tujuan</h4>
-                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            <h4 class="font-display font-bold text-base text-slate-900 mb-2 group-hover:text-indigo-600 transition">Pengertian, Fungsi & Tujuan</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">
                                 Menjelaskan pengertian kemasan produk, 4 fungsi utama (Proteksi, Promosi, Informasi, Ergonomi), dan tujuan strategisnya.
                             </p>
                         </div>
@@ -231,16 +214,16 @@
                     </div>
 
                     <!-- TP 2 -->
-                    <div onclick="switchTab('tp2')" class="group cursor-pointer bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-xl hover:border-emerald-400 transition-all duration-300 flex flex-col justify-between">
+                    <div onclick="switchTab('tp2')" class="group cursor-pointer bg-white rounded-2xl p-5 border border-slate-200 shadow-sm hover:shadow-xl hover:border-emerald-400 transition-all duration-300 flex flex-col justify-between">
                         <div>
-                            <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center justify-between mb-3">
                                 <span class="px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-700 font-bold text-xs">MODUL 2 • TP 2</span>
-                                <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition">
+                                <div class="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition">
                                     <i class="fa-solid fa-layer-group"></i>
                                 </div>
                             </div>
-                            <h4 class="font-display font-bold text-lg text-slate-900 mb-2 group-hover:text-emerald-600 transition">Jenis, Bahan & Tingkatan</h4>
-                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            <h4 class="font-display font-bold text-base text-slate-900 mb-2 group-hover:text-emerald-600 transition">Jenis, Bahan & Tingkatan</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">
                                 Mengidentifikasi tingkatan kemasan (Primer, Sekunder, Tersier), frekuensi pakai, serta karakteristik material & kode plastik.
                             </p>
                         </div>
@@ -251,16 +234,16 @@
                     </div>
 
                     <!-- TP 3 -->
-                    <div onclick="switchTab('tp3')" class="group cursor-pointer bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-xl hover:border-amber-400 transition-all duration-300 flex flex-col justify-between">
+                    <div onclick="switchTab('tp3')" class="group cursor-pointer bg-white rounded-2xl p-5 border border-slate-200 shadow-sm hover:shadow-xl hover:border-amber-400 transition-all duration-300 flex flex-col justify-between">
                         <div>
-                            <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center justify-between mb-3">
                                 <span class="px-2.5 py-1 rounded-lg bg-amber-50 text-amber-700 font-bold text-xs">MODUL 3 • TP 3</span>
-                                <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center group-hover:bg-amber-500 group-hover:text-white transition">
+                                <div class="w-9 h-9 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center group-hover:bg-amber-500 group-hover:text-white transition">
                                     <i class="fa-solid fa-users-viewfinder"></i>
                                 </div>
                             </div>
-                            <h4 class="font-display font-bold text-lg text-slate-900 mb-2 group-hover:text-amber-600 transition">Analisis Produk & Konsumen</h4>
-                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            <h4 class="font-display font-bold text-base text-slate-900 mb-2 group-hover:text-amber-600 transition">Analisis Produk & Konsumen</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">
                                 Menganalisis karakteristik kemasan yang tepat berdasarkan wujud fisik produk serta demografi/psikografi target pasar.
                             </p>
                         </div>
@@ -271,16 +254,16 @@
                     </div>
 
                     <!-- TP 4 -->
-                    <div onclick="switchTab('tp4')" class="group cursor-pointer bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-xl hover:border-rose-400 transition-all duration-300 flex flex-col justify-between">
+                    <div onclick="switchTab('tp4')" class="group cursor-pointer bg-white rounded-2xl p-5 border border-slate-200 shadow-sm hover:shadow-xl hover:border-rose-400 transition-all duration-300 flex flex-col justify-between">
                         <div>
-                            <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center justify-between mb-3">
                                 <span class="px-2.5 py-1 rounded-lg bg-rose-50 text-rose-700 font-bold text-xs">MODUL 4 • TP 4</span>
-                                <div class="w-10 h-10 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center group-hover:bg-rose-600 group-hover:text-white transition">
+                                <div class="w-9 h-9 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center group-hover:bg-rose-600 group-hover:text-white transition">
                                     <i class="fa-solid fa-palette"></i>
                                 </div>
                             </div>
-                            <h4 class="font-display font-bold text-lg text-slate-900 mb-2 group-hover:text-rose-600 transition">Unsur Desain & Label</h4>
-                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            <h4 class="font-display font-bold text-base text-slate-900 mb-2 group-hover:text-rose-600 transition">Unsur Desain & Label</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">
                                 Menjelaskan unsur desain visual, psikologi warna, 8 syarat informasi wajib label (PP No. 69/1999), serta daya tarik kemasan.
                             </p>
                         </div>
@@ -293,19 +276,19 @@
             </div>
 
             <!-- Studi Kasus Pemantik Diskusi -->
-            <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm">
-                <div class="flex items-center gap-3 mb-4">
+            <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+                <div class="flex items-center gap-3 mb-3">
                     <span class="px-3 py-1 rounded-full bg-amber-100 text-amber-800 font-bold text-xs uppercase tracking-wide">
                         <i class="fa-solid fa-lightbulb mr-1"></i> Studi Kasus Pemantik (Apersepsi)
                     </span>
                 </div>
-                <h3 class="font-display font-bold text-xl text-slate-900 mb-4">
+                <h3 class="font-display font-bold text-lg sm:text-xl text-slate-900 mb-4">
                     Mengapa Keripik Singkong dengan Rasa yang Sama Bisa Memiliki Harga 4x Lipat Berbeda?
                 </h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div class="rounded-xl bg-slate-50 p-5 border border-slate-200">
                         <div class="flex items-center justify-between mb-3">
-                            <span class="font-bold text-slate-700">Produk A: Plastik Polos + Steples</span>
+                            <span class="font-bold text-slate-700 text-sm">Produk A: Plastik Polos + Steples</span>
                             <span class="px-2.5 py-1 rounded bg-slate-200 text-slate-800 font-bold text-xs">Rp 5.000 / bungkus</span>
                         </div>
                         <ul class="space-y-2 text-xs sm:text-sm text-slate-600">
@@ -317,7 +300,7 @@
 
                     <div class="rounded-xl bg-indigo-50/70 p-5 border border-indigo-200">
                         <div class="flex items-center justify-between mb-3">
-                            <span class="font-bold text-indigo-950">Produk B: Standing Pouch Metalized + Ziplock</span>
+                            <span class="font-bold text-indigo-950 text-sm">Produk B: Standing Pouch Metalized + Ziplock</span>
                             <span class="px-2.5 py-1 rounded bg-indigo-600 text-white font-bold text-xs">Rp 20.000 / bungkus</span>
                         </div>
                         <ul class="space-y-2 text-xs sm:text-sm text-indigo-950">
@@ -332,7 +315,6 @@
 
         <!-- ==================== SECTION 1: TP 1 (PENGERTIAN, FUNGSI & TUJUAN) ==================== -->
         <section id="sec-tp1" class="module-section hidden space-y-8">
-            <!-- Header Modul -->
             <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
                 <span class="text-xs font-bold uppercase tracking-wider text-indigo-600">Modul 1 • Tujuan Pembelajaran 1</span>
                 <h2 class="font-display font-bold text-2xl sm:text-3xl text-slate-900 mt-1 mb-3">
@@ -343,7 +325,6 @@
                 </p>
             </div>
 
-            <!-- Pengertian Kemasan -->
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
                     <div class="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center mb-4 font-bold">
@@ -384,12 +365,11 @@
                         <h3 class="font-display font-bold text-xl sm:text-2xl text-slate-900">4 Fungsi Utama Kemasan Produk</h3>
                     </div>
                     <span class="text-xs font-medium text-slate-500 mt-1 sm:mt-0">
-                        <i class="fa-solid fa-hand-pointer text-indigo-600 mr-1"></i> Sentuh / Arahkan kursor pada kartu untuk membalik penjelasan
+                        <i class="fa-solid fa-hand-pointer text-indigo-600 mr-1"></i> Klik / Arahkan kursor pada kartu untuk membalik penjelasan
                     </span>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <!-- Flip Card 1: Protektif -->
                     <div class="flip-card h-72 cursor-pointer perspective" onclick="this.classList.toggle('flipped')">
                         <div class="flip-card-inner relative w-full h-full">
                             <div class="flip-card-front absolute inset-0 bg-gradient-to-br from-indigo-50 to-white border-2 border-indigo-200 rounded-2xl p-6 flex flex-col items-center justify-center text-center shadow-sm">
@@ -414,7 +394,6 @@
                         </div>
                     </div>
 
-                    <!-- Flip Card 2: Promosional -->
                     <div class="flip-card h-72 cursor-pointer perspective" onclick="this.classList.toggle('flipped')">
                         <div class="flip-card-inner relative w-full h-full">
                             <div class="flip-card-front absolute inset-0 bg-gradient-to-br from-amber-50 to-white border-2 border-amber-200 rounded-2xl p-6 flex flex-col items-center justify-center text-center shadow-sm">
@@ -439,7 +418,6 @@
                         </div>
                     </div>
 
-                    <!-- Flip Card 3: Информаtif -->
                     <div class="flip-card h-72 cursor-pointer perspective" onclick="this.classList.toggle('flipped')">
                         <div class="flip-card-inner relative w-full h-full">
                             <div class="flip-card-front absolute inset-0 bg-gradient-to-br from-emerald-50 to-white border-2 border-emerald-200 rounded-2xl p-6 flex flex-col items-center justify-center text-center shadow-sm">
@@ -464,7 +442,6 @@
                         </div>
                     </div>
 
-                    <!-- Flip Card 4: Ergonomis & Logistik -->
                     <div class="flip-card h-72 cursor-pointer perspective" onclick="this.classList.toggle('flipped')">
                         <div class="flip-card-inner relative w-full h-full">
                             <div class="flip-card-front absolute inset-0 bg-gradient-to-br from-rose-50 to-white border-2 border-rose-200 rounded-2xl p-6 flex flex-col items-center justify-center text-center shadow-sm">
@@ -504,22 +481,10 @@
                         </div>
                     </div>
                     <ul class="space-y-3 text-sm text-slate-700">
-                        <li class="flex items-start gap-2.5">
-                            <i class="fa-solid fa-circle-check text-indigo-600 mt-1"></i>
-                            <span><strong>Memperpanjang Umur Simpan (Shelf-Life):</strong> Menekan risiko barang rusak/basi sebelum terjual.</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <i class="fa-solid fa-circle-check text-indigo-600 mt-1"></i>
-                            <span><strong>Meningkatkan Nilai Jual (Added Value):</strong> Produk yang dikemas secara profesional dapat dijual dengan margin keuntungan lebih tinggi.</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <i class="fa-solid fa-circle-check text-indigo-600 mt-1"></i>
-                            <span><strong>Mencegah Pemalsuan:</strong> Melalui segel keamanan (<em>security seal / hologram</em>).</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <i class="fa-solid fa-circle-check text-indigo-600 mt-1"></i>
-                            <span><strong>Efisiensi Distribusi:</strong> Memudahkan perhitungan stok dan pemuatan barang di kendaraan logistik.</span>
-                        </li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-indigo-600 mt-1"></i><span><strong>Memperpanjang Umur Simpan (Shelf-Life):</strong> Menekan risiko barang rusak/basi sebelum terjual.</span></li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-indigo-600 mt-1"></i><span><strong>Meningkatkan Nilai Jual (Added Value):</strong> Produk yang dikemas secara profesional dapat dijual dengan margin keuntungan lebih tinggi.</span></li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-indigo-600 mt-1"></i><span><strong>Mencegah Pemalsuan:</strong> Melalui segel keamanan (<em>security seal / hologram</em>).</span></li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-indigo-600 mt-1"></i><span><strong>Efisiensi Distribusi:</strong> Memudahkan perhitungan stok dan pemuatan barang di kendaraan logistik.</span></li>
                     </ul>
                 </div>
 
@@ -534,27 +499,14 @@
                         </div>
                     </div>
                     <ul class="space-y-3 text-sm text-slate-700">
-                        <li class="flex items-start gap-2.5">
-                            <i class="fa-solid fa-circle-check text-emerald-600 mt-1"></i>
-                            <span><strong>Jaminan Higienitas & Keamanan:</strong> Kepastian bahwa produk bersih dan belum pernah dibuka orang lain (<em>tamper-evident</em>).</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <i class="fa-solid fa-circle-check text-emerald-600 mt-1"></i>
-                            <span><strong>Kemudahan Identifikasi:</strong> Memudahkan konsumen mengenali varian rasa, ukuran, dan kecocokan produk.</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <i class="fa-solid fa-circle-check text-emerald-600 mt-1"></i>
-                            <span><strong>Kepraktisan Konsumsi:</strong> Mudah dibawa bepergian (<em>on-the-go</em>) dan disimpan kembali.</span>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <i class="fa-solid fa-circle-check text-emerald-600 mt-1"></i>
-                            <span><strong>Nilai Guna Ulang (Reusable):</strong> Beberapa kemasan wadah kaca/kaleng dapat dimanfaatkan kembali di rumah.</span>
-                        </li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-emerald-600 mt-1"></i><span><strong>Jaminan Higienitas & Keamanan:</strong> Kepastian bahwa produk bersih dan belum pernah dibuka orang lain (<em>tamper-evident</em>).</span></li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-emerald-600 mt-1"></i><span><strong>Kemudahan Identifikasi:</strong> Memudahkan konsumen mengenali varian rasa, ukuran, dan kecocokan produk.</span></li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-emerald-600 mt-1"></i><span><strong>Kepraktisan Konsumsi:</strong> Mudah dibawa bepergian (<em>on-the-go</em>) dan disimpan kembali.</span></li>
+                        <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-emerald-600 mt-1"></i><span><strong>Nilai Guna Ulang (Reusable):</strong> Beberapa kemasan wadah kaca/kaleng dapat dimanfaatkan kembali di rumah.</span></li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Next Step Button -->
             <div class="flex justify-end">
                 <button onclick="switchTab('tp2')" class="px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm transition shadow-md flex items-center gap-2">
                     Lanjut ke Modul 2: Jenis, Bahan & Tingkatan <i class="fa-solid fa-arrow-right"></i>
@@ -564,7 +516,6 @@
 
         <!-- ==================== SECTION 2: TP 2 (JENIS, BAHAN & TINGKATAN) ==================== -->
         <section id="sec-tp2" class="module-section hidden space-y-8">
-            <!-- Header Modul -->
             <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
                 <span class="text-xs font-bold uppercase tracking-wider text-emerald-600">Modul 2 • Tujuan Pembelajaran 2</span>
                 <h2 class="font-display font-bold text-2xl sm:text-3xl text-slate-900 mt-1 mb-3">
@@ -575,14 +526,13 @@
                 </p>
             </div>
 
-            <!-- INTERAKTIF 1: Bedah Tingkatan Kemasan (Primer, Sekunder, Tersier) -->
+            <!-- INTERAKTIF 1: Bedah Tingkatan Kemasan -->
             <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
                 <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
                     <div>
                         <span class="text-xs font-bold uppercase tracking-wider text-indigo-600">Simulasi Interaktif Lapisan Kemasan</span>
                         <h3 class="font-display font-bold text-xl sm:text-2xl text-slate-900">1. Klasifikasi Berdasarkan Struktur Tingkatan</h3>
                     </div>
-                    <!-- Product Selector -->
                     <div class="flex items-center gap-2 bg-slate-100 p-1.5 rounded-xl">
                         <span class="text-xs font-bold text-slate-600 px-2">Contoh Produk:</span>
                         <select id="tierProductSelect" onchange="updateTierExample()" class="bg-white text-slate-900 text-xs sm:text-sm font-bold px-3 py-2 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500">
@@ -593,13 +543,10 @@
                         </select>
                     </div>
                 </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="tierCardsContainer">
-                    <!-- Dynamic Content Loaded via JS -->
-                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="tierCardsContainer"></div>
             </div>
 
-            <!-- Klasifikasi Berdasarkan Frekuensi Pemakaian & Kesiapan Pakai -->
+            <!-- Klasifikasi Berdasarkan Frekuensi Pemakaian -->
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
                     <div class="flex items-center justify-between mb-3">
@@ -639,7 +586,7 @@
                         Kemasan yang tidak dikembalikan ke pabrik, tetapi oleh konsumen dimanfaatkan kembali untuk keperluan rumah tangga.
                     </p>
                     <div class="text-xs bg-slate-50 p-3 rounded-xl border border-slate-200 text-slate-700">
-                        <strong>Contoh:</strong> Kaleng biskuit lebaran (diisi rengginang/alat jahit), toples kaca selai, kotak makan plastik tipis (<em>thinwall</em>).
+                        <strong>Contoh:</strong> Kaleng biskuit lebaran, toples kaca selai, kotak makan plastik tipis (<em>thinwall</em>).
                     </div>
                 </div>
             </div>
@@ -703,15 +650,12 @@
 
             <!-- INTERAKTIF 2: Inspektor 7 Kode Daur Ulang Plastik (RIC) -->
             <div class="bg-slate-900 text-white rounded-2xl p-6 sm:p-8 shadow-xl">
-                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
-                    <div>
-                        <span class="text-xs font-bold uppercase tracking-wider text-amber-400">Penting Untuk Keamanan Pangan (Food Grade)</span>
-                        <h3 class="font-display font-bold text-xl sm:text-2xl mt-1">3. Inspektor 7 Kode Plastik (Resin Identification Code)</h3>
-                        <p class="text-xs sm:text-sm text-slate-300 mt-1">Klik salah satu nomor segitiga daur ulang di bawah untuk memeriksa keamanan pangannya!</p>
-                    </div>
+                <div class="mb-6">
+                    <span class="text-xs font-bold uppercase tracking-wider text-amber-400">Penting Untuk Keamanan Pangan (Food Grade)</span>
+                    <h3 class="font-display font-bold text-xl sm:text-2xl mt-1">3. Inspektor 7 Kode Plastik (Resin Identification Code)</h3>
+                    <p class="text-xs sm:text-sm text-slate-300 mt-1">Klik salah satu nomor segitiga daur ulang di bawah untuk memeriksa keamanan pangannya!</p>
                 </div>
 
-                <!-- 7 Buttons -->
                 <div class="grid grid-cols-4 sm:grid-cols-7 gap-3 mb-6">
                     <button onclick="selectPlasticCode(1)" id="ric-btn-1" class="ric-btn p-3 rounded-xl border-2 border-amber-400 bg-white/10 hover:bg-white/20 transition flex flex-col items-center">
                         <span class="text-lg font-display font-extrabold text-amber-300">▲ 1</span>
@@ -743,13 +687,9 @@
                     </button>
                 </div>
 
-                <!-- Display Panel -->
-                <div id="ricDetailPanel" class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/15">
-                    <!-- Dynamic via JS -->
-                </div>
+                <div id="ricDetailPanel" class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/15"></div>
             </div>
 
-            <!-- Navigation Buttons -->
             <div class="flex justify-between">
                 <button onclick="switchTab('tp1')" class="px-5 py-3 rounded-xl bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 font-bold text-sm transition flex items-center gap-2">
                     <i class="fa-solid fa-arrow-left"></i> Kembali ke Modul 1
@@ -762,7 +702,6 @@
 
         <!-- ==================== SECTION 3: TP 3 (ANALISIS PRODUK & TARGET KONSUMEN) ==================== -->
         <section id="sec-tp3" class="module-section hidden space-y-8">
-            <!-- Header Modul -->
             <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
                 <span class="text-xs font-bold uppercase tracking-wider text-amber-600">Modul 3 • Tujuan Pembelajaran 3</span>
                 <h2 class="font-display font-bold text-2xl sm:text-3xl text-slate-900 mt-1 mb-3">
@@ -773,9 +712,7 @@
                 </p>
             </div>
 
-            <!-- Matriks Analisis Karakteristik -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <!-- Berdasarkan Jenis & Wujud Produk -->
                 <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-4">
                     <div class="flex items-center gap-3">
                         <div class="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center">
@@ -807,7 +744,6 @@
                     </div>
                 </div>
 
-                <!-- Berdasarkan Target Konsumen -->
                 <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-4">
                     <div class="flex items-center gap-3">
                         <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center">
@@ -842,22 +778,17 @@
 
             <!-- INTERAKTIF 3: Smart Packaging Simulator -->
             <div class="bg-gradient-to-br from-indigo-950 via-slate-900 to-indigo-900 text-white rounded-3xl p-6 sm:p-8 shadow-xl border border-indigo-500/30">
-                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
-                    <div>
-                        <span class="px-3 py-1 rounded-full bg-amber-400 text-slate-950 font-bold text-xs uppercase tracking-wide">
-                            <i class="fa-solid fa-wand-magic-sparkles mr-1"></i> Laboratorium Simulasi Keputusan Kemasan
-                        </span>
-                        <h3 class="font-display font-bold text-2xl mt-2">Simulator Rekomendasi Kemasan Cerdas</h3>
-                        <p class="text-xs sm:text-sm text-indigo-200">Pilih kombinasi <strong>Jenis Produk UMKM</strong> dan <strong>Target Konsumen</strong> untuk melihat analisis kemasan terbaik!</p>
-                    </div>
+                <div class="mb-6">
+                    <span class="px-3 py-1 rounded-full bg-amber-400 text-slate-950 font-bold text-xs uppercase tracking-wide">
+                        <i class="fa-solid fa-wand-magic-sparkles mr-1"></i> Laboratorium Simulasi Keputusan Kemasan
+                    </span>
+                    <h3 class="font-display font-bold text-2xl mt-2">Simulator Rekomendasi Kemasan Cerdas</h3>
+                    <p class="text-xs sm:text-sm text-indigo-200">Pilih kombinasi <strong>Jenis Produk UMKM</strong> dan <strong>Target Konsumen</strong> untuk melihat analisis kemasan terbaik!</p>
                 </div>
 
-                <!-- Controls -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                     <div class="bg-white/10 p-4 rounded-2xl border border-white/15">
-                        <label class="block text-xs font-bold uppercase tracking-wider text-amber-300 mb-2">
-                            1. Pilih Jenis Produk UMKM:
-                        </label>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-amber-300 mb-2">1. Pilih Jenis Produk UMKM:</label>
                         <select id="simProduct" onchange="runPackagingSimulator()" class="w-full bg-slate-900 text-white font-semibold text-sm rounded-xl px-4 py-3 border border-indigo-400/40 focus:outline-none focus:ring-2 focus:ring-amber-400">
                             <option value="snack">Keripik / Snack Kering Renyah</option>
                             <option value="minuman">Minuman Kekinian (Kopi Susu / Teh Buah)</option>
@@ -867,9 +798,7 @@
                     </div>
 
                     <div class="bg-white/10 p-4 rounded-2xl border border-white/15">
-                        <label class="block text-xs font-bold uppercase tracking-wider text-amber-300 mb-2">
-                            2. Pilih Segmen Target Konsumen:
-                        </label>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-amber-300 mb-2">2. Pilih Segmen Target Konsumen:</label>
                         <select id="simTarget" onchange="runPackagingSimulator()" class="w-full bg-slate-900 text-white font-semibold text-sm rounded-xl px-4 py-3 border border-indigo-400/40 focus:outline-none focus:ring-2 focus:ring-amber-400">
                             <option value="genz">Remaja & Mahasiswa (Gen-Z / Trendy)</option>
                             <option value="keluarga">Ibu Rumah Tangga / Pasar Ekonomis</option>
@@ -879,13 +808,9 @@
                     </div>
                 </div>
 
-                <!-- Output Result Box -->
-                <div id="simOutputBox" class="bg-white text-slate-900 rounded-2xl p-6 shadow-lg">
-                    <!-- Dynamic via JS -->
-                </div>
+                <div id="simOutputBox" class="bg-white text-slate-900 rounded-2xl p-6 shadow-lg"></div>
             </div>
 
-            <!-- Navigation Buttons -->
             <div class="flex justify-between">
                 <button onclick="switchTab('tp2')" class="px-5 py-3 rounded-xl bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 font-bold text-sm transition flex items-center gap-2">
                     <i class="fa-solid fa-arrow-left"></i> Kembali ke Modul 2
@@ -898,7 +823,6 @@
 
         <!-- ==================== SECTION 4: TP 4 (UNSUR DESAIN, LABEL & DAYA TARIK) ==================== -->
         <section id="sec-tp4" class="module-section hidden space-y-8">
-            <!-- Header Modul -->
             <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
                 <span class="text-xs font-bold uppercase tracking-wider text-rose-600">Modul 4 • Tujuan Pembelajaran 4</span>
                 <h2 class="font-display font-bold text-2xl sm:text-3xl text-slate-900 mt-1 mb-3">
@@ -922,16 +846,13 @@
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                    <!-- Visual Mockup Standing Pouch with Hotspots -->
                     <div class="lg:col-span-5 flex justify-center">
                         <div id="mockupPackage" class="relative w-72 sm:w-80 rounded-[36px] p-6 shadow-2xl border-4 border-white transition-colors duration-500 bg-gradient-to-b from-amber-500 via-orange-500 to-amber-700 text-white select-none">
-                            <!-- Ziplock Seal Line -->
                             <div class="w-full h-3 border-y-2 border-dashed border-white/50 mb-4 flex items-center justify-between px-2">
                                 <span class="text-[9px] uppercase tracking-widest text-white/80">Tear Here / Ziplock Seal</span>
                                 <i class="fa-solid fa-scissors text-[10px] text-white/80"></i>
                             </div>
 
-                            <!-- Top Badges: Halal & BPOM -->
                             <div class="flex justify-between items-start mb-3">
                                 <div class="bg-white text-emerald-800 px-2.5 py-1 rounded-lg text-[10px] font-extrabold shadow flex items-center gap-1">
                                     <i class="fa-solid fa-certificate text-emerald-600"></i> HALAL INDONESIA
@@ -941,14 +862,12 @@
                                 </div>
                             </div>
 
-                            <!-- Brand & Product Name -->
                             <div class="text-center my-4 bg-slate-950/30 backdrop-blur-sm rounded-2xl p-4 border border-white/20">
                                 <div class="text-[11px] font-bold uppercase tracking-widest text-amber-200">KRIPIK NUSANTARA</div>
                                 <h4 class="font-display font-extrabold text-2xl leading-tight tracking-tight mt-0.5">SINGKONG BALADO</h4>
                                 <p class="text-[11px] text-white/90 mt-1">Renyah Pilihan Tanpa Pengawet</p>
                             </div>
 
-                            <!-- Ingredients & Nutrition Box -->
                             <div class="bg-white/95 text-slate-800 rounded-xl p-3 text-[10px] space-y-1.5 shadow-inner">
                                 <div><strong>Komposisi:</strong> Singkong Segar (75%), Minyak Nabati, Cabai Merah, Bawang Putih, Gula, Garam.</div>
                                 <div class="border-t border-slate-200 pt-1 flex justify-between">
@@ -960,13 +879,11 @@
                                 </div>
                             </div>
 
-                            <!-- Bottom Row: Netto & Expiry -->
                             <div class="mt-4 flex items-center justify-between text-xs font-extrabold">
                                 <div class="bg-slate-900/70 px-3 py-1.5 rounded-lg">Berat Bersih: 150g</div>
                                 <div class="bg-white text-slate-900 px-2.5 py-1.5 rounded-lg text-[10px]">Baik Digunakan Sebelum: 30 DES 2027</div>
                             </div>
 
-                            <!-- 8 Interactive Hotspot Buttons -->
                             <button onclick="showLabelHotspot(1)" class="hotspot-dot absolute top-28 left-6 w-8 h-8 rounded-full bg-indigo-600 text-white font-bold text-xs shadow-lg border-2 border-white flex items-center justify-center">1</button>
                             <button onclick="showLabelHotspot(2)" class="hotspot-dot absolute top-14 left-5 w-8 h-8 rounded-full bg-indigo-600 text-white font-bold text-xs shadow-lg border-2 border-white flex items-center justify-center">2</button>
                             <button onclick="showLabelHotspot(3)" class="hotspot-dot absolute top-14 right-5 w-8 h-8 rounded-full bg-indigo-600 text-white font-bold text-xs shadow-lg border-2 border-white flex items-center justify-center">3</button>
@@ -978,11 +895,8 @@
                         </div>
                     </div>
 
-                    <!-- Explanation Panel & Quick Selector -->
                     <div class="lg:col-span-7 space-y-4">
-                        <div id="hotspotDetailCard" class="bg-indigo-50 border-2 border-indigo-200 rounded-2xl p-6">
-                            <!-- Dynamic via JS -->
-                        </div>
+                        <div id="hotspotDetailCard" class="bg-indigo-50 border-2 border-indigo-200 rounded-2xl p-6"></div>
 
                         <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
                             <button onclick="showLabelHotspot(1)" id="hs-btn-1" class="hs-btn text-left p-2.5 rounded-xl border text-xs font-bold transition">1. Nama Produk & Merek</button>
@@ -1024,9 +938,7 @@
                     </button>
                 </div>
 
-                <div id="colorPsychResult" class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
-                    <!-- Dynamic via JS -->
-                </div>
+                <div id="colorPsychResult" class="p-6 rounded-2xl bg-slate-50 border border-slate-200"></div>
             </div>
 
             <!-- 2 Kategori Daya Tarik Kemasan: Visual vs Praktis -->
@@ -1043,9 +955,9 @@
                     </div>
                     <ul class="space-y-2.5 text-xs sm:text-sm text-slate-600">
                         <li>• <strong>Kombinasi Warna Harmonis:</strong> Kontras yang tepat antara latar belakang dan teks agar mudah terbaca (<em>legibility</em>).</li>
-                        <li>• <strong>Tipografi (Huruf):</strong> Pemilihan jenis font yang sesuai karakter produk (misal font <em>serif</em> elegan untuk parfum, font <em>sans-serif bold</em> untuk snack).</li>
-                        <li>• <strong>Ilustrasi & Fotografi Produk:</strong> Menampilkan foto penyajian produk yang menggugah selera atau jendela transparan (<em>window</em>) agar isi terlihat.</li>
-                        <li>• <strong>Tata Letak (Layout):</strong> Hierarki visual yang jelas sehingga konsumen langsung tahu apa nama produk dan keunggulannya.</li>
+                        <li>• <strong>Tipografi (Huruf):</strong> Pemilihan jenis font yang sesuai karakter produk.</li>
+                        <li>• <strong>Ilustrasi & Fotografi Produk:</strong> Menampilkan foto penyajian produk yang menggugah selera atau jendela transparan (<em>window</em>).</li>
+                        <li>• <strong>Tata Letak (Layout):</strong> Hierarki visual yang jelas sehingga konsumen langsung tahu nama produk dan keunggulannya.</li>
                     </ul>
                 </div>
 
@@ -1060,15 +972,14 @@
                         </div>
                     </div>
                     <ul class="space-y-2.5 text-xs sm:text-sm text-slate-600">
-                        <li>• <strong>Kemudahan Dibuka & Ditutup Kembali (Resealable):</strong> Fitur <em>ziplock</em>, tutup ulir (<em>spout</em>), atau perekat ulang agar sisa produk tetap awet.</li>
-                        <li>• <strong>Takaran Porsi yang Pas (Single-Serve / Portion Pack):</strong> Kemasan <em>sachet</em> sekali seduh yang praktis tanpa perlu menakar lagi.</li>
-                        <li>• <strong>Kemudahan Dijinjing / Dibawa:</strong> Adanya lubang pegangan jari (<em>handle</em>) atau bentuk botol yang pas di genggaman tangan.</li>
+                        <li>• <strong>Kemudahan Dibuka & Ditutup Kembali (Resealable):</strong> Fitur <em>ziplock</em>, tutup ulir (<em>spout</em>), atau perekat ulang.</li>
+                        <li>• <strong>Takaran Porsi yang Pas (Single-Serve / Portion Pack):</strong> Kemasan <em>sachet</em> sekali seduh yang praktis.</li>
+                        <li>• <strong>Kemudahan Dijinjing / Dibawa:</strong> Adanya lubang pegangan jari (<em>handle</em>) atau bentuk botol ergonomis.</li>
                         <li>• <strong>Kemudahan Dituang / Disemprotkan:</strong> Mekanisme <em>spray, pump,</em> atau corong anti-tumpah.</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Navigation Buttons -->
             <div class="flex justify-between">
                 <button onclick="switchTab('tp3')" class="px-5 py-3 rounded-xl bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 font-bold text-sm transition flex items-center gap-2">
                     <i class="fa-solid fa-arrow-left"></i> Kembali ke Modul 3
@@ -1109,7 +1020,7 @@
                 </div>
 
                 <!-- Student Identity Form for PDF Report -->
-                <div class="mt-6 pt-6 border-t border-slate-200 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div id="studentFormBox" class="mt-6 pt-6 border-t border-slate-200 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Nama Lengkap Siswa <span class="text-rose-500">*</span></label>
                         <input type="text" id="studentName" placeholder="Contoh: Andi Ralviansyah" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent">
@@ -1128,22 +1039,34 @@
                     </div>
                 </div>
 
+                <!-- Peringatan Validasi Inline (Kompatibel Google Sites Sandbox) -->
+                <div id="pdfAlertBox" class="hidden mt-4 p-4 rounded-xl bg-amber-50 border border-amber-300 text-amber-900 text-xs sm:text-sm flex items-center justify-between gap-3">
+                    <div>
+                        <i class="fa-solid fa-triangle-exclamation text-amber-600 mr-1.5"></i>
+                        <span id="pdfAlertMessage">Silakan lengkapi Nama Lengkap Siswa terlebih dahulu sebelum mengunduh PDF.</span>
+                    </div>
+                    <button onclick="document.getElementById('pdfAlertBox').classList.add('hidden')" class="px-2.5 py-1 rounded-lg bg-amber-200/70 hover:bg-amber-200 text-amber-900 font-bold text-xs">Tutup</button>
+                </div>
+
                 <!-- Quick Action Bar -->
                 <div class="mt-4 flex flex-wrap items-center justify-between gap-3 bg-slate-50 p-3.5 rounded-xl border border-slate-200">
                     <div class="text-xs text-slate-600 flex items-center gap-2">
                         <i class="fa-solid fa-file-pdf text-rose-600 text-base"></i>
-                        <span>Hasil evaluasi dapat diunduh kapan saja dalam bentuk <strong>File PDF Resmi</strong> lengkap dengan rincian jawaban 20 soal untuk dikirim ke WhatsApp / Google Classroom Guru.</span>
+                        <span>Hasil evaluasi dapat langsung diunduh dalam bentuk <strong>File PDF Resmi</strong> lengkap dengan rincian jawaban 20 soal untuk dikirim ke Guru.</span>
                     </div>
-                    <button onclick="downloadQuizPDF()" class="px-4 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs transition shadow-sm flex items-center gap-2 shrink-0">
-                        <i class="fa-solid fa-file-arrow-down"></i> Unduh Hasil Evaluasi (PDF)
-                    </button>
+                    <div class="flex flex-wrap items-center gap-2">
+                        <button onclick="downloadQuizPDF()" class="px-4 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs transition shadow-sm flex items-center gap-2 shrink-0">
+                            <i class="fa-solid fa-file-arrow-down"></i> Unduh Hasil Evaluasi (PDF)
+                        </button>
+                        <a id="fallbackPdfLink" href="#" target="_blank" class="hidden px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs transition shadow-sm flex items-center gap-2 shrink-0">
+                            <i class="fa-solid fa-up-right-from-square"></i> Buka PDF di Tab Baru
+                        </a>
+                    </div>
                 </div>
             </div>
 
             <!-- Quiz Questions Container -->
-            <div id="quizContainer" class="space-y-5">
-                <!-- Rendered via JS -->
-            </div>
+            <div id="quizContainer" class="space-y-5"></div>
 
             <!-- Final Summary Card -->
             <div id="quizResultBanner" class="hidden bg-gradient-to-r from-indigo-900 via-slate-900 to-indigo-950 text-white rounded-2xl p-8 text-center shadow-xl">
@@ -1156,9 +1079,9 @@
                     <button onclick="downloadQuizPDF()" class="px-6 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-sm transition shadow-lg flex items-center gap-2">
                         <i class="fa-solid fa-file-pdf text-base"></i> Simpan & Unduh Hasil PDF (Kirim ke Guru)
                     </button>
-                    <button onclick="window.print()" class="px-5 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm transition border border-white/20 flex items-center gap-2">
-                        <i class="fa-solid fa-print"></i> Cetak Halaman
-                    </button>
+                    <a id="fallbackPdfLinkBottom" href="#" target="_blank" class="hidden px-5 py-3.5 rounded-xl bg-indigo-500 hover:bg-indigo-400 text-white font-bold text-sm transition shadow-lg flex items-center gap-2">
+                        <i class="fa-solid fa-up-right-from-square"></i> Buka PDF di Tab Baru
+                    </a>
                     <button onclick="resetQuiz()" class="px-5 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm transition flex items-center gap-2">
                         <i class="fa-solid fa-rotate-right"></i> Kerjakan Ulang
                     </button>
@@ -1169,7 +1092,7 @@
     </main>
 
     <!-- FOOTER DENGAN LINK INSTAGRAM & YOUTUBE RESMI -->
-    <footer class="bg-slate-900 text-slate-300 border-t border-slate-800 mt-12 py-10 no-print">
+    <footer class="bg-slate-900 text-slate-300 border-t border-slate-800 mt-12 py-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-8 pb-8 border-b border-slate-800">
                 <!-- Identitas Sekolah & Guru -->
@@ -1198,22 +1121,22 @@
                         <i class="fa-brands fa-instagram text-pink-400 text-sm"></i> Instagram Resmi
                     </h5>
                     <div class="space-y-2">
-                        <a href="[https://www.instagram.com/smkpasim.official/](https://www.instagram.com/smkpasim.official/)" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-800/60 hover:bg-pink-600/20 border border-slate-700/80 hover:border-pink-500/50 transition group">
+                        <a href="https://www.instagram.com/smkpasim.official/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-800/60 hover:bg-pink-600/20 border border-slate-700/80 hover:border-pink-500/50 transition group">
                             <span class="w-8 h-8 rounded-lg bg-gradient-to-tr from-amber-500 via-pink-500 to-purple-600 text-white flex items-center justify-center shrink-0 shadow-sm">
                                 <i class="fa-brands fa-instagram"></i>
                             </span>
                             <div class="overflow-hidden">
                                 <div class="text-xs font-bold text-white group-hover:text-pink-300 transition truncate">@smkpasim.official</div>
-                                <div class="text-[10px] text-slate-400 truncate">[https://www.instagram.com/smkpasim.official/](https://www.instagram.com/smkpasim.official/)</div>
+                                <div class="text-[10px] text-slate-400 truncate">https://www.instagram.com/smkpasim.official/</div>
                             </div>
                         </a>
-                        <a href="[https://www.instagram.com/agus_tryanto/](https://www.instagram.com/agus_tryanto/)" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-800/60 hover:bg-pink-600/20 border border-slate-700/80 hover:border-pink-500/50 transition group">
+                        <a href="https://www.instagram.com/agus_tryanto/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-800/60 hover:bg-pink-600/20 border border-slate-700/80 hover:border-pink-500/50 transition group">
                             <span class="w-8 h-8 rounded-lg bg-gradient-to-tr from-amber-500 via-pink-500 to-purple-600 text-white flex items-center justify-center shrink-0 shadow-sm">
                                 <i class="fa-brands fa-instagram"></i>
                             </span>
                             <div class="overflow-hidden">
                                 <div class="text-xs font-bold text-white group-hover:text-pink-300 transition truncate">@agus_tryanto</div>
-                                <div class="text-[10px] text-slate-400 truncate">[https://www.instagram.com/agus_tryanto/](https://www.instagram.com/agus_tryanto/)</div>
+                                <div class="text-[10px] text-slate-400 truncate">https://www.instagram.com/agus_tryanto/</div>
                             </div>
                         </a>
                     </div>
@@ -1225,22 +1148,22 @@
                         <i class="fa-brands fa-youtube text-red-500 text-sm"></i> Kanal YouTube
                     </h5>
                     <div class="space-y-2">
-                        <a href="[https://www.youtube.com/@PASIMChannel](https://www.youtube.com/@PASIMChannel)" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-800/60 hover:bg-red-600/20 border border-slate-700/80 hover:border-red-500/50 transition group">
+                        <a href="https://www.youtube.com/@PASIMChannel" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-800/60 hover:bg-red-600/20 border border-slate-700/80 hover:border-red-500/50 transition group">
                             <span class="w-8 h-8 rounded-lg bg-red-600 text-white flex items-center justify-center shrink-0 shadow-sm">
                                 <i class="fa-brands fa-youtube"></i>
                             </span>
                             <div class="overflow-hidden">
                                 <div class="text-xs font-bold text-white group-hover:text-red-300 transition truncate">@PASIMChannel</div>
-                                <div class="text-[10px] text-slate-400 truncate">[https://www.youtube.com/@PASIMChannel](https://www.youtube.com/@PASIMChannel)</div>
+                                <div class="text-[10px] text-slate-400 truncate">https://www.youtube.com/@PASIMChannel</div>
                             </div>
                         </a>
-                        <a href="[https://www.youtube.com/@agustryanto6575](https://www.youtube.com/@agustryanto6575)" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-800/60 hover:bg-red-600/20 border border-slate-700/80 hover:border-red-500/50 transition group">
+                        <a href="https://www.youtube.com/@agustryanto6575" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-800/60 hover:bg-red-600/20 border border-slate-700/80 hover:border-red-500/50 transition group">
                             <span class="w-8 h-8 rounded-lg bg-red-600 text-white flex items-center justify-center shrink-0 shadow-sm">
                                 <i class="fa-brands fa-youtube"></i>
                             </span>
                             <div class="overflow-hidden">
                                 <div class="text-xs font-bold text-white group-hover:text-red-300 transition truncate">@agustryanto6575</div>
-                                <div class="text-[10px] text-slate-400 truncate">[https://www.youtube.com/@agustryanto6575](https://www.youtube.com/@agustryanto6575)</div>
+                                <div class="text-[10px] text-slate-400 truncate">https://www.youtube.com/@agustryanto6575</div>
                             </div>
                         </a>
                     </div>
@@ -1252,54 +1175,51 @@
                     © 2026 <strong>SMKS PK PASIM Plus Kota Sukabumi</strong> • Disusun oleh <strong>Agus Tryanto, M.Pd</strong>
                 </div>
                 <div class="flex flex-wrap items-center gap-3">
-                    <a href="[https://www.instagram.com/smkpasim.official/](https://www.instagram.com/smkpasim.official/)" target="_blank" rel="noopener noreferrer" class="hover:text-pink-400 transition">IG Sekolah</a>
+                    <a href="https://www.instagram.com/smkpasim.official/" target="_blank" rel="noopener noreferrer" class="hover:text-pink-400 transition">IG Sekolah</a>
                     <span>•</span>
-                    <a href="[https://www.instagram.com/agus_tryanto/](https://www.instagram.com/agus_tryanto/)" target="_blank" rel="noopener noreferrer" class="hover:text-pink-400 transition">IG Guru</a>
+                    <a href="https://www.instagram.com/agus_tryanto/" target="_blank" rel="noopener noreferrer" class="hover:text-pink-400 transition">IG Guru</a>
                     <span>•</span>
-                    <a href="[https://www.youtube.com/@PASIMChannel](https://www.youtube.com/@PASIMChannel)" target="_blank" rel="noopener noreferrer" class="hover:text-red-400 transition">YT PASIM</a>
+                    <a href="https://www.youtube.com/@PASIMChannel" target="_blank" rel="noopener noreferrer" class="hover:text-red-400 transition">YT PASIM</a>
                     <span>•</span>
-                    <a href="[https://www.youtube.com/@agustryanto6575](https://www.youtube.com/@agustryanto6575)" target="_blank" rel="noopener noreferrer" class="hover:text-red-400 transition">YT Guru</a>
+                    <a href="https://www.youtube.com/@agustryanto6575" target="_blank" rel="noopener noreferrer" class="hover:text-red-400 transition">YT Guru</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- MODAL PANDUAN GITHUB PAGES -->
-    <div id="githubModal" class="fixed inset-0 z-50 hidden bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4 no-print">
+    <!-- MODAL PANDUAN GOOGLE SITES -->
+    <div id="sitesModal" class="fixed inset-0 z-50 hidden bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="bg-white rounded-3xl max-w-xl w-full p-6 sm:p-8 shadow-2xl border border-slate-200">
             <div class="flex items-center justify-between mb-4">
                 <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-xl bg-slate-900 text-white flex items-center justify-center text-xl">
-                        <i class="fa-brands fa-github"></i>
+                    <div class="w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-window-maximize"></i>
                     </div>
                     <div>
-                        <h3 class="font-display font-bold text-lg text-slate-900">Cara Upload ke GitHub Pages</h3>
-                        <p class="text-xs text-slate-500">Agar bahan ajar dapat diakses online oleh seluruh siswa</p>
+                        <h3 class="font-display font-bold text-lg text-slate-900">Petunjuk Penggunaan di Google Sites</h3>
+                        <p class="text-xs text-slate-500">Panduan untuk Guru & Siswa</p>
                     </div>
                 </div>
-                <button onclick="toggleGithubModal()" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center">
+                <button onclick="toggleSitesModal()" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
 
             <ol class="space-y-3 text-xs sm:text-sm text-slate-700 mb-6">
                 <li class="p-3 rounded-xl bg-slate-50 border border-slate-200">
-                    <strong>1. Simpan File:</strong> Simpan kode aplikasi ini dengan nama wajib <code class="px-1.5 py-0.5 rounded bg-indigo-100 text-indigo-800 font-bold">index.html</code>.
+                    <strong>1. Sematkan Kode (Untuk Guru):</strong> Di editor Google Sites, klik menu <strong>Sisipkan (Insert) &rarr; Sematkan (Embed) &rarr; Sematkan Kode (Embed Code)</strong>, lalu tempel seluruh kode HTML ini.
                 </li>
                 <li class="p-3 rounded-xl bg-slate-50 border border-slate-200">
-                    <strong>2. Buat Repository Baru:</strong> Login ke <a href="[https://github.com](https://github.com)" target="_blank" class="text-indigo-600 underline font-semibold">github.com</a>, klik tombol <strong>New Repository</strong>, beri nama misalnya <code class="px-1.5 py-0.5 rounded bg-slate-200 font-semibold">modul-kemasan-kik</code>, pilih <strong>Public</strong>, lalu klik <em>Create repository</em>.
+                    <strong>2. Atur Ukuran Bingkai:</strong> Tarik bingkai embed di Google Sites agar melebar penuh dari kiri ke kanan, dan atur tingginya agar nyaman dibaca tanpa <em>double scrollbar</em>.
                 </li>
                 <li class="p-3 rounded-xl bg-slate-50 border border-slate-200">
-                    <strong>3. Upload File:</strong> Klik tautan <em>"uploading an existing file"</em>, tarik file <code class="px-1.5 py-0.5 rounded bg-indigo-100 text-indigo-800 font-bold">index.html</code> ke halaman tersebut, lalu klik tombol hijau <strong>Commit changes</strong>.
-                </li>
-                <li class="p-3 rounded-xl bg-slate-50 border border-slate-200">
-                    <strong>4. Aktifkan GitHub Pages:</strong> Buka menu <strong>Settings</strong> di repository Anda &rarr; pilih menu <strong>Pages</strong> di samping kiri &rarr; pada bagian <em>Branch</em> ubah <em>None</em> menjadi <strong>main</strong> &rarr; klik <strong>Save</strong>. Tunggu 1 menit, link website siap dibagikan ke siswa!
+                    <strong>3. Unduh Hasil PDF (Untuk Siswa):</strong> Setelah mengerjakan 20 soal Evaluasi HOTS, isi Nama & Kelas lalu klik <strong>Unduh Hasil Evaluasi (PDF)</strong>. Jika browser HP menahan unduhan otomatis, klik tombol biru <strong>"Buka PDF di Tab Baru"</strong> yang muncul di sebelahnya.
                 </li>
             </ol>
 
             <div class="flex justify-end">
-                <button onclick="toggleGithubModal()" class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs transition">
-                    Mengerti, Tutup Panduan
+                <button onclick="toggleSitesModal()" class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs transition">
+                    Mengerti, Tutup Info
                 </button>
             </div>
         </div>
@@ -1335,12 +1255,15 @@
             document.getElementById('progressBar').style.width = percent + '%';
             document.getElementById('progressText').textContent = percent + '%';
 
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            // Aman untuk iframe Google Sites
+            const topEl = document.getElementById('appTop');
+            if (topEl && topEl.scrollIntoView) {
+                topEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
         }
 
-        function toggleGithubModal() {
-            const modal = document.getElementById('githubModal');
-            modal.classList.toggle('hidden');
+        function toggleSitesModal() {
+            document.getElementById('sitesModal').classList.toggle('hidden');
         }
 
         // ==================== 2. MODUL 2: SIMULASI TINGKATAN KEMASAN ====================
@@ -1830,7 +1753,6 @@
 
         // ==================== 7. EVALUASI HOTS (20 SOAL PILIHAN GANDA & PDF EXPORT) ====================
         const quizQuestions = [
-            // TP 1: Pengertian, Fungsi, dan Tujuan Kemasan (Soal 1 - 5)
             {
                 tp: 'TP 1 • Fungsi Promosional Kemasan',
                 q: 'Sebuah UMKM keripik tempe di Kota Sukabumi mendapati produknya sangat enak, namun kalah laris ketika dititipkan di rak minimarket modern dibandingkan produk pesaing. Setelah dievaluasi, keripik UMKM tersebut masih menggunakan plastik bening tanpa warna mencolok, sedangkan pesaing menggunakan kemasan full-color yang langsung menarik perhatian pembeli dalam 5 detik pertama. Dalam konsep pemasaran modern, kegagalan kemasan UMKM tersebut berkaitan dengan peran kemasan sebagai...',
@@ -1896,8 +1818,6 @@
                 answer: 1,
                 explanation: 'Segel keamanan (Tamper-Evident Seal) bertujuan melindungi konsumen dari risiko pemalsuan, kontaminasi, atau pembukaan ilegal sebelum produk sampai ke tangan pembeli.'
             },
-
-            // TP 2: Jenis, Bahan, dan Tingkatan Kemasan (Soal 6 - 10)
             {
                 tp: 'TP 2 • Struktur Tingkatan Kemasan',
                 q: 'Perhatikan alur pengemasan produk Biskuit Kelapa berikut: (1) Biskuit dibungkus langsung menggunakan plastik metalized kedap udara; (2) Bungkus metalized tersebut dimasukkan ke dalam kotak karton bergambar merek dan informasi gizi untuk dipajang di toko; (3) Sebanyak 24 kotak karton disusun ke dalam kardus besar bergelombang (corrugated box) untuk dikirim menggunakan truk antarprovinsi. Urutan tingkatan kemasan (1), (2), dan (3) yang tepat adalah...',
@@ -1963,8 +1883,6 @@
                 answer: 1,
                 explanation: 'Kemasan komposit aseptik menggabungkan kekuatan mekanis kertas karton, sifat kedap air plastik polietilena (PE), dan sifat penghalang cahaya/oksigen dari lapisan tipis aluminium foil.'
             },
-
-            // TP 3: Analisis Karakteristik Kemasan Berdasarkan Produk & Target Konsumen (Soal 11 - 15)
             {
                 tp: 'TP 3 • Analisis Karakteristik Fisik Produk Higroskopis',
                 q: 'Bawang goreng dan keripik bayam memiliki sifat "higroskopis" (mudah menyerap uap air dari udara sekitar sehingga cepat melempem) serta mengandung minyak yang mudah tengik bila terpapar oksigen dan cahaya matahari. Kombinasi kemasan yang PALING EFEKTIF untuk menjaga kerenyahan produk tersebut selama 6 bulan adalah...',
@@ -2030,8 +1948,6 @@
                 answer: 1,
                 explanation: 'Konsumen hijau (Green Consumer) sangat memperhatikan jejak ekologis kemasan; material biodegradable/recyclable seperti kertas kraft tanpa plastik sangat selaras dengan citra produk organik.'
             },
-
-            // TP 4: Unsur Desain, Informasi Label Wajib, dan Daya Tarik Kemasan (Soal 16 - 20)
             {
                 tp: 'TP 4 • Regulasi Informasi Wajib Label Pangan (PP No. 69/1999 & BPOM)',
                 q: 'Berdasarkan Peraturan Pemerintah tentang Label dan Iklan Pangan serta ketentuan BPOM, sebuah kemasan pangan olahan yang telah mencantumkan: (1) Nama Produk, (2) Daftar Komposisi Bahan, (3) Berat Bersih/Netto, (4) Nama & Alamat Produsen, serta (5) Nomor Izin Edar & Logo Halal, MASIH BELUM MEMENUHI SYARAT HUKUM apabila belum mencantumkan...',
@@ -2179,15 +2095,10 @@
                 banner.classList.remove('hidden');
 
                 let predikat = '';
-                if (score >= 90) {
-                    predikat = 'Sangat Kompeten (A)';
-                } else if (score >= 75) {
-                    predikat = 'Kompeten (B)';
-                } else if (score >= 60) {
-                    predikat = 'Cukup Kompeten (C)';
-                } else {
-                    predikat = 'Perlu Penguatan (D)';
-                }
+                if (score >= 90) predikat = 'Sangat Kompeten (A)';
+                else if (score >= 75) predikat = 'Kompeten (B)';
+                else if (score >= 60) predikat = 'Cukup Kompeten (C)';
+                else predikat = 'Perlu Penguatan (D)';
 
                 feedback.innerHTML = `Skor Akhir Anda: <strong class="text-amber-300 text-lg">${score} / 100</strong> (${correctCount} benar dari 20 soal HOTS) — Predikat: <strong class="text-emerald-300">${predikat}</strong>.<br>Silakan klik tombol <strong>"Simpan & Unduh Hasil PDF"</strong> di bawah untuk mengunduh lembar hasil evaluasi resmi dan kirimkan kepada Bapak <strong>Agus Tryanto, M.Pd</strong>.`;
             }
@@ -2196,28 +2107,33 @@
         function resetQuiz() {
             userAnswers = {};
             document.getElementById('quizResultBanner').classList.add('hidden');
+            document.getElementById('fallbackPdfLink').classList.add('hidden');
+            document.getElementById('fallbackPdfLinkBottom').classList.add('hidden');
             renderQuiz();
         }
 
-        // ==================== 8. EXPORT HASIL EVALUASI KE PDF (jsPDF & AutoTable) ====================
+        // ==================== 8. EXPORT HASIL EVALUASI KE PDF (KOMPATIBEL GOOGLE SITES) ====================
         function downloadQuizPDF() {
             const nameInput = document.getElementById('studentName');
             const classInput = document.getElementById('studentClass');
             const numInput = document.getElementById('studentNumber');
             const schoolInput = document.getElementById('studentSchool');
+            const alertBox = document.getElementById('pdfAlertBox');
+            const alertMsg = document.getElementById('pdfAlertMessage');
 
-            const studentName = nameInput.value.trim() || 'Siswa (Belum Mengisi Nama)';
+            if (!nameInput.value.trim()) {
+                alertBox.classList.remove('hidden');
+                alertMsg.textContent = 'Mohon isi "Nama Lengkap Siswa" pada kolom identitas di atas terlebih dahulu agar tercetak pada laporan PDF.';
+                nameInput.focus();
+                document.getElementById('studentFormBox').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                return;
+            }
+            alertBox.classList.add('hidden');
+
+            const studentName = nameInput.value.trim();
             const studentClass = classInput.value.trim() || 'Kelas XI SMK';
             const studentNumber = numInput.value.trim() || '-';
             const studentSchool = schoolInput.value.trim() || 'SMKS PK PASIM Plus Kota Sukabumi';
-
-            if (!nameInput.value.trim()) {
-                const proceed = confirm('Anda belum mengisi "Nama Lengkap Siswa" pada kolom identitas di atas.\n\nKlik "Cancel / Batal" jika ingin mengisi nama terlebih dahulu, atau klik "OK" untuk tetap mengunduh PDF.');
-                if (!proceed) {
-                    nameInput.focus();
-                    return;
-                }
-            }
 
             let correctCount = 0;
             const answeredCount = Object.keys(userAnswers).length;
@@ -2233,7 +2149,6 @@
             else if (score >= 75) predikat = 'Kompeten (B)';
             else if (score >= 60) predikat = 'Cukup Kompeten (C)';
 
-            // Hitung Capaian per Tujuan Pembelajaran (TP 1 - TP 4)
             const tpStats = [
                 { name: 'TP 1: Pengertian, Fungsi & Tujuan Kemasan (Soal 1-5)', correct: 0, total: 5 },
                 { name: 'TP 2: Jenis, Bahan & Tingkatan Kemasan (Soal 6-10)', correct: 0, total: 5 },
@@ -2256,7 +2171,7 @@
             }) + ' Pukul ' + now.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
 
             // Header Kop Dokumen
-            doc.setFillColor(30, 27, 75); // Indigo-950
+            doc.setFillColor(30, 27, 75);
             doc.rect(0, 0, 210, 30, 'F');
 
             doc.setTextColor(255, 255, 255);
@@ -2335,7 +2250,6 @@
             doc.setFontSize(10);
             doc.text(`B. Rincian Jawaban Siswa (${answeredCount} dari 20 Soal Terjawab)`, 14, detailStartY);
 
-            const letters = ['A', 'B', 'C', 'D', 'E'];
             const detailRows = quizQuestions.map((item, idx) => {
                 const uAns = userAnswers[idx];
                 const userChoiceText = (uAns !== undefined) ? item.options[uAns] : 'Belum Dijawab';
@@ -2370,16 +2284,15 @@
                     if (data.section === 'body' && data.column.index === 4) {
                         const text = data.cell.raw;
                         if (text.includes('BENAR')) {
-                            data.cell.styles.textColor = [5, 150, 105]; // Emerald
+                            data.cell.styles.textColor = [5, 150, 105];
                         } else {
-                            data.cell.styles.textColor = [225, 29, 72]; // Rose
+                            data.cell.styles.textColor = [225, 29, 72];
                         }
                     }
                 },
                 margin: { left: 14, right: 14 }
             });
 
-            // Footer Tanda Tangan / Pengesahan Guru
             let finalY = doc.lastAutoTable.finalY + 8;
             if (finalY > 265) {
                 doc.addPage();
@@ -2393,7 +2306,26 @@
 
             const safeName = studentName.replace(/[^a-zA-Z0-9]/g, '_');
             const safeClass = studentClass.replace(/[^a-zA-Z0-9]/g, '_');
-            doc.save(`Hasil_Evaluasi_Kemasan_${safeName}_${safeClass}.pdf`);
+            const fileName = `Hasil_Evaluasi_Kemasan_${safeName}_${safeClass}.pdf`;
+
+            // Buat Blob URL Cadangan untuk Google Sites Iframe
+            try {
+                const pdfBlob = doc.output('blob');
+                const blobUrl = URL.createObjectURL(pdfBlob);
+
+                const topLink = document.getElementById('fallbackPdfLink');
+                topLink.href = blobUrl;
+                topLink.download = fileName;
+                topLink.classList.remove('hidden');
+
+                const bottomLink = document.getElementById('fallbackPdfLinkBottom');
+                bottomLink.href = blobUrl;
+                bottomLink.download = fileName;
+                bottomLink.classList.remove('hidden');
+            } catch (e) {}
+
+            // Trigger Unduhan Utama
+            doc.save(fileName);
         }
 
         // ==================== INITIALIZE ALL INTERACTIVE MODULES ON LOAD ====================
